@@ -9,7 +9,7 @@ import {
 } from 'react-router-dom'
 
 /* 1st party */
-import { LOCAL_STORAGE_JWT_TOKEN_KEY } from '../utils'
+import { LOCAL_STORAGE_AUTH_KEY } from '../utils'
 
 export default withRouter(function Authenticated({ history }) {
   
@@ -23,7 +23,7 @@ export default withRouter(function Authenticated({ history }) {
       .then(parsedResponse => {
         console.log('parsed token is: ', parsedResponse)
         console.log('history is: ', history)
-        window.localStorage && window.localStorage.setItem(LOCAL_STORAGE_JWT_TOKEN_KEY, JSON.stringify(parsedResponse))
+        window.localStorage && window.localStorage.setItem(LOCAL_STORAGE_AUTH_KEY, JSON.stringify(parsedResponse))
         history.push('/')
       })
       .catch(e => console.log('Failed - ', e))

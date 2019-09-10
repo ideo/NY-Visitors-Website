@@ -12,7 +12,7 @@ import {
 
 /* 1st party */
 import StudioItem from './StudioItem'
-import { isAuthenticated, hydrate, logout, ENDPOINTS } from '../utils'
+import { isAuthenticated, hydrate, logout, ENDPOINTS, LOCAL_STORAGE_AUTH_KEY } from '../utils'
 
 const Tips = ({ items }) => {
   let ret = null
@@ -67,13 +67,13 @@ export default withRouter(function StudioSection({ history }) {
             {isAuthenticated() &&
               <>
                 <h4 className="ma0 fw6 mb1 sans-serif">
-                  Hi { JSON.parse(localStorage.getItem('auth')).user.email }! Welcome to your home away from home.
+                  Hi { JSON.parse(localStorage.getItem(LOCAL_STORAGE_AUTH_KEY)).user.email }! Welcome to your home away from home.
                 </h4>
                 <div className="_button-group-login flex flex-row w-100 mt3">
                   <a 
                     onClick={logout}
                     href="#"
-                    class="sans-serif f7 link underline black pa0">Logout</a>
+                    className="sans-serif f7 link underline black pa0">Logout</a>
                 </div>
               </>
             }

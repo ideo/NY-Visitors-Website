@@ -1,25 +1,23 @@
 const { 
 	REACT_APP_BASE_API_URL,
 	REACT_APP_GOOGLE_API_KEY,
-	REACT_APP_LOCALSTORAGE_JWT_TOKEN_KEY
+	REACT_APP_LS_AUTH_KEY
 } = process.env
 
-export const LOCAL_STORAGE_JWT_TOKEN_KEY = REACT_APP_LOCALSTORAGE_JWT_TOKEN_KEY
+export const LOCAL_STORAGE_AUTH_KEY = REACT_APP_LS_AUTH_KEY
 
-export async function hydrate(endpoint, wihAuth = false, sortBy = '') {
+export async function hydrate(endpoint, sortBy = '') {
   const sort = sortBy.length ? `?_sort=${sortBy}` : ''
+	const jwtToken = getAuthToken() ? getAuthToken().jwt : ''
 	let config = {
-		headers: {'Content-Type': 'application/json'}
-	}
-	if (wihAuth && isAuthenticated()) {
-		config = {
-			withCredentials: true,
-			credentials: 'include',
-			headers: {
-				'Authorization': `Bearer ${getAuthToken().jwt}`,
-				'Content-Type': 'application/json'
-			}
+		withCredentials: true,
+		credentials: 'include',
+		headers: {
+			'Content-Type': 'application/json'
 		}
+	}
+	if (jwtToken.length) { 
+		config.headers['Authorization'] = `Bearer ${jwtToken}`
 	}
 	return await fetch(`${REACT_APP_BASE_API_URL}/${endpoint}${sort}`, config)
     .then(response => response.json())
@@ -27,7 +25,7 @@ export async function hydrate(endpoint, wihAuth = false, sortBy = '') {
 }
 
 export function getAuthToken() {
-	const token = window.localStorage.getItem(LOCAL_STORAGE_JWT_TOKEN_KEY)
+	const token = window.localStorage.getItem(LOCAL_STORAGE_AUTH_KEY)
 	return JSON.parse(token)
 }
 
@@ -40,7 +38,7 @@ export function isAuthenticated() {
 }
 
 export function logout() {
-	window.localStorage.removeItem(LOCAL_STORAGE_JWT_TOKEN_KEY)
+	window.localStorage.removeItem(LOCAL_STORAGE_AUTH_KEY)
 	window.location.reload()
 }
 
