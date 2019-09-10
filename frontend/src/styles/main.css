@@ -1,0 +1,287 @@
+/* 
+  variables
+*/
+:root {
+  --unit: 2.5vw;
+  --underline-height: 6px;
+  --grid-color: #878787;
+  --white: #ffffff;
+  --black: #000000;
+  --yellow: #fcf113;
+  --layer-0: 0;
+  --layer-1: 10;
+  --layer-2: 20;
+  --layer-10: 100;
+}
+
+/* 
+  animations
+*/
+@keyframes appear {
+  from {
+    transform: translateX(calc(var(--unit) * -0.5));
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+  
+/* 
+  override Tachyon's `serif` and `sans-serif` font stacks
+*/
+.serif {
+  font-family: 'Sentinel', georgia, times, serif;
+}
+
+.sans-serif {
+  font-family: 'Gotham', -apple-system, BlinkMacSystemFont, 'avenir next', avenir, 'helvetica neue', helvetica, ubuntu, roboto, noto, 'segoe ui', arial, sans-serif;
+}
+
+/* 
+  global styles
+*/
+::selection { 
+  background: var(--yellow);
+}
+
+body  {
+  background-size: var(--unit) var(--unit);
+  background-image: linear-gradient(to right, var(--grid-color) .5px, transparent 0px), linear-gradient(to bottom, var(--grid-color) .5px, transparent 0px);
+}
+
+/* 
+  custom selectors are prefixed with a `_` to denote in the markup 
+  that they were hand-authored, and do not come from tachyons.css
+*/
+._header-global {
+  height: 5vw;
+}
+
+._nav-global > a {
+  margin-left: var(--unit);
+  background-color: var(--white);
+  color: var(--black);
+}
+
+._branding-global {
+  background-color: var(--white);
+  padding-left: calc(var(--unit) * 3.5);
+  background-image: url('./images/logo.svg');
+  background-repeat: no-repeat;
+  background-position-y: 50%;
+  background-position-x: calc(var(--unit) * 0.8);
+  background-size: calc(var(--unit) * 2);
+}
+
+._section-welcome {
+  margin-top: calc(var(--unit) * 4);
+}
+
+._inner-welcome {
+  position: relative;
+}
+
+._article-info {
+  height: calc(var(--unit) * 2);
+  padding-left: calc(var(--unit) * 3);
+  background-color: var(--white);
+  background-repeat: no-repeat;
+  background-position-y: 50%;
+  background-position-x: calc(var(--unit) * 0.8);
+  background-size: calc(var(--unit) * 1.2);
+}
+
+._article-info._address {
+  background-image: url('./images/location.svg');
+}
+
+._article-info._network {
+  background-image: url('./images/wifi.svg');
+}
+
+._article-info._contact {
+  background-image: url('./images/contact.svg');
+}
+
+._wrapper-info {
+  position: absolute;
+  top: calc(var(--unit) * 6);
+  width: calc(var(--unit) * 15);
+  height: calc(var(--unit) * 6);
+}
+
+._section-get-here {
+  position: absolute;
+  top: calc(var(--unit) * 21);   
+}
+
+._header-get-here,
+._header-places,
+._header-studio {
+  height: calc(var(--unit) * 2);
+  padding-left: calc(var(--unit) * 1);
+}
+
+._inner-get-here,
+._inner-places,
+._inner-studio {
+  background-color: var(--white);
+}
+
+._content-get-here {
+  height: calc(var(--unit) * 15);
+  overflow-y: scroll;
+}
+
+._items-get-here {
+  padding: calc(var(--unit) * 1) calc(var(--unit) * 2);
+}
+
+._item-get-here {
+  padding: calc(var(--unit) * 1) calc(var(--unit) * 2);
+}
+
+._section-places {
+  position: absolute;
+  top: calc(var(--unit) * 41);
+  height: calc(var(--unit) * 10);
+}
+
+._content-places {
+  height: calc(var(--unit) * 15);
+  overflow-y: scroll;
+}
+
+._inner-expandable {
+  position: relative;
+}
+
+._article-expandable._expanded ._arrow-expandable {
+  transform: rotate(90deg);
+}
+
+
+._title-expandable {
+  z-index: var(--layer-1);
+  position: relative;
+}
+
+._underline-expandable {
+  content: '';
+  position: relative;
+  z-index: var(--layer-0);
+  width: auto;
+  height: var(--underline-height);
+  bottom: 8px;
+  left: 0;
+  visibility: hidden;
+  transform-origin: 0 0;
+  transform: scaleX(0);
+  transition: transform 0.2s ease-in 0s;
+}
+
+._article-expandable._placeholder ._header-expandable {
+  background-color: #eee;
+}
+
+._heading-expandable:hover ._underline-expandable,
+._article-expandable._expanded ._underline-expandable {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+._arrow-expandable {
+  position: relative;
+  background-image: url('./images/arrow.svg');
+  background-repeat: no-repeat;
+  background-position-y: 50%;
+  background-position-x: 50%;
+  background-size: 8%;
+  transition: transform 0.2s ease-in 0s;
+}
+
+._content-places ._arrow-expandable {
+  top: calc(var(--underline-height) * -1);
+}
+
+._content-studio ._arrow-expandable {
+  top: calc(var(--unit) * 0.5 );
+}
+
+._header-expandable {
+  cursor: pointer;
+}
+
+._section-places-list,
+._response-studio {
+  animation-duration: .3s;
+  animation-name: appear;
+}
+
+._item-place {
+  cursor: pointer;
+  transition: color .2s ease;
+  color: var(--black);
+}
+
+._item-place:hover {
+  color: var(--grid-color);
+}
+
+._item-place-name:after {
+  content: ','
+}
+
+._marker-place {
+  position: absolute;
+  cursor: pointer;
+  top: 50%;
+  left: 50%;
+  height: calc(var(--unit) * 0.5);
+  width: calc(var(--unit) * 0.5);
+  user-select: none;
+  transform: translate(-50%, -50%) scale(1);
+  transition: 0.1s ease-in transform;
+}
+
+._marker-place ._icon-place {
+  transform: scale(2.5);
+  transition: 0.2s ease-out transform;
+}
+
+._marker-place._active ._icon-place,
+._marker-place:hover ._icon-place {
+  transform: scale(3.7);
+}
+
+._marker-place ._icon-ideo {
+  transform: scale(1.7);
+}
+
+/*
+  In The Studio
+*/
+._section-studio {
+  position: absolute;
+  top: calc(var(--unit) * 61);
+  height: calc(var(--unit) * 20);
+}
+
+._content-studio {
+  height: calc(var(--unit) * 15);
+}
+
+._footer-studio {
+  height: calc(var(--unit) * 5);
+}
+
+._button-group-login {
+  height: calc(var(--unit) * 1.5);
+}
+
+._title-google {
+  /* background-color: var(--black); */
+}
+

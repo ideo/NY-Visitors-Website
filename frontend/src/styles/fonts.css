@@ -1,0 +1,93 @@
+/* Gotham (Sans-serif) */
+@font-face {
+  font-family: 'Gotham';
+  src: url('fonts/Gotham-Book.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('fonts/Gotham-Bold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('fonts/Gotham-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* Sentinel (Serif) */
+@font-face {
+  font-family: 'Sentinel';
+  src: url('fonts/Sentinel-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Sentinel';
+  src: url('fonts/Sentinel-LightItal.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Sentinel';
+  src: url('fonts/Sentinel-Book.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Sentinel';
+  src: url('fonts/Sentinel-BookItal.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Sentinel';
+  src: url('fonts/Sentinel-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Sentinel';
+  src: url('fonts/Sentinel-MediumItal.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Sentinel';
+  src: url('fonts/Sentinel-Semibold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Sentinel';
+  src: url('fonts/Sentinel-SemiboldItal.ttf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Sentinel';
+  src: url('fonts/Sentinel-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Sentinel';
+  src: url('fonts/Sentinel-BoldItal.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Sentinel';
+  src: url('fonts/Sentinel-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Sentinel';
+  src: url('fonts/Sentinel-BlackItal.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+}
