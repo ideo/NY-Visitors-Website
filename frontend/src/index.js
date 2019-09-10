@@ -2,7 +2,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
-// import { config } from 'dotenv'
 
 /* 1st party */
 import * as serviceWorker from './serviceWorker'
@@ -12,6 +11,7 @@ import 'tachyons'
 import './styles/fonts.css'
 import './styles/main.css'
 
+// read and import env variables fron `.env`
 require('dotenv').config()
 
 const data = {

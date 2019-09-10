@@ -4,8 +4,7 @@ const {
 	REACT_APP_LOCALSTORAGE_JWT_TOKEN_KEY
 } = process.env
 
-// todo below is temp. should come from env vars
-export const LOCAL_STORAGE_JWT_TOKEN_KEY = 'auth'
+export const LOCAL_STORAGE_JWT_TOKEN_KEY = REACT_APP_LOCALSTORAGE_JWT_TOKEN_KEY
 
 export async function hydrate(endpoint, wihAuth = false, sortBy = '') {
   const sort = sortBy.length ? `?_sort=${sortBy}` : ''
