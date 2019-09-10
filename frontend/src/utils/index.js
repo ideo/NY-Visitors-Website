@@ -5,6 +5,7 @@ const {
 } = process.env
 
 export const LOCAL_STORAGE_AUTH_KEY = REACT_APP_LS_AUTH_KEY
+export const BASE_API_URL = REACT_APP_BASE_API_URL
 
 export async function hydrate(endpoint, sortBy = '') {
   const sort = sortBy.length ? `?_sort=${sortBy}` : ''

@@ -12,7 +12,7 @@ import {
 
 /* 1st party */
 import StudioItem from './StudioItem'
-import { isAuthenticated, hydrate, logout, ENDPOINTS, LOCAL_STORAGE_AUTH_KEY } from '../utils'
+import { isAuthenticated, hydrate, logout, ENDPOINTS, LOCAL_STORAGE_AUTH_KEY, BASE_API_URL } from '../utils'
 
 const Tips = ({ items }) => {
   let ret = null
@@ -87,7 +87,7 @@ export default withRouter(function StudioSection({ history }) {
                   <div className="_title-google outline w-20">Google</div>
                   <button 
                     className="outline w-40"
-                    onClick={() => { window.location = 'http://localhost:1337/connect/google' }}>IDEO</button>
+                    onClick={() => { window.location = `${BASE_API_URL}/connect/google` }}>IDEO</button>
                   <button className="outline w-40">IDEO.ORG</button>
                 </div>
               </>

@@ -9,7 +9,7 @@ import {
 } from 'react-router-dom'
 
 /* 1st party */
-import { LOCAL_STORAGE_AUTH_KEY } from '../utils'
+import { LOCAL_STORAGE_AUTH_KEY, BASE_API_URL } from '../utils'
 
 export default withRouter(function Authenticated({ history }) {
   
@@ -18,7 +18,7 @@ export default withRouter(function Authenticated({ history }) {
       let authParms = window.location.search.split('')
       authParms = authParms.splice(1).join('')
       console.log('got jwt back from google: ' , authParms)
-      fetch(`http://localhost:1337/auth/google/callback?${authParms}`)
+      fetch(`${BASE_API_URL}/auth/google/callback?${authParms}`)
       .then(response => response.json())
       .then(parsedResponse => {
         console.log('parsed token is: ', parsedResponse)
