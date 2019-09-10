@@ -37,7 +37,7 @@ export default withRouter(function StudioSection({ history }) {
       let data = []
       const response = await hydrate(ENDPOINTS.TIPS, 'id:ASC')
       if (response.statusCode && response.statusCode === 403) {
-        console.log('We are not logged in, it seems')
+        console.log('We are not logged in, it seems.')
       } else if (Array.isArray(response)) {
         data = response
       }
@@ -67,7 +67,8 @@ export default withRouter(function StudioSection({ history }) {
             {isAuthenticated() &&
               <>
                 <h4 className="ma0 fw6 mb1 sans-serif">
-                  Hi { JSON.parse(localStorage.getItem(LOCAL_STORAGE_AUTH_KEY)).user.email }! Welcome to your home away from home.
+                  Hi { JSON.parse(localStorage.getItem(LOCAL_STORAGE_AUTH_KEY)).user.email }! 
+                  Welcome to your home away from home.
                 </h4>
                 <div className="_button-group-login flex flex-row w-100 mt3">
                   <a 

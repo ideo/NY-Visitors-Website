@@ -1,12 +1,6 @@
 /* 3rd party */
-import React, { useState } from 'react'
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  Redirect,
-  withRouter
-} from 'react-router-dom'
+import React from 'react'
+import { withRouter} from 'react-router-dom'
 
 /* 1st party */
 import { LOCAL_STORAGE_AUTH_KEY, BASE_API_URL } from '../utils'
@@ -17,18 +11,15 @@ export default withRouter(function Authenticated({ history }) {
     if (window.location.search.length && window.location.search.indexOf('id_token') >= 0) {
       let authParms = window.location.search.split('')
       authParms = authParms.splice(1).join('')
-      console.log('got jwt back from google: ' , authParms)
       fetch(`${BASE_API_URL}/auth/google/callback?${authParms}`)
       .then(response => response.json())
       .then(parsedResponse => {
-        console.log('parsed token is: ', parsedResponse)
-        console.log('history is: ', history)
         window.localStorage && window.localStorage.setItem(LOCAL_STORAGE_AUTH_KEY, JSON.stringify(parsedResponse))
         history.push('/')
       })
       .catch(e => console.log('Failed - ', e))
     } else {
-      console.log('redirect home. why are you even here.')
+      console.log('Redirecting home. Why are you even here?')
     }
   }
 
