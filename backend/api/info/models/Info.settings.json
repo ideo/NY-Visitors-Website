@@ -1,0 +1,30 @@
+{
+  "connection": "default",
+  "collectionName": "infos",
+  "info": {
+    "name": "info",
+    "description": "Studio information such as Address, WiFi, Phone number, et."
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "address": {
+      "type": "string"
+    },
+    "wifi-name": {
+      "type": "string"
+    },
+    "wifi-password": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    }
+  }
+}

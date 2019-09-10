@@ -1,0 +1,24 @@
+{
+  "connection": "default",
+  "collectionName": "gettingheres",
+  "info": {
+    "name": "tip",
+    "description": "A tip about getting here"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": [
+      "created_at",
+      "updated_at"
+    ],
+    "comment": ""
+  },
+  "attributes": {
+    "question": {
+      "type": "string"
+    },
+    "response": {
+      "type": "text"
+    }
+  }
+}

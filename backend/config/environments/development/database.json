@@ -1,0 +1,17 @@
+{
+  "defaultConnection": "default",
+  "connections": {
+    "default": {
+      "connector": "strapi-hook-bookshelf",
+      "settings": {
+        "client": "postgres",
+        "database": "nyvisitor",
+        "host": "127.0.0.1",
+        "port": 5432,
+        "username": "nyvisitor",
+        "password": "R0ck1234!"
+      },
+      "options": {}
+    }
+  }
+}

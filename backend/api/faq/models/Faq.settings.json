@@ -1,0 +1,21 @@
+{
+  "connection": "default",
+  "collectionName": "faqs",
+  "info": {
+    "name": "faq",
+    "description": "FAQ for IDEOers visiting the NY office."
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "question": {
+      "type": "string"
+    },
+    "answer": {
+      "type": "text"
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "name": "ny-visitor",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A Strapi application",
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi",
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.0",
+    "eslint": "^6.0.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-react": "^7.14.0"
+  },
+  "dependencies": {
+    "knex": "latest",
+    "lodash": "^4.17.5",
+    "nanoid": "^2.1.0",
+    "pg": "latest",
+    "strapi": "3.0.0-beta.15",
+    "strapi-admin": "3.0.0-beta.15",
+    "strapi-hook-bookshelf": "3.0.0-beta.15",
+    "strapi-hook-knex": "3.0.0-beta.15",
+    "strapi-plugin-content-manager": "3.0.0-beta.15",
+    "strapi-plugin-content-type-builder": "3.0.0-beta.15",
+    "strapi-plugin-email": "3.0.0-beta.15",
+    "strapi-plugin-settings-manager": "3.0.0-beta.15",
+    "strapi-plugin-upload": "3.0.0-beta.15",
+    "strapi-plugin-users-permissions": "3.0.0-beta.15",
+    "strapi-utils": "3.0.0-beta.15"
+  },
+  "author": {
+    "name": "A Strapi developer"
+  },
+  "strapi": {
+    "uuid": "5d733862-e2b0-47ad-9ae7-1d98e69f4738"
+  },
+  "engines": {
+    "node": ">=10.0.0",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}

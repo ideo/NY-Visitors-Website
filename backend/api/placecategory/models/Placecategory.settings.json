@@ -1,0 +1,29 @@
+{
+  "connection": "default",
+  "collectionName": "placecategories",
+  "info": {
+    "name": "placecategory",
+    "description": "A category for places. i.e: Coffee, Quick Bites, etc."
+  },
+  "options": {
+    "increments": true,
+    "timestamps": [
+      "created_at",
+      "updated_at"
+    ],
+    "comment": ""
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "places": {
+      "collection": "place",
+      "via": "placecategory"
+    },
+    "color": {
+      "type": "string",
+      "default": "#cccccc"
+    }
+  }
+}
