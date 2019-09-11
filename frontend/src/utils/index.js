@@ -10,13 +10,14 @@ export const AUTHORIZED_DOMAIN = REACT_APP_AUTHORIZED_GOOGLE_DOMAIN
 export const BASE_API_URL = REACT_APP_BASE_API_URL
 
 export async function hydrate(endpoint, sortBy = '') {
-  const sort = sortBy.length ? `?_sort=${sortBy}` : ''
+	const sort = sortBy.length ? `?_sort=${sortBy}` : ''
 	const jwtToken = getAuthToken() ? getAuthToken().jwt : ''
 	let config = {
 		withCredentials: true,
+		// mode: 'no-cors',
 		// credentials: 'include',
 		headers: {
-			'Content-Type': 'application/json'
+			'Content-Type': 'application/json',
 		}
 	}
 	if (jwtToken.length) { 
