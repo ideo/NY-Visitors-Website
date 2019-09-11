@@ -1,10 +1,12 @@
 const { 
 	REACT_APP_BASE_API_URL,
 	REACT_APP_GOOGLE_API_KEY,
-	REACT_APP_LS_AUTH_KEY
+	REACT_APP_LS_AUTH_KEY,
+	REACT_APP_AUTHORIZED_GOOGLE_DOMAIN
 } = process.env
 
 export const LOCAL_STORAGE_AUTH_KEY = REACT_APP_LS_AUTH_KEY
+export const AUTHORIZED_DOMAIN = REACT_APP_AUTHORIZED_GOOGLE_DOMAIN
 export const BASE_API_URL = REACT_APP_BASE_API_URL
 
 export async function hydrate(endpoint, sortBy = '') {
@@ -12,7 +14,7 @@ export async function hydrate(endpoint, sortBy = '') {
 	const jwtToken = getAuthToken() ? getAuthToken().jwt : ''
 	let config = {
 		withCredentials: true,
-		credentials: 'include',
+		// credentials: 'include',
 		headers: {
 			'Content-Type': 'application/json'
 		}
