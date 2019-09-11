@@ -25,7 +25,7 @@ export default function GlobalFooter({ data }) {
       <div className="w-20 flex">
         <div className="_branding-global flex serif self-center justify-center">
           <span className="f6 self-center">
-            | New York
+            |&nbsp;&nbsp;New York
           </span>
         </div>
       </div>

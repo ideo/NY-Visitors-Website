@@ -260,9 +260,6 @@ body  {
   transform: scale(1.7);
 }
 
-/*
-  In The Studio
-*/
 ._section-studio {
   position: absolute;
   top: calc(var(--unit) * 61);
@@ -313,4 +310,16 @@ body  {
   top: calc(var(--unit) * 90);
   height: calc(var(--unit) * 3);
   background-color: var(--white);
+}
+
+._footer-global ._article-info {
+  font-size: 0.7rem;
+  background-size: calc(var(--unit) * 0.9);
+  background-position: calc(var(--unit) * 0.3);
+  padding-left: calc(var(--unit) * 1.8);
+  width: 100%;
+}
+
+._footer-global ._branding-global {
+  padding-left: calc(var(--unit) * 3);
 }
