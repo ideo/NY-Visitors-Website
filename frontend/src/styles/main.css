@@ -282,6 +282,28 @@ body  {
 }
 
 ._title-google {
-  /* background-color: var(--black); */
+  background: url('./images/google.png') center center no-repeat var(--white);
+  background-size: 20%;
 }
 
+._button-login {
+  background-position: center center;
+  background-color: var(--black);
+  background-repeat: no-repeat;
+  font-size: 0;
+  border: none;
+  cursor: pointer;
+}
+
+._button-login._ideo {
+  background-image: url('./images/logo-white.svg');
+  background-size: 30%;
+}
+
+._button-login._ideoorg {
+  background-image: url('./images/orglogo-white.svg');
+  background-size: 50%;
+  font-size: 0;
+  border: none;
+  border-left: 1px solid var(--white);
+}

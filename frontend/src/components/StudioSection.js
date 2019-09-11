@@ -84,19 +84,20 @@ export default withRouter(function StudioSection({ history }) {
                   Hi IDEOers! Welcome to your home away from home.
                 </h4>
                 <p className="sans-serif f6 fw4 ma0">Please sign in to view the content.</p>
-                <div className="_button-group-login flex flex-row w-100 mt3">
-                  <div className="_title-google outline w-20">Google</div>
+                <div className="_button-group-login outline flex flex-row w-100 mt4">
+                  <div className="_title-google outline w-10"></div>
                   <button 
-                    className="outline w-40"
+                    className="_button-login _ideo w-50"
                     onClick={() => { window.location = `${BASE_API_URL}/connect/google` }}>IDEO</button>
-                  <button className="outline w-40">IDEO.ORG</button>
+                  <button 
+                    className="_button-login _ideoorg w-50"
+                    onClick={() => { window.location = `${BASE_API_URL}/connect/google` }}>IDEO.ORG</button>
                 </div>
               </>
             }
             
-            
           </footer>
-        
+       
         </div>
       </div>
       
