@@ -9,6 +9,7 @@ import TipsSection from './components/TipsSection'
 import PlacesSection from './components/PlacesSection'
 import StudioSection from './components/StudioSection'
 import Authenticated from './components/Authenticated'
+import GlobalFooter from './components/GlobalFooter'
 
 const Root = ({ data: { essentials, tips }}) => (
   <>
@@ -17,6 +18,7 @@ const Root = ({ data: { essentials, tips }}) => (
     <TipsSection data={tips} />
     <PlacesSection />
     <StudioSection />
+    <GlobalFooter />
   </>
 )
 
@@ -26,8 +28,6 @@ export default function App({ data}) {
     <Router>
       <Route path='/' exact component={ () => <Root data={data} /> } />
       <Route path='/authenticated' exact component={ Authenticated } />
-      <Route path='/auth/google/callback' exact component={ Authenticated } />
-    </Router>
-    
+    </Router>    
   )
 }

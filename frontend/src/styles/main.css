@@ -307,3 +307,10 @@ body  {
   border: none;
   border-left: 1px solid var(--white);
 }
+
+._footer-global {
+  position: absolute;
+  top: calc(var(--unit) * 90);
+  height: calc(var(--unit) * 3);
+  background-color: var(--white);
+}
