@@ -5,7 +5,7 @@ export default function EssentialInfo({ data: { address, network, contact }}) {
   return (
     <div className="_wrapper-info outline">
       
-      <article className="_article-info _address f6 sans-serif flex flex-column justify-center">
+      <article className="_article-info _address f6 sans-serif flex flex-column self-center justify-center">
         <div className="flex flex-row">
           <span>{address.line1}</span>
         </div>
@@ -14,7 +14,7 @@ export default function EssentialInfo({ data: { address, network, contact }}) {
         </div>
       </article>
 
-      <article className="_article-info _network f6 sans-serif flex flex-column justify-center">
+      <article className="_article-info _network f6 sans-serif flex flex-column self-center justify-center">
         <div className="flex flex-row">
           <span>Network: {network.name}</span>
         </div>
@@ -23,7 +23,7 @@ export default function EssentialInfo({ data: { address, network, contact }}) {
         </div>
       </article>
 
-      <article className="_article-info _contact f6 sans-serif flex flex-column justify-center">
+      <article className="_article-info _contact f6 sans-serif flex flex-column self-center justify-center">
         <div className="flex flex-row">
           <span className="pr2">Phone:</span>
           <a className="no-underline underline-hover black flex w-40" href={`tel:${contact.phone}`}>{contact.phone}</a>
