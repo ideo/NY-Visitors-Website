@@ -7,11 +7,14 @@
   },
   "options": {
     "increments": true,
-    "timestamps": true,
+    "timestamps": [
+      "created_at",
+      "updated_at"
+    ],
     "comment": ""
   },
   "attributes": {
-    "address": {
+    "address-line-1": {
       "type": "string"
     },
     "wifi-name": {
@@ -25,6 +28,9 @@
     },
     "email": {
       "type": "email"
+    },
+    "address-line-2": {
+      "type": "string"
     }
   }
 }

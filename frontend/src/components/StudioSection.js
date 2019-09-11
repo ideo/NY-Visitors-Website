@@ -2,13 +2,7 @@
 import React, { useState, useEffect } from 'react'
 import ReactPlaceholder from 'react-placeholder'
 import 'react-placeholder/lib/reactPlaceholder.css'
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  Redirect,
-  withRouter
-} from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 
 /* 1st party */
 import StudioItem from './StudioItem'
@@ -30,10 +24,10 @@ const Tips = ({ items }) => {
 
 export default withRouter(function StudioSection({ history }) {
 
-  // hydrate `place` categories from endpoint
+  // hydrate `tips` from endpoint
   const [tips, setTips] = useState([])
   useEffect(() => {
-    async function hydrateTip() {
+    async function hydrateTips() {
       let data = []
       const response = await hydrate(ENDPOINTS.TIPS, 'id:ASC')
       if (response.statusCode && response.statusCode === 403) {
@@ -43,7 +37,7 @@ export default withRouter(function StudioSection({ history }) {
       }
       setTips(data)
     }
-    hydrateTip()
+    hydrateTips()
   }, [])
 
   return (

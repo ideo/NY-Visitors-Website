@@ -13,7 +13,6 @@ export default function PlacesSection() {
   useEffect(() => {
     async function hydratePlaces() {
       const data = await hydrate(ENDPOINTS.PLACE_CATEGORIES, 'id:ASC')
-      console.log(data)
       setPlaceCategories(data)
     }
     hydratePlaces()

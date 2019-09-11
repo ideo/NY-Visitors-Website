@@ -5,6 +5,7 @@ import React from 'react'
 import EssentialInfo from './EssentialInfo'
 
 export default function WelcomeSection({ data }) {
+  
   return (
     <section className="_section-welcome flex flex-row justify-center w-100">
       <div className="_inner-welcome flex w-70 flex-column">

@@ -48,7 +48,9 @@ export function logout() {
 
 export const ENDPOINTS = {
   PLACE_CATEGORIES: 'placecategories',
-  TIPS: 'tips'
+	TIPS: 'tips',
+	INFOS: 'infos',
+	FAQS: 'faqs'
 }
 
 export const ICON_TYPES = {
