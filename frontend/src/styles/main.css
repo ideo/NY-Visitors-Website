@@ -1,4 +1,9 @@
 /* 
+  all styles are mobile-first, and follow the same breakpoints suggested by Tachyons.
+  For more information see: http://tachyons.io/docs/
+*/
+
+/* 
   variables
 */
 :root {
@@ -12,7 +17,6 @@
   --layer-1: 10;
   --layer-2: 20;
   --layer-10: 100;
-  
 }
 
 /* 
@@ -55,9 +59,11 @@ body  {
 /* 
   custom selectors are prefixed with a `_` to denote in the markup 
   that they were hand-authored, and do not come from tachyons.css
+  or any other 3rd party source
 */
 ._header-global {
-  height: 5vw;
+  height: calc(var(--unit) * 3);
+  margin-bottom: calc(var(--unit) * 3)
 }
 
 ._nav-global {
@@ -74,8 +80,8 @@ body  {
   right: 0;
   z-index: var(--layer-10);
   background-color: var(--white);
-  width: calc(var(--unit) * 2);
-  height: calc(var(--unit) * 2);
+  width: calc(var(--unit) * 3);
+  height: calc(var(--unit) * 3);
   border: 1px solid var(--black);
   cursor: pointer;  
 }
@@ -115,16 +121,15 @@ body  {
 }
 
 ._branding-global {
+  height: calc(var(--unit) * 3);
   background-color: var(--white);
   padding-left: calc(var(--unit) * 3.5);
   background-image: url('./images/logo.svg');
   background-repeat: no-repeat;
   background-position-y: 50%;
-  background-position-x: calc(var(--unit) * 0.8);
-  background-size: calc(var(--unit) * 2);
-  height: calc(var(--unit) * 2);
+  background-position-x: calc(var(--unit) * 0.7);
+  background-size: calc(var(--unit) * 2.5);
 }
-
 
 ._section-welcome {
 }
@@ -146,7 +151,8 @@ body  {
 }
 
 ._wrapper-info {
-  
+  width: calc(var(--unit) * 15);
+  height: calc(var(--unit) * 6);
 }
 
 ._section-get-here {
@@ -308,7 +314,7 @@ body  {
   }
 
   ._header-global {
-    height: 5vw;
+    height: calc(var(--unit) * 2);
   }
 
   ._nav-global {
@@ -326,11 +332,7 @@ body  {
   }
 
   ._branding-global {
-    background-color: var(--white);
-    padding-left: calc(var(--unit) * 3.5);
-    background-image: url('./images/logo.svg');
-    background-repeat: no-repeat;
-    background-position-y: 50%;
+    height: calc(var(--unit) * 2);
     background-position-x: calc(var(--unit) * 0.8);
     background-size: calc(var(--unit) * 2);
   }
