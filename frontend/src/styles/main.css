@@ -72,27 +72,35 @@ body  {
   position: fixed;
   top: 0;
   right: 0;
-  color: white;
   z-index: var(--layer-10);
+  background-color: var(--white);
   width: calc(var(--unit) * 2);
   height: calc(var(--unit) * 2);
-  border-color: var(--white);
-  background-color: var(--grid-color);
+  border: 1px solid var(--black);
   cursor: pointer;  
 }
 
-
-._icon-menu {
-  display: block;
-  color: var(--black);
+._button-expand-mobile-nav .hamburger-box {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  user-select: none;  
-  color: white;
+  transform: translate(-50%, -50%) scale(0.6);
 }
 
+._button-expand-mobile-nav.hamburger:hover, 
+._button-expand-mobile-nav.hamburger.is-active:hover {
+  opacity: 1; /* verriding hamburger.css */
+}
+
+._button-expand-mobile-nav.is-active {
+  background-color: var(--grid-color);
+  border-color: var(--white);
+}
+
+._button-expand-mobile-nav.is-active .hamburger-inner, 
+._button-expand-mobile-nav.is-active .hamburger-inner:after {
+  background-color: var(--white);
+}
 
 ._modal-menu {
   top: 0;
@@ -101,7 +109,7 @@ body  {
   right: 0;
   background-color: var(--grid-color);
   background-size: var(--unit) var(--unit);
-  background-image: linear-gradient(to right, var(--white) .5px, transparent 0px), linear-gradient(to bottom, var(--white) .5px, transparent 0px); 
+  background-image: linear-gradient(to right, var(--white) .5px, transparent 0px), linear-gradient(to bottom, var(--white) .5px, transparent 0px);
   position: fixed; 
   z-index: var(--layer-2);
 }
@@ -114,6 +122,7 @@ body  {
   background-position-y: 50%;
   background-position-x: calc(var(--unit) * 0.8);
   background-size: calc(var(--unit) * 2);
+  height: calc(var(--unit) * 2);
 }
 
 
@@ -312,6 +321,10 @@ body  {
     color: var(--black);
   }
   
+  ._button-expand-mobile-nav {
+    display: none;
+  }
+
   ._branding-global {
     background-color: var(--white);
     padding-left: calc(var(--unit) * 3.5);

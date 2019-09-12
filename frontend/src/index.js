@@ -8,6 +8,7 @@ import * as serviceWorker from './serviceWorker'
 
 /* css styles */
 import 'tachyons'
+import './styles/hamburgers.min.css'
 import './styles/fonts.css'
 import './styles/main.css'
 

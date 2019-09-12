@@ -1,10 +1,11 @@
 /* 3rd party */
 import React, { useState } from 'react'
+import classNames from 'classnames'
 
 export default function GlobalHeader() {
   
   // mobile menu state
-  const [isMenuOpen, setMenuIsOpen] = useState(true)
+  const [isMenuOpen, setMenuIsOpen] = useState(false)
   function toggleMenu(event) {
     event.preventDefault()
     setMenuIsOpen(!isMenuOpen)
@@ -12,7 +13,7 @@ export default function GlobalHeader() {
 
   return (
     <header className="_header-global serif flex flex-row justify-between w-100">        
-      <div className="_branding-global flex serif w-30 outline">
+      <div className="_branding-global flex serif w-70 w-30-ns outline">
         
         <span className="f6 self-center">
           Visitor Guide | New York
@@ -21,11 +22,14 @@ export default function GlobalHeader() {
       </div>
 
       {/* mobile menu */}
-      <a href="#" onClick={toggleMenu} className="_button-expand-mobile-nav link db ba">
-        <span className="_icon-menu white f3">
-          &#9776;
-        </span> 
-      </a>
+      <button 
+        onClick={toggleMenu}
+        className={classNames('_button-expand-mobile-nav', 'hamburger--slider', 'hamburger', {'is-active': isMenuOpen})} 
+        type="button">
+        <span className="hamburger-box">
+          <span className="hamburger-inner"></span>
+        </span>
+      </button>  
 
       {isMenuOpen &&
         <div className="_modal-menu serif flex flex-column justify-around">
