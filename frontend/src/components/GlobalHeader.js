@@ -34,9 +34,9 @@ export default function GlobalHeader() {
       {isMenuOpen &&
         <div className="_modal-menu serif flex flex-column justify-around">
           <nav className="flex flex-column items-end tr pa5">
-            <a  href="#get-here" className="white flex link f2 pa3 ">Get here</a>
-            <a  href="#around-studio" className="white flex link f2 pa3">Around the Studio</a>
-            <a  href="#in-studio" className="white flex link f2 pa3">In the Studio</a>
+            <a href="#get-here" className="flex black link f2 pa3 ">Get here</a>
+            <a href="#around-studio" className="flex black link f2 pa3">Around the Studio</a>
+            <a href="#in-studio" className="flex black link f2 pa3">In the Studio</a>
           </nav>
 
 

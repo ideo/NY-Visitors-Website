@@ -100,8 +100,8 @@ body  {
 }
 
 ._button-expand-mobile-nav.is-active {
-  background-color: var(--grid-color);
-  border-color: var(--white);
+  background-color: var(--black);
+  border-color: var(--black);
 }
 
 ._button-expand-mobile-nav.is-active .hamburger-inner, 
@@ -114,9 +114,9 @@ body  {
   left: 0;
   bottom: 0;
   right: 0;
-  background-color: var(--grid-color);
-  background-size: var(--unit) var(--unit);
-  background-image: linear-gradient(to right, var(--white) .5px, transparent 0px), linear-gradient(to bottom, var(--white) .5px, transparent 0px);
+  background-color: var(--white);
+  /* background-size: var(--unit) var(--unit); */
+  /* background-image: linear-gradient(to right, var(--white) .5px, transparent 0px), linear-gradient(to bottom, var(--white) .5px, transparent 0px); */
   position: fixed; 
   z-index: var(--layer-2);
 }
@@ -326,7 +326,7 @@ body  {
 }
 
 ._footer-studio {
-  height: calc(var(--unit) * 9);
+  height: calc(var(--unit) * 12);
 }
 
 ._button-group-login {
@@ -361,16 +361,29 @@ body  {
 }
 
 ._footer-global {
-  
+  margin-top: calc(var(--unit) * 3);
+  height: calc(var(--unit) * 15);
+  background-color: var(--white);
 }
 
 ._footer-global ._article-info {
-  
+  font-size: 0.7rem;
+  background-size: calc(var(--unit) * 0.9);
+  background-position: calc(var(--unit) * 0.3);
+  padding-left: calc(var(--unit) * 1.8);
+  width: 100%;
 }
 
 ._footer-global ._branding-global {
+  height: calc(var(--unit) * 1);
+  padding-left: calc(var(--unit) * 2.5);
+  background-size: calc(var(--unit) * 2);
+  background-position-x: calc(var(--unit) * 0.2);
 }
 
+._message-footer {
+
+}
 
 /* 
   equivalent of Tachyon's `ns`
@@ -400,6 +413,7 @@ body  {
   ._footer-studio {
     /* height: calc(var(--unit) * 10); */
   }
+  
 }
 
 /* 
@@ -638,7 +652,6 @@ body  {
     position: absolute;
     top: calc(var(--unit) * 90);
     height: calc(var(--unit) * 3);
-    background-color: var(--white);
   }
   
   ._footer-global ._article-info {
@@ -651,5 +664,9 @@ body  {
   
   ._footer-global ._branding-global {
     padding-left: calc(var(--unit) * 3);
+  }
+
+  ._message-footer {
+    display: none;
   }
 }
