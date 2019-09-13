@@ -41,7 +41,7 @@ export default function PlacesSection() {
     '#ff0033' 
 
   return (
-    <section className="_section-places flex flex-column w-100 items-center">        
+    <section className="_section-places flex flex-column w-100 mt0-l items-center">        
       <div className="_inner-places outline w-80 w-70-m">
 
         <header className="_header-places bb w-100 flex flex-row items-center">

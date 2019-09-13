@@ -326,23 +326,38 @@ body  {
 }
 
 ._footer-studio {
+  height: calc(var(--unit) * 9);
 }
 
 ._button-group-login {
+  height: calc(var(--unit) * 1.5);
 }
 
 ._title-google {
+  background: url('./images/google.png') center center no-repeat var(--white);
+  background-size: 30%;
 }
 
 ._button-login {
-  
+  background-position: center center;
+  background-color: var(--black);
+  background-repeat: no-repeat;
+  font-size: 0;
+  border: none;
+  cursor: pointer;
 }
 
 ._button-login._ideo {
+  background-image: url('./images/logo-white.svg');
+  background-size: 40%;
 }
 
 ._button-login._ideoorg {
-  
+  background-image: url('./images/orglogo-white.svg');
+  background-size: 70%;
+  font-size: 0;
+  border: none;
+  border-left: 1px solid var(--white);
 }
 
 ._footer-global {
@@ -382,6 +397,9 @@ body  {
   ._content-places {
     height: calc(var(--unit) * 23);
   }
+  ._footer-studio {
+    /* height: calc(var(--unit) * 10); */
+  }
 }
 
 /* 
@@ -389,7 +407,9 @@ body  {
   covers roughly tablets
 */
 @media screen and (min-width: 30em) and (max-width: 60em) { 
-  
+  ._footer-studio {
+    height: calc(var(--unit) * 7);
+  }
 }
 
 /* 
@@ -453,7 +473,7 @@ body  {
   ._section-get-here {
     margin-top: 0;
     position: absolute;
-    top: calc(var(--unit) * 24);   
+    top: calc(var(--unit) * 25);   
   }
   
   ._header-get-here,
@@ -477,8 +497,9 @@ body  {
   }
   
   ._section-places {
+    margin-top: 0;
     position: absolute;
-    top: calc(var(--unit) * 41);
+    top: calc(var(--unit) * 45);
     height: calc(var(--unit) * 17);
   }
   
@@ -568,8 +589,9 @@ body  {
   }
   
   ._section-studio {
+    margin-top: 0;
     position: absolute;
-    top: calc(var(--unit) * 64);
+    top: calc(var(--unit) * 66);
     height: calc(var(--unit) * 20);
   }
   
@@ -578,38 +600,38 @@ body  {
   }
   
   ._footer-studio {
-    height: calc(var(--unit) * 5);
+    height: calc(var(--unit) * 7);
   }
   
   ._button-group-login {
-    height: calc(var(--unit) * 1.5);
+    /* height: calc(var(--unit) * 1.5); */
   }
   
   ._title-google {
-    background: url('./images/google.png') center center no-repeat var(--white);
+    /* background: url('./images/google.png') center center no-repeat var(--white); */
     background-size: 20%;
   }
   
   ._button-login {
-    background-position: center center;
-    background-color: var(--black);
-    background-repeat: no-repeat;
-    font-size: 0;
-    border: none;
-    cursor: pointer;
+    /* background-position: center center; */
+    /* background-color: var(--black); */
+    /* background-repeat: no-repeat; */
+    /* font-size: 0; */
+    /* border: none; */
+    /* cursor: pointer; */
   }
   
   ._button-login._ideo {
-    background-image: url('./images/logo-white.svg');
+    /* background-image: url('./images/logo-white.svg'); */
     background-size: 30%;
   }
   
   ._button-login._ideoorg {
-    background-image: url('./images/orglogo-white.svg');
+    /* background-image: url('./images/orglogo-white.svg'); */
     background-size: 50%;
-    font-size: 0;
-    border: none;
-    border-left: 1px solid var(--white);
+    /* font-size: 0; */
+    /* border: none; */
+    /* border-left: 1px solid var(--white); */
   }
   
   ._footer-global {

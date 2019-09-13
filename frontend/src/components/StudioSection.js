@@ -42,8 +42,8 @@ export default withRouter(function StudioSection({ history }) {
 
   return (
     <section className="_section-studio flex flex-column w-100 items-center">        
-      <div className="flex flex-column items-end w-70">
-        <div className="_inner-studio outline flex flex-column w-75">
+      <div className="flex flex-column items-end w-80 w-70">
+        <div className="_inner-studio outline flex flex-column w-100 w-75-l">
 
           <header className="_header-studio bb w-100 flex flex-row items-center">
             <h3 className="f3 fw5 serif ma0 w-100">
@@ -79,12 +79,12 @@ export default withRouter(function StudioSection({ history }) {
                 </h4>
                 <p className="sans-serif f6 fw4 ma0">Please sign in to view the content.</p>
                 <div className="_button-group-login outline flex flex-row w-100 mt4">
-                  <div className="_title-google outline w-10"></div>
+                  <div className="_title-google outline flex w-10"></div>
                   <button 
-                    className="_button-login _ideo w-50"
+                    className="_button-login _ideo flex w-50"
                     onClick={() => { window.location = `${BASE_API_URL}/connect/google` }}>IDEO</button>
                   <button 
-                    className="_button-login _ideoorg w-50"
+                    className="_button-login _ideoorg flex w-50"
                     onClick={() => { window.location = `${BASE_API_URL}/connect/google` }}>IDEO.ORG</button>
                 </div>
               </>
