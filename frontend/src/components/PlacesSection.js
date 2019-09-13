@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react'
 /* 1st party */
 import PlaceCategory from './PlaceCategory'
 import PlacesMap from './PlacesMap'
-import { hydrate, ENDPOINTS, isMobile } from '../utils'
+import { hydrate, ENDPOINTS, isMobile, isDesktop } from '../utils'
 
 export default function PlacesSection() {
   
@@ -50,14 +50,14 @@ export default function PlacesSection() {
           </h3>
         </header>
 
-        <div className="_content-places w-100 flex flex-column flex-row-m">
-          {isMobile() && 
+        <div className="_content-places w-100 flex flex-column flex-row-l">
+          {!isDesktop() && 
             <PlacesMap
               activePlaceId={activePlaceId}
               data={currentPlaces}
               color={currentCategoryColor} />
           }
-          <div className="_list-places w-100 w-50-m br-m overflow-y-scroll">
+          <div className="_list-places w-100 w-50-l br-l overflow-y-scroll">
 
             {placeCategories.map((placeCategory, index) => (
               <PlaceCategory
@@ -70,7 +70,7 @@ export default function PlacesSection() {
             ))}
 
           </div>
-          {!isMobile() && 
+          {isDesktop() && 
             <PlacesMap
               activePlaceId={activePlaceId}
               data={currentPlaces}

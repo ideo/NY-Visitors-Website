@@ -10,7 +10,7 @@ const [lat, lng] = MAP.IDEO_NYC_LAT_LNG
 
 export default function PlacesMap({ data, color, activePlaceId }) {
   return (
-    <div className="_map-places w-100 w-50-m">
+    <div className="_map-places w-100 w-50-l">
       <GoogleMap
         apiKey={MAP.API_KEY}
         center={MAP.IDEO_NYC_LAT_LNG}

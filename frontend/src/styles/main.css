@@ -171,7 +171,7 @@ body  {
 }
 
 ._wrapper-info {
-  width: calc(var(--unit) * 15);
+  /* width: calc(var(--unit) * 15); */
   height: calc(var(--unit) * 9);
 }
 
@@ -376,6 +376,12 @@ body  {
     background-color: var(--white);
     color: var(--black);
   }
+  ._section-places {
+    height: calc(var(--unit) * 35);
+  }
+  ._content-places {
+    height: calc(var(--unit) * 23);
+  }
 }
 
 /* 
@@ -473,7 +479,7 @@ body  {
   ._section-places {
     position: absolute;
     top: calc(var(--unit) * 41);
-    height: calc(var(--unit) * 33);
+    height: calc(var(--unit) * 17);
   }
   
   ._content-places {
