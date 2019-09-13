@@ -13,9 +13,9 @@ export default function GlobalHeader() {
 
   return (
     <header className="_header-global serif flex flex-row justify-between w-100">        
-      <div className="_branding-global flex serif w-70 w-30-ns outline">
+      <div className="_branding-global flex serif w-50 w-30-l outline">
         
-        <span className="f6 self-center">
+        <span className="f7 f6-m f5-l self-center">
           Visitor Guide | New York
         </span>
       
@@ -45,17 +45,17 @@ export default function GlobalHeader() {
 
       <nav className="_nav-global w-50 flex flex-row justify-end">
         
-        <a href="#" className="flex w-20 dib justify-center outline link underline-hover">
-          <span className="f6 self-center">
+        <a href="#" className="flex pa3 w-30-ns w-20-l dib justify-center outline link underline-hover">
+          <span className="f5-ns f6  self-center">
             Get Here
           </span>
         </a>
-        <a href="#" className="flex w-30 dib justify-center outline link underline-hover">
-          <span className="f6 self-center">
+        <a href="#" className="flex pa3 w-30-ns w-30-l dib justify-center outline link underline-hover">
+          <span className="f5-ns f6 self-center">
             Around the Studio
           </span>
         </a>
-        <a href="#" className="f6 flex w-20 dib justify-center outline link underline-hover">
+        <a href="#" className="f5-ns pa3 f6 flex w-30-ns w-20-l dib justify-center outline link underline-hover">
           <span className="self-center">
             In the Studio
           </span>

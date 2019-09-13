@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function Network ({ data }) {
   return (
-    <article className="_article-info _network f6 sans-serif flex flex-column self-center justify-center">
+    <article className="_article-info _network f7 f6-ns bb sans-serif flex flex-column self-center justify-center">
       <div className="flex flex-row">
         <span>Network: {data.name}</span>
       </div>

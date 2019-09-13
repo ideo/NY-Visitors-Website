@@ -20,7 +20,7 @@ export default function PlaceCategory({
         title={name} />
       
       {isExpanded &&
-        <section className="_section-places-list">
+        <section className="_section-places-list mt3 mb2 mt0-l mb0-1">
           {places.map((place, index) => (
             <Place
               key={index}

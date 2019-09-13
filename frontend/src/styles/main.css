@@ -75,6 +75,7 @@ body  {
 }
 
 ._button-expand-mobile-nav {
+  display: block;
   position: fixed;
   top: 0;
   right: 0;
@@ -131,6 +132,10 @@ body  {
   background-size: calc(var(--unit) * 2.5);
 }
 
+._heading-welcome {
+  height: calc(var(--unit) * 4);
+}
+
 ._section-welcome {
 }
 
@@ -138,30 +143,48 @@ body  {
 }
 
 ._article-info {
-  
+  height: calc(var(--unit) * 3);
+  padding-left: calc(var(--unit) * 3);
+  background-color: var(--white);
+  background-repeat: no-repeat;
+  background-position-y: 50%;
+  background-position-x: calc(var(--unit) * 0.8);
+  background-size: calc(var(--unit) * 1.2);
 }
 
 ._article-info._address {
+  background-image: url('./images/location.svg');
 }
 
 ._article-info._network {
+  background-image: url('./images/wifi.svg');
 }
 
 ._article-info._contact {
+  background-image: url('./images/contact.svg');
+}
+
+._inner-get-here,
+._inner-places,
+._inner-studio {
+  background-color: var(--white);
 }
 
 ._wrapper-info {
   width: calc(var(--unit) * 15);
-  height: calc(var(--unit) * 6);
+  height: calc(var(--unit) * 9);
 }
 
 ._section-get-here {
-  
+  margin-top: calc(var(--unit) * 16);
 }
 
 ._header-get-here,
 ._header-places,
 ._header-studio {
+  height: calc(var(--unit) * 3);
+  padding-left: calc(var(--unit) * 1);
+  background-color: var(--white);
 }
 
 ._inner-get-here,
@@ -180,43 +203,65 @@ body  {
 }
 
 ._section-places {
- 
+  margin-top: calc(var(--unit) * 16);
+  height: calc(var(--unit) * 40);
 }
 
 ._content-places {
-  
+  height: calc(var(--unit) * 37);
+  overflow-y: scroll;
 }
 
 ._inner-expandable {
+  position: relative;
 }
 
 ._article-expandable._expanded ._arrow-expandable {
+  transform: rotate(90deg);
 }
 
-
 ._title-expandable {
-  
+  z-index: var(--layer-1);
+  position: relative;
 }
 
 ._underline-expandable {
-
-}
-
-._article-expandable._placeholder ._header-expandable {
+  content: '';
+  position: relative;
+  z-index: var(--layer-0);
+  width: auto;
+  height: var(--underline-height);
+  bottom: 8px;
+  left: 0;
+  visibility: hidden;
+  transform-origin: 0 0;
+  transform: scaleX(0);
+  transition: transform 0.2s ease-in 0s;
 }
 
 ._heading-expandable:hover ._underline-expandable,
 ._article-expandable._expanded ._underline-expandable {
+  visibility: visible;
+  transform: scaleX(1);
 }
 
 ._arrow-expandable {
-  
+  position: relative;
+  background-image: url('./images/arrow.svg');
+  background-repeat: no-repeat;
+  background-position-y: 50%;
+  background-position-x: 50%;
+  background-size: 8%;
+  transition: transform 0.2s ease-in 0s;
 }
 
 ._content-places ._arrow-expandable {
+  top: calc(var(--underline-height) * 1.3);
+  background-size: 13%;
 }
 
 ._content-studio ._arrow-expandable {
+
 }
 
 ._header-expandable {
@@ -227,26 +272,51 @@ body  {
 }
 
 ._item-place {
+  cursor: pointer;
+  transition: color .2s ease;
+  color: var(--black);
 }
 
 ._item-place:hover {
+  color: var(--grid-color);
 }
 
 ._item-place-name:after {
+  content: ','
+}
+
+._map-places {
+  height: calc(var(--unit) * 15);
+}
+
+._list-places {
+  height: calc(var(--unit) * 22);
 }
 
 ._marker-place {
-  
+  position: absolute;
+  cursor: pointer;
+  top: 50%;
+  left: 50%;
+  height: calc(var(--unit) * 0.5);
+  width: calc(var(--unit) * 0.5);
+  user-select: none;
+  transform: translate(-50%, -50%) scale(2);
+  transition: 0.1s ease-in transform;
 }
 
 ._marker-place ._icon-place {
+  transform: scale(2.5);
+  transition: 0.2s ease-out transform;
 }
 
 ._marker-place._active ._icon-place,
 ._marker-place:hover ._icon-place {
+  transform: scale(3.7);
 }
 
 ._marker-place ._icon-ideo {
+  transform: scale(1.7);
 }
 
 ._section-studio {
@@ -291,20 +361,33 @@ body  {
   equivalent of Tachyon's `ns`
   everything above mobile size
 */
-@media screen and (min-width: 30ms) {
-
+@media screen and (min-width: 30em) {
+  :root {
+    /* --unit: 2.5vw; */
+  }
+  ._nav-global {
+    display: flex;
+  }
+  ._button-expand-mobile-nav {
+    display: none;
+  }
+  ._nav-global > a {
+    margin-left: 0;
+    background-color: var(--white);
+    color: var(--black);
+  }
 }
 
 /* 
-  equivalent of Tachyon's `ns`
+  equivalent of Tachyon's `m`
   covers roughly tablets
 */
 @media screen and (min-width: 30em) and (max-width: 60em) { 
-
+  
 }
 
 /* 
-  equivalent of Tachyon's `ns`
+  equivalent of Tachyon's `l`
   covers roughly desktops
 */
 @media screen and (min-width: 60em) {
@@ -317,18 +400,14 @@ body  {
     height: calc(var(--unit) * 2);
   }
 
-  ._nav-global {
+  /* ._nav-global {
     display: flex;
-  }
+  } */
   
   ._nav-global > a {
     margin-left: var(--unit);
-    background-color: var(--white);
-    color: var(--black);
-  }
-  
-  ._button-expand-mobile-nav {
-    display: none;
+    /* background-color: var(--white); */
+    /* color: var(--black); */
   }
 
   ._branding-global {
@@ -345,38 +424,30 @@ body  {
     position: relative;
   }
   
-  ._article-info {
-    height: calc(var(--unit) * 2);
-    padding-left: calc(var(--unit) * 3);
-    background-color: var(--white);
-    background-repeat: no-repeat;
-    background-position-y: 50%;
-    background-position-x: calc(var(--unit) * 0.8);
-    background-size: calc(var(--unit) * 1.2);
+  ._article-info { 
+    /* height: calc(var(--unit) * 2); */
   }
   
   ._article-info._address {
-    background-image: url('./images/location.svg');
   }
   
   ._article-info._network {
-    background-image: url('./images/wifi.svg');
   }
   
   ._article-info._contact {
-    background-image: url('./images/contact.svg');
   }
   
   ._wrapper-info {
     position: absolute;
     top: calc(var(--unit) * 6);
     width: calc(var(--unit) * 15);
-    height: calc(var(--unit) * 6);
+    /* height: calc(var(--unit) * 6); */
   }
   
   ._section-get-here {
+    margin-top: 0;
     position: absolute;
-    top: calc(var(--unit) * 21);   
+    top: calc(var(--unit) * 24);   
   }
   
   ._header-get-here,
@@ -384,12 +455,6 @@ body  {
   ._header-studio {
     height: calc(var(--unit) * 2);
     padding-left: calc(var(--unit) * 1);
-  }
-  
-  ._inner-get-here,
-  ._inner-places,
-  ._inner-studio {
-    background-color: var(--white);
   }
   
   ._content-get-here {
@@ -408,7 +473,7 @@ body  {
   ._section-places {
     position: absolute;
     top: calc(var(--unit) * 41);
-    height: calc(var(--unit) * 10);
+    height: calc(var(--unit) * 33);
   }
   
   ._content-places {
@@ -421,7 +486,6 @@ body  {
   }
   
   ._article-expandable._expanded ._arrow-expandable {
-    transform: rotate(90deg);
   }
   
   
@@ -431,21 +495,7 @@ body  {
   }
   
   ._underline-expandable {
-    content: '';
-    position: relative;
-    z-index: var(--layer-0);
-    width: auto;
-    height: var(--underline-height);
-    bottom: 8px;
-    left: 0;
-    visibility: hidden;
-    transform-origin: 0 0;
-    transform: scaleX(0);
-    transition: transform 0.2s ease-in 0s;
-  }
-  
-  ._article-expandable._placeholder ._header-expandable {
-    background-color: #eee;
+    
   }
   
   ._heading-expandable:hover ._underline-expandable,
@@ -455,17 +505,12 @@ body  {
   }
   
   ._arrow-expandable {
-    position: relative;
-    background-image: url('./images/arrow.svg');
-    background-repeat: no-repeat;
-    background-position-y: 50%;
-    background-position-x: 50%;
-    background-size: 8%;
-    transition: transform 0.2s ease-in 0s;
+    
   }
   
   ._content-places ._arrow-expandable {
     top: calc(var(--underline-height) * -1);
+    background-size: 8%;
   }
   
   ._content-studio ._arrow-expandable {
@@ -483,48 +528,42 @@ body  {
   }
   
   ._item-place {
-    cursor: pointer;
-    transition: color .2s ease;
-    color: var(--black);
+    
   }
   
   ._item-place:hover {
-    color: var(--grid-color);
   }
   
   ._item-place-name:after {
-    content: ','
+  }
+  
+  ._map-places {
+    height: auto;
+  }
+
+  ._list-places {
+    height: auto;
   }
   
   ._marker-place {
-    position: absolute;
-    cursor: pointer;
-    top: 50%;
-    left: 50%;
-    height: calc(var(--unit) * 0.5);
-    width: calc(var(--unit) * 0.5);
-    user-select: none;
     transform: translate(-50%, -50%) scale(1);
-    transition: 0.1s ease-in transform;
   }
   
   ._marker-place ._icon-place {
-    transform: scale(2.5);
-    transition: 0.2s ease-out transform;
+    
   }
   
   ._marker-place._active ._icon-place,
   ._marker-place:hover ._icon-place {
-    transform: scale(3.7);
+    
   }
   
   ._marker-place ._icon-ideo {
-    transform: scale(1.7);
   }
   
   ._section-studio {
     position: absolute;
-    top: calc(var(--unit) * 61);
+    top: calc(var(--unit) * 64);
     height: calc(var(--unit) * 20);
   }
   

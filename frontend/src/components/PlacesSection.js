@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react'
 /* 1st party */
 import PlaceCategory from './PlaceCategory'
 import PlacesMap from './PlacesMap'
-import { hydrate, ENDPOINTS } from '../utils'
+import { hydrate, ENDPOINTS, isMobile } from '../utils'
 
 export default function PlacesSection() {
   
@@ -42,7 +42,7 @@ export default function PlacesSection() {
 
   return (
     <section className="_section-places flex flex-column w-100 items-center">        
-      <div className="_inner-places outline w-70">
+      <div className="_inner-places outline w-80 w-70-m">
 
         <header className="_header-places bb w-100 flex flex-row items-center">
           <h3 className="f3 fw5 serif ma0 w-100">
@@ -50,8 +50,14 @@ export default function PlacesSection() {
           </h3>
         </header>
 
-        <div className="_content-places w-100 flex flex-row">
-          <div className="_list-places w-50 br overflow-y-scroll">
+        <div className="_content-places w-100 flex flex-column flex-row-m">
+          {isMobile() && 
+            <PlacesMap
+              activePlaceId={activePlaceId}
+              data={currentPlaces}
+              color={currentCategoryColor} />
+          }
+          <div className="_list-places w-100 w-50-m br-m overflow-y-scroll">
 
             {placeCategories.map((placeCategory, index) => (
               <PlaceCategory
@@ -64,12 +70,12 @@ export default function PlacesSection() {
             ))}
 
           </div>
-
-          <PlacesMap
-            activePlaceId={activePlaceId}
-            data={currentPlaces}
-            color={currentCategoryColor} />
-        
+          {!isMobile() && 
+            <PlacesMap
+              activePlaceId={activePlaceId}
+              data={currentPlaces}
+              color={currentCategoryColor} />
+          }
         </div>
       </div>
       

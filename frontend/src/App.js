@@ -34,8 +34,10 @@ const Root = () => {
       <WelcomeSection data={info} />
       <FaqSection data={faqs} />
       <PlacesSection />
+      {/*
       <StudioSection />
       <GlobalFooter data={info} />
+      */}
     </>
   )
 

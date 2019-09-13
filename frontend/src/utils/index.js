@@ -55,7 +55,6 @@ export function getOffsetTop(el) {
 export function getVerticalGridAlignmentDiscrepancy(el) {
 	const elOffsetTop = getOffsetTop(el)
 	const gridSizePx = getPxFromWv(getGridSizeWv())
-	debugger
 	if (isDesktop() || (elOffsetTop % gridSizePx === 0)) {
 		// We don't need alignment on Desktop. All is done via CSS.
 		return 0
@@ -100,6 +99,7 @@ export function getWindowWidthEm() {
 }
 
 export function isMobile() {
+	console.log('--> is mobile is here')
 	return getWindowWidthEm() < BREAKPOINTS_EM.NOT_SMALL_MIN
 }
 
