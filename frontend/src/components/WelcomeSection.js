@@ -15,7 +15,7 @@ export default function WelcomeSection({ data }) {
             Welcome to <span className="ttu">IDEO</span>
           </h1>
           
-          <h2 className="serif fw9 f1 f-subheadline-ns f-headline-l mb0 mt1 mt3-ns lh-solid">New York</h2>
+          <h2 className="serif fw9 f1 f-headline-l mb0 mt1 mt3-ns lh-solid">New York</h2>
         </div>
         
 

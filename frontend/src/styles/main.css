@@ -177,6 +177,7 @@ body  {
 
 ._section-get-here {
   margin-top: calc(var(--unit) * 16);
+  height: calc(var(--unit) * 26);
 }
 
 ._header-get-here,
@@ -655,6 +656,7 @@ body  {
   }
   
   ._footer-global ._article-info {
+    border: none;
     font-size: 0.7rem;
     background-size: calc(var(--unit) * 0.9);
     background-position: calc(var(--unit) * 0.3);
