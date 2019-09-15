@@ -20,7 +20,7 @@ export default function GlobalFooter({ data }) {
     phone: data['phone']
   }
   return (
-    <footer className="_footer-global serif flex flex-row-l flex-column w-100 ba bn-l">        
+    <footer className="_footer-global serif flex flex-row-l flex-column w-100 outline">        
       
       <div className="w-100 w-20-l flex pa1 pa0-l flex-row items-center justify-center">
         <h3 className="_message-footer serif fw5 f5">See you soon!</h3>
