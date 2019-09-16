@@ -13,6 +13,7 @@ import RedDot2 from '../styles/images/red-dot-2.png'
 import OceanBlob from '../styles/images/ocean-blob.png'
 import Sign from '../styles/images/sign.png'
 import Sandy from '../styles/images/sandy.png'
+import Moon from '../styles/images/moon.png'
 import Tom from '../styles/images/tom.png'
 import Tower from '../styles/images/tower.png'
 import Bridge from '../styles/images/bridge.png'
@@ -53,6 +54,10 @@ export default function FaqSection({ data }) {
 
       <Rellax className="_image-sandy" as="div" speed={2.5} >
         <img src={Sandy} />
+      </Rellax>
+      
+      <Rellax className="_image-moon" as="div" speed={2.0} >
+        <img src={Moon} />
       </Rellax>
 
       <Rellax className="_image-bridge" as="div" speed={2.8} >
