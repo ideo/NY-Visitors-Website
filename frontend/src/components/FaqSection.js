@@ -10,6 +10,7 @@ import Sandy from '../styles/images/sandy.png'
 import Tom from '../styles/images/tom.png'
 import Tower from '../styles/images/tower.png'
 import Bridge from '../styles/images/bridge.png'
+import Wrinkle from '../styles/images/wrinkle.png'
 import { BASE_ANIME_CONFIG } from '../utils'
 
 function animate() {
@@ -90,6 +91,10 @@ export default function FaqSection({ data }) {
               fill="#FE840E" />
           </clipPath>
         </svg>
+      </Rellax>
+
+      <Rellax className="_image-wrinkle" as="div" speed={3.4} >
+        <img src={Wrinkle} />
       </Rellax>
 
       <div className="_inner-get-here outline w-80 w-70-ns">

@@ -306,6 +306,15 @@ body  {
   z-index: var(--layer-0);
 } 
 
+._image-wrinkle {
+  position: absolute;
+  top: calc(var(--unit) * 13);
+  left: calc(var(--unit) * -3);
+  width: 130px;
+  height: auto;
+  z-index: var(--layer-12);
+}
+
 ._blob-purple {
   position: absolute;
   top: calc(var(--unit) * -15);
