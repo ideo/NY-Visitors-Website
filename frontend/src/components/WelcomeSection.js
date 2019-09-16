@@ -25,7 +25,7 @@ function animate() {
 
 export default function WelcomeSection({ data }) {
   animate()
-  
+
   return (
     <section className="_section-welcome flex flex-row justify-center w-100">
       
@@ -40,7 +40,6 @@ export default function WelcomeSection({ data }) {
           <rect width="600" height="600" fill="#FFF900" opacity="1" mask="url(#mask-yellow)"/>
         </g>
       </svg>
-
 
       <div className="_inner-welcome flex w-80 w-70-ns flex-column">
         

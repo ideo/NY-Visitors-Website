@@ -69,6 +69,20 @@ export default function FaqSection({ data }) {
         </svg>
       </Rellax>
 
+      <Rellax className="_blob-polka" as="div" speed={4} >
+        <img src={PolkadotTexture} className="_bg-blob-polka" />
+        <svg
+          width="300"
+          height="300"
+          viewBox="0 0 600 600"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <clipPath id="_mask-polka" transform="translate(220,120) scale(0.6)">
+            <path d="M106.1,-152.4C128.5,-150.6,131.6,-106,158.2,-66.7C184.8,-27.3,234.9,6.8,227,29.6C219,52.4,153,63.9,107.5,64.1C62.1,64.3,37.2,53.2,20,50.1C2.7,47,-6.9,51.8,-22.6,56.6C-38.3,61.3,-60,66,-103.7,63.3C-147.5,60.5,-213.3,50.3,-239.6,20.3C-265.8,-9.7,-252.5,-59.5,-228.7,-101.5C-204.9,-143.5,-170.6,-177.7,-130.7,-171.5C-90.8,-165.3,-45.4,-118.7,-1.8,-115.9C41.8,-113.1,83.6,-154.1,106.1,-152.4Z" fill="#FE840E" />
+          </clipPath>
+        </svg>
+      </Rellax>
+
       <div className="_inner-get-here outline w-80 w-70-ns">
         <header className="_header-get-here bb w-100 flex flex-row items-center">
           <h3 className="f3 fw5 serif ma0 w-100">01/ Get Here</h3>
