@@ -315,6 +315,51 @@ body  {
   z-index: var(--layer-12);
 }
 
+._image-polkaflat {
+  position: absolute;
+  top: calc(var(--unit) * 13);
+  right: calc(var(--unit) * -2);
+  width: 180px;
+  height: auto;
+  z-index: var(--layer-1);
+}
+
+._image-ocean-blob {
+  position: absolute;
+  top: calc(var(--unit) * 40);
+  left: calc(var(--unit) * -2);
+  width: 130px;
+  height: auto;
+  z-index: var(--layer-1);
+}
+
+._image-sun {
+  position: absolute;
+  top: calc(var(--unit) * 40);
+  right: calc(var(--unit) * 1);
+  width: 50px;
+  height: auto;
+  z-index: var(--layer-11);
+}
+
+._image-red-dot-1 {
+  position: absolute;
+  top: calc(var(--unit) * 33);
+  right: calc(var(--unit) * 0.3);
+  width: 30px;
+  height: auto;
+  z-index: var(--layer-11);
+}
+
+._image-red-dot-2 {
+  position: absolute;
+  top: calc(var(--unit) * 29);
+  right: calc(var(--unit) * -0);
+  width: 15px;
+  height: auto;
+  z-index: var(--layer-11);
+}
+
 ._blob-purple {
   position: absolute;
   top: calc(var(--unit) * -15);

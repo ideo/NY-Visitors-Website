@@ -5,6 +5,11 @@ import anime from 'animejs'
 
 /* 1st party */
 import PolkadotTexture from '../styles/images/polkadot-texture.jpg'
+import PolkadotFlat from '../styles/images/polkaflat.png'
+import Sun from '../styles/images/sun.png'
+import RedDot1 from '../styles/images/red-dot-1.png'
+import RedDot2 from '../styles/images/red-dot-2.png'
+import OceanBlob from '../styles/images/ocean-blob.png'
 import Sign from '../styles/images/sign.png'
 import Sandy from '../styles/images/sandy.png'
 import Tom from '../styles/images/tom.png'
@@ -95,6 +100,26 @@ export default function FaqSection({ data }) {
 
       <Rellax className="_image-wrinkle" as="div" speed={3.4} >
         <img src={Wrinkle} />
+      </Rellax>
+
+      <Rellax className="_image-polkaflat" as="div" speed={2.4} >
+        <img src={PolkadotFlat} />
+      </Rellax>
+
+      <Rellax className="_image-ocean-blob" as="div" speed={4} >
+        <img src={OceanBlob} />
+      </Rellax>
+      
+      <Rellax className="_image-sun" as="div" speed={5} >
+        <img src={Sun} />
+      </Rellax>
+      
+      <Rellax className="_image-red-dot-1" as="div" speed={4} >
+        <img src={RedDot1} />
+      </Rellax>
+
+      <Rellax className="_image-red-dot-2" as="div" speed={3} >
+        <img src={RedDot2} />
       </Rellax>
 
       <div className="_inner-get-here outline w-80 w-70-ns">
