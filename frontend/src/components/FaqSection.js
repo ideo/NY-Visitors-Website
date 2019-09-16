@@ -6,6 +6,7 @@ import anime from 'animejs'
 /* 1st party */
 import PolkadotTexture from '../styles/images/polkadot-texture.jpg'
 import PolkadotFlat from '../styles/images/polkaflat.png'
+import EpicPoster from '../styles/images/epic.png'
 import Sun from '../styles/images/sun.png'
 import RedDot1 from '../styles/images/red-dot-1.png'
 import RedDot2 from '../styles/images/red-dot-2.png'
@@ -120,6 +121,10 @@ export default function FaqSection({ data }) {
 
       <Rellax className="_image-red-dot-2" as="div" speed={3} >
         <img src={RedDot2} />
+      </Rellax>
+      
+      <Rellax className="_image-epic-poster" as="div" speed={1.8} >
+        <img src={EpicPoster} />
       </Rellax>
 
       <div className="_inner-get-here outline w-80 w-70-ns">

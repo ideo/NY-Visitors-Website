@@ -360,6 +360,24 @@ body  {
   z-index: var(--layer-11);
 }
 
+._image-epic-poster {
+  position: absolute;
+  top: calc(var(--unit) * 41);
+  right: calc(var(--unit) * 0);
+  width: 100px;
+  height: auto;
+  z-index: var(--layer-11);
+}
+
+._image-key {
+  position: absolute;
+  top: calc(var(--unit) * 80);
+  left: calc(var(--unit) * 0);
+  width: 250px;
+  height: auto;
+  z-index: var(--layer-11);
+}
+
 ._blob-purple {
   position: absolute;
   top: calc(var(--unit) * -15);
@@ -388,6 +406,96 @@ body  {
   top: calc(var(--unit) * -8);
   left: calc(var(--unit) * 4);
   z-index: var(--layer-3);
+}
+
+._image-red-dot-3 {
+  position: absolute;
+  top: calc(var(--unit) * 110);
+  left: calc(var(--unit) * 0.5);
+  width: 18px;
+  height: auto;
+  z-index: var(--layer-11);
+}
+
+._image-black-blob {
+  position: absolute;
+  top: calc(var(--unit) * 105);
+  left: calc(var(--unit) * 0);
+  width: 80px;
+  height: auto;
+  z-index: var(--layer-1);
+}
+
+._image-golden-blob {
+  position: absolute;
+  top: calc(var(--unit) * 120);
+  right: calc(var(--unit) * 0);
+  width: 90px;
+  height: auto;
+  z-index: var(--layer-1);
+}
+
+._image-purple-blob {
+  position: absolute;
+  top: calc(var(--unit) * 118);
+  right: calc(var(--unit) * 0);
+  width: 120px;
+  height: auto;
+  z-index: var(--layer-11);
+}
+
+._image-printer {
+  position: absolute;
+  top: calc(var(--unit) * 144);
+  left: calc(var(--unit) * 1);
+  width: 150px;
+  height: auto;
+  z-index: var(--layer-11);
+}
+
+._image-funky-blob {
+  position: absolute;
+  top: calc(var(--unit) * 144);
+  left: calc(var(--unit) * 0);
+  width: 150px;
+  height: auto;
+  z-index: var(--layer-10);
+}
+
+._image-yellow-blob {
+  position: absolute;
+  top: calc(var(--unit) * 168);
+  right: calc(var(--unit) * 0);
+  width: 150px;
+  height: auto;
+  z-index: var(--layer-1);
+}
+
+._image-mini-printer {
+  position: absolute;
+  top: calc(var(--unit) * 175);
+  right: calc(var(--unit) * 0);
+  width: 80px;
+  height: auto;
+  z-index: var(--layer-11);
+}
+
+._image-polka-blob-bottom {
+  position: absolute;
+  top: calc(var(--unit) * 175);
+  left: calc(var(--unit) * 0);
+  width: 150px;
+  height: auto;
+  z-index: var(--layer-8);
+}
+
+._image-ocean-blob-bottom {
+  position: absolute;
+  top: calc(var(--unit) * 182);
+  left: calc(var(--unit) * 1);
+  width: 60px;
+  height: auto;
+  z-index: var(--layer-9);
 }
 
 ._section-places {
@@ -508,6 +616,7 @@ body  {
 }
 
 ._section-studio {
+  margin-top: calc(var(--unit) * 6);
 }
 
 ._content-studio {

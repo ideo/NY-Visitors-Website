@@ -1,12 +1,19 @@
 /* 3rd party */
 import React, { useState, useEffect } from 'react'
+import { withRouter } from 'react-router-dom'
 import ReactPlaceholder from 'react-placeholder'
 import 'react-placeholder/lib/reactPlaceholder.css'
-import { withRouter } from 'react-router-dom'
+import Rellax from 'react-rellax'
 
 /* 1st party */
 import StudioItem from './StudioItem'
 import { isAuthenticated, hydrate, logout, ENDPOINTS, LOCAL_STORAGE_AUTH_KEY, BASE_API_URL } from '../utils'
+import Printer from '../styles/images/printer.png'
+import FunkyBlob from '../styles/images/funky-blob.png'
+import YellowBlob from '../styles/images/yellow-blob.png'
+import MiniPrinter from '../styles/images/mini-printer.png'
+import PolkaBlobBottom from '../styles/images/polka-blob-bottom.png'
+import OceanBlobBotton from '../styles/images/ocean-blob-bottom.png'
 
 const Tips = ({ items }) => {
   let ret = null
@@ -42,6 +49,31 @@ export default withRouter(function StudioSection({ history }) {
 
   return (
     <section className="_section-studio flex flex-column w-100 items-center">        
+      
+      <Rellax className="_image-printer" as="div" speed={2.1} >
+        <img src={Printer} />
+      </Rellax>
+      
+      <Rellax className="_image-funky-blob" as="div" speed={2.1} >
+        <img src={FunkyBlob} />
+      </Rellax>
+      
+      <Rellax className="_image-yellow-blob" as="div" speed={1.1} >
+        <img src={YellowBlob} />
+      </Rellax>
+      
+      <Rellax className="_image-mini-printer" as="div" speed={1.1} >
+        <img src={MiniPrinter} />
+      </Rellax>
+      
+      <Rellax className="_image-polka-blob-bottom" as="div" speed={1.1} >
+        <img src={PolkaBlobBottom} />
+      </Rellax>
+      
+      <Rellax className="_image-ocean-blob-bottom" as="div" speed={1.3} >
+        <img src={OceanBlobBotton} />
+      </Rellax>
+
       <div className="flex flex-column items-end w-80 w-70">
         <div className="_inner-studio outline flex flex-column w-100 w-75-l">
 

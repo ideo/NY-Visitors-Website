@@ -1,10 +1,16 @@
 /* 3rd party */
 import React, { useState, useEffect } from 'react'
+import Rellax from 'react-rellax'
 
 /* 1st party */
 import PlaceCategory from './PlaceCategory'
 import PlacesMap from './PlacesMap'
 import { hydrate, ENDPOINTS, isMobile, isDesktop } from '../utils'
+import Key from '../styles/images/key.png'
+import RedDot1 from '../styles/images/red-dot-1.png'
+import BlackBlob from '../styles/images/black-blob.png'
+import GoldenBlob from '../styles/images/golden-blob.png'
+import PurpleBlob2 from '../styles/images/purple-blob-2.png'
 
 export default function PlacesSection() {
   
@@ -38,10 +44,31 @@ export default function PlacesSection() {
   let currentCategoryColor = 
     placeCategories[expandedCategoryIndex] ? 
     placeCategories[expandedCategoryIndex].color :
-    '#ff0033' 
+    '#cccccc' 
 
   return (
     <section className="_section-places flex flex-column w-100 mt0-l items-center">        
+      
+      <Rellax className="_image-key" as="div" speed={1.8} >
+        <img src={Key} />
+      </Rellax>
+
+      <Rellax className="_image-red-dot-3" as="div" speed={2.7} >
+        <img src={RedDot1} />
+      </Rellax>
+      
+      <Rellax className="_image-black-blob" as="div" speed={1.8} >
+        <img src={BlackBlob} />
+      </Rellax>
+
+      <Rellax className="_image-golden-blob" as="div" speed={2.3} >
+        <img src={GoldenBlob} />
+      </Rellax>
+      
+      <Rellax className="_image-purple-blob" as="div" speed={0.3} >
+        <img src={PurpleBlob2} />
+      </Rellax>
+      
       <div className="_inner-places outline w-80 w-70-m">
 
         <header className="_header-places bb w-100 flex flex-row items-center">
