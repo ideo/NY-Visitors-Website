@@ -209,7 +209,7 @@ body  {
 
 ._article-info {
   position: relative;
-  z-index: var(--layer-1);
+  z-index: var(--layer-4);
   height: calc(var(--unit) * 3);
   padding-left: calc(var(--unit) * 3);
   background-color: var(--white);
@@ -327,7 +327,7 @@ body  {
 
 ._blob-purple {
   position: absolute;
-  top: calc(var(--unit) * -13);
+  top: calc(var(--unit) * -15);
   left: calc(var(--unit) * 8);
   /* width: 80px; */
   z-index: var(--layer-3);
