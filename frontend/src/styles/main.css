@@ -331,8 +331,8 @@ body  {
 
 ._blob-polka {
   position: absolute;
-  top: calc(var(--unit) * -5);
-  left: calc(var(--unit) * -2);
+  top: calc(var(--unit) * -8);
+  left: calc(var(--unit) * 4);
   z-index: var(--layer-3);
 }
 
