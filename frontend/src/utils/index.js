@@ -99,7 +99,6 @@ export function getWindowWidthEm() {
 }
 
 export function isMobile() {
-	console.log('--> is mobile is here')
 	return getWindowWidthEm() < BREAKPOINTS_EM.NOT_SMALL_MIN
 }
 
@@ -110,6 +109,16 @@ export function isTablet() {
 
 export function isDesktop() {
 	return getWindowWidthEm() >= BREAKPOINTS_EM.DESKTOP_MIN
+}
+
+export const BASE_ANIME_CONFIG = {
+	easing: 'easeOutQuad',
+	duration: 6000,
+	loop: true,
+	autoplay: true,
+	delay: 400,
+	endDelay: 0,
+	direction: 'alternate'
 }
 
 export const ENDPOINTS = {

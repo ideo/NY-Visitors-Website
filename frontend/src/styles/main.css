@@ -192,19 +192,11 @@ body  {
 }
 
 ._bg-blob-polkadot {
-  clip-path: url(#_mask-polkadot);
-  position: absolute;
-  right: 100px;
-  top: 500px;
+  
 }
 
 ._blob-polkadot {
-  width: 0; 
-  height: 0;
-  position: absolute;
-  /* top: 400px; */
-  /* left: 00px; */
-  z-index: var(--layer-0);
+  
 }
 
 ._article-info {
