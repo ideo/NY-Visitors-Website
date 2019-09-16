@@ -233,11 +233,12 @@ body  {
 ._inner-places,
 ._inner-studio {
   background-color: var(--white);
+  z-index: var(--layer-10);
 }
 
 ._wrapper-info {
   position: relative;
-  z-index: var(--layer-1);
+  /* z-index: var(--layer-1); */
   /* width: calc(var(--unit) * 15); */
   height: calc(var(--unit) * 9);
   overflow: visible;
@@ -245,7 +246,7 @@ body  {
 
 ._section-get-here {
   position: relative;
-  z-index: var(--layer-1);
+  /* z-index: var(--layer-1); */
   margin-top: calc(var(--unit) * 16);
   height: calc(var(--unit) * 26);
 }
@@ -321,6 +322,19 @@ body  {
   height: auto;
   z-index: var(--layer-0);
 } 
+
+._blob-purple {
+  position: absolute;
+  top: calc(var(--unit) * 21);
+  left: calc(var(--unit) * 10);
+  /* width: 80px; */
+  z-index: var(--layer-3);
+} 
+
+._inner-blob-purple {
+  overflow-x: hidden;
+  width: 270px;
+}
 
 ._section-places {
   margin-top: calc(var(--unit) * 16);
