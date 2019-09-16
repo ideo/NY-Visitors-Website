@@ -1227,15 +1227,20 @@ body  {
   }
 
   ._image-wrinkle {
-    top: calc(var(--unit) * 13);
+    top: calc(var(--unit) * 23);
     left: calc(var(--unit) * 0);
     width: 150px;
   }
 
+  ._image-wrinkle > img {
+    transform: rotate(360deg);
+  }
+
   ._image-polkaflat {
     top: calc(var(--unit) * 13);
+    border: 1px solid red;
     right: calc(var(--unit) * 0);
-    width: 220px;
+    width: calc(var(--unit) * 4);
   }
 
   ._image-ocean-blob {
@@ -1245,34 +1250,38 @@ body  {
   }
 
   ._image-sun {
-    top: calc(var(--unit) * 40);
-    right: calc(var(--unit) * 1);
+    top: calc(var(--unit) * 70);
+    left: calc(var(--unit) * 4);
+    right: unset;
     width: 80px;
   }
 
   ._image-red-dot-1 {
-    top: calc(var(--unit) * 33);
-    right: calc(var(--unit) * 1.5);
-    width: 30px;
+    top: calc(var(--unit) * 65);
+    left: calc(var(--unit) * 4);
+    right: unset;
+    width: 50px;
   }
   
   ._image-red-dot-2 {
     position: absolute;
-    top: calc(var(--unit) * 29);
-    right: calc(var(--unit) * 1);
-    width: 15px;
+    top: calc(var(--unit) * 63);  
+    left: calc(var(--unit) * 4);
+    right: unset;
+    width: 35px;
   }
 
   ._image-epic-poster {
-    top: calc(var(--unit) * 40);
-    right: calc(var(--unit) * 0);
-    width: 200px;
+    top: calc(var(--unit) * 4);
+    left: calc(var(--unit) * 12);
+    right: unset;
+    width: calc(var(--unit) * 5);
   }
   
   ._image-key {
-    top: calc(var(--unit) * 73);
-    left: calc(var(--unit) * 0);
-    width: 400px;
+    top: calc(var(--unit) * -20);
+    left: calc(var(--unit) * 2);
+    width: calc(var(--unit) * 20);
   }
 
   ._image-red-dot-3 {
@@ -1324,15 +1333,16 @@ body  {
   }
   
   ._image-polka-blob-bottom {
-    top: calc(var(--unit) * 153);
-    left: calc(var(--unit) * 0);
-    width: 190px;
+    top: calc(var(--unit) * -40);
+    left: calc(var(--unit) * 2);
+    width: calc(var(--unit) * 20);
   }
   
   ._image-ocean-blob-bottom {
-    top: calc(var(--unit) * 156);
-    left: calc(var(--unit) * 0);
-    width: 100px;
+    top: calc(var(--unit) * -30);
+    left: calc(var(--unit) * 5);
+    width: calc(var(--unit) * 6);
+    z-index: var(--layer-11);
   }
 
 }
