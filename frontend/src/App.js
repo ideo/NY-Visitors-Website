@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import anime from 'animejs'
+import Rellax from 'react-rellax'
 
 /* 1st party */
 import GlobalHeader from './components/GlobalHeader'
@@ -13,6 +14,11 @@ import StudioSection from './components/StudioSection'
 import Authenticated from './components/Authenticated'
 import { hydrate, ENDPOINTS } from './utils'
 import PolkadotTexture from './styles/images/polkadot-texture.jpg'
+import Sign from './styles/images/sign.png'
+import Sandy from './styles/images/sandy.png'
+import Tom from './styles/images/tom.png'
+import Tower from './styles/images/tower.png'
+import Bridge from './styles/images/bridge.png'
 
 const Root = () => {
   
@@ -64,6 +70,25 @@ const Root = () => {
         </clipPath>
       </svg>
 
+      <Rellax className="_image-sign" as="div" speed={2} >
+        <img src={Sign} />
+      </Rellax>
+
+      <Rellax className="_image-sandy" as="div" speed={2.5} >
+        <img src={Sandy} />
+      </Rellax>
+
+      <Rellax className="_image-bridge" as="div" speed={2.8} >
+        <img src={Bridge} />
+      </Rellax>
+
+      <Rellax className="_image-tom" as="div" speed={3.5} >
+        <img src={Tom} />
+      </Rellax>
+
+      <Rellax className="_image-tower" as="div" speed={2} >
+        <img src={Tower} />
+      </Rellax>
 
       <GlobalHeader />
       <WelcomeSection data={info} />
