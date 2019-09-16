@@ -821,7 +821,7 @@ body  {
 
   ._image-epic-poster {
     top: calc(var(--unit) * 40);
-    right: calc(var(--unit) * -1);
+    right: calc(var(--unit) * 0);
     width: 200px;
   }
   
@@ -891,8 +891,6 @@ body  {
     width: 100px;
   }
 }
-
-
 
 
 /* 
