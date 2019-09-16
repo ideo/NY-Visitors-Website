@@ -132,7 +132,7 @@ export default function FaqSection({ data }) {
         <img src={EpicPoster} />
       </Rellax>
 
-      <div className="_inner-get-here outline w-80 w-70-ns">
+      <div className="_inner-get-here outline w-80 w-70-ns w-40-l">
         <header className="_header-get-here bb w-100 flex flex-row items-center">
           <h3 className="f3 fw5 serif ma0 w-100">01/ Get Here</h3>
         </header>

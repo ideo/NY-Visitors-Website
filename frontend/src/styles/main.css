@@ -979,6 +979,11 @@ body  {
     overflow-y: scroll;
   }
   
+  ._inner-get-here {
+    position: relative;
+    left: calc(var(--unit) * 7);
+  }
+
   ._items-get-here {
     padding: calc(var(--unit) * 1) calc(var(--unit) * 2);
   }
@@ -1171,13 +1176,13 @@ body  {
   }
 
   ._inner-blob-purple {
-    width: 530px;
+    width: calc(var(--unit) * 10);
   }
 
   ._bg-blob-polka {
     top: calc(var(--unit) * -6);
-    left: calc(var(--unit) * 20);
-    transform: scale(2);
+    left: calc(var(--unit) * 18);
+    transform: scale(1.1);
   }
 
   ._blob-polka {
