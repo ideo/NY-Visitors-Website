@@ -54,53 +54,6 @@ const Root = () => {
 
   return (
     <>
-      
-      <svg
-        className="_blob-polkadot"
-        width="600"
-        height="600"
-        viewBox="0 0 600 600" 
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <clipPath id="_mask-polkadot">
-          <g transform="translate(300,300)">
-            <path id="s-polkadot" d="M74.8,-129C101.6,-99.1,131.3,-86.3,136.5,-65.2C141.7,-44.1,122.3,-14.6,131,28.4C139.7,71.4,176.4,128,173.1,172.9C169.9,217.8,126.6,250.9,84.3,243.3C42,235.7,0.6,187.4,-34.1,158.1C-68.8,128.8,-96.7,118.4,-115.2,98.9C-133.6,79.3,-142.5,50.5,-146.9,21C-151.3,-8.5,-151.1,-38.7,-138.9,-62.5C-126.6,-86.4,-102.2,-103.7,-77.1,-134.4C-51.9,-165.1,-26,-209,-1,-207.5C24,-206,47.9,-158.9,74.8,-129Z" fill="#000000" />
-          </g>
-        </clipPath>
-      </svg>
-
-      <Rellax className="_image-sign" as="div" speed={2} >
-        <img src={Sign} />
-      </Rellax>
-
-      <Rellax className="_image-sandy" as="div" speed={2.5} >
-        <img src={Sandy} />
-      </Rellax>
-
-      <Rellax className="_image-bridge" as="div" speed={2.8} >
-        <img src={Bridge} />
-      </Rellax>
-
-      <Rellax className="_image-tom" as="div" speed={3.5} >
-        <img src={Tom} />
-      </Rellax>
-
-      <Rellax className="_image-tower" as="div" speed={2} >
-        <img src={Tower} />
-      </Rellax>
-
-      <Rellax className="_blob-purple" as="div" speed={4} >
-      <svg
-        width="600"
-        height="600"
-        className="_inner-blob-purple"
-        viewBox="0 0 600 600"
-        xmlns="http://www.w3.org/2000/svg">
-        <g transform="translate(300,300)">
-          <path id="_path-blob-purple" d="M149,-106.3C193.3,-104.7,229.7,-52.3,208.4,-21.2C187.2,9.9,108.5,19.8,64.1,33.5C19.8,47.1,9.9,64.6,-7.3,71.9C-24.5,79.2,-49,76.4,-96.9,62.7C-144.7,49,-215.8,24.5,-220.1,-4.2C-224.3,-33,-161.7,-66,-113.8,-67.7C-66,-69.3,-33,-39.7,9.7,-49.3C52.3,-59,104.7,-108,149,-106.3Z" fill="#1f008e" />
-        </g>
-      </svg>
-      </Rellax>
 
       <GlobalHeader />
       <WelcomeSection data={info} />
