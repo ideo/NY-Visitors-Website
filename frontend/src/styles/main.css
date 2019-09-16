@@ -343,7 +343,7 @@ body  {
 ._image-sun {
   position: absolute;
   top: calc(var(--unit) * 40);
-  right: calc(var(--unit) * 1);
+  right: calc(var(--unit) * 0);
   width: 50px;
   height: auto;
   z-index: var(--layer-11);
@@ -781,7 +781,119 @@ body  {
     left: calc(var(--unit) * 11);
     width: 200px;
   }
+
+  ._image-wrinkle {
+    top: calc(var(--unit) * 13);
+    left: calc(var(--unit) * 0);
+    width: 150px;
+  }
+
+  ._image-polkaflat {
+    top: calc(var(--unit) * 13);
+    right: calc(var(--unit) * 0);
+    width: 220px;
+  }
+
+  ._image-ocean-blob {
+    top: calc(var(--unit) * 40);
+    left: calc(var(--unit) * 0);
+    width: 150px;
+  }
+
+  ._image-sun {
+    top: calc(var(--unit) * 40);
+    right: calc(var(--unit) * 1);
+    width: 80px;
+  }
+
+  ._image-red-dot-1 {
+    top: calc(var(--unit) * 33);
+    right: calc(var(--unit) * 1.5);
+    width: 30px;
+  }
+  
+  ._image-red-dot-2 {
+    position: absolute;
+    top: calc(var(--unit) * 29);
+    right: calc(var(--unit) * 1);
+    width: 15px;
+  }
+
+  ._image-epic-poster {
+    top: calc(var(--unit) * 40);
+    right: calc(var(--unit) * -1);
+    width: 200px;
+  }
+  
+  ._image-key {
+    top: calc(var(--unit) * 73);
+    left: calc(var(--unit) * 0);
+    width: 400px;
+  }
+
+  ._image-red-dot-3 {
+    top: calc(var(--unit) * 110);
+    left: calc(var(--unit) * 0.5);
+    width: 28px;
+  }
+  
+  ._image-black-blob {
+    top: calc(var(--unit) * 105);
+    left: calc(var(--unit) * 1);
+    width: 130px;
+  }
+  
+  ._image-golden-blob {
+    top: calc(var(--unit) * 100);
+    right: calc(var(--unit) * 0);
+    width: 120px;
+  }
+  
+  ._image-purple-blob {
+    top: calc(var(--unit) * 104);
+    right: calc(var(--unit) * 0);
+    width: 220px;
+  }
+  
+  ._image-printer {
+    top: calc(var(--unit) * 126);
+    left: calc(var(--unit) * 3);
+    width: 340px;
+  }
+  
+  ._image-funky-blob {
+    top: calc(var(--unit) * 125);
+    left: calc(var(--unit) * 0);
+    width: 380px;
+  }
+  
+  ._image-yellow-blob {
+    top: calc(var(--unit) * 148);
+    right: calc(var(--unit) * 0);
+    width: 180px;
+  }
+  
+  ._image-mini-printer {
+    top: calc(var(--unit) * 152);
+    right: calc(var(--unit) * 0);
+    width: 130px;
+  }
+  
+  ._image-polka-blob-bottom {
+    top: calc(var(--unit) * 153);
+    left: calc(var(--unit) * 0);
+    width: 190px;
+  }
+  
+  ._image-ocean-blob-bottom {
+    top: calc(var(--unit) * 156);
+    left: calc(var(--unit) * 0);
+    width: 100px;
+  }
 }
+
+
+
 
 /* 
   equivalent of Tachyon's `m`
