@@ -14,7 +14,6 @@ function getIcon(type, color) {
         <svg className="_icon-place" version="1.1" x="0px" y="0px" viewBox="0 0 100 125">
           <g transform="translate(0,-952.36218)">
             <path 
-              style={{color:'#000000', enablBackground:'accumulate'}} 
               d="m 50,965.36218 c -13.25484,0 -24,10.0883 -24,25 0,5.3743 1.17605,8.7978 3.5625,13.00002 l 20.4375,36 20.4375,-36 C 72.82399,999.15988 74,995.73648 74,990.36218 c 0,-14.9117 -10.74516,-25 -24,-25 z m 0,12 c 6.62742,0 12,5.3726 12,12 0,6.6273 -5.37258,12.00002 -12,12.00002 -6.62742,0 -12,-5.37272 -12,-12.00002 0,-6.6274 5.37258,-12 12,-12 z" 
               fill={color} 
               stroke="#ffffff" 
@@ -46,14 +45,10 @@ function getIcon(type, color) {
   return icon
 }
 
-export default function Marker({ name, color, isActive, iconType }) {
+export default function Marker({ color, isActive, iconType }) {
   return (
-    <div 
-      className={classNames('_marker-place', { '_active': isActive })} 
-      style={{ backgroundColor: 'transparent' }}>
-      
+    <div className={classNames('_marker-place', { '_active': isActive })}>
       {getIcon(iconType, color)}
-
     </div>
   )
 }

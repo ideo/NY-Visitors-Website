@@ -22,6 +22,7 @@ import { BASE_ANIME_CONFIG } from '../utils'
 
 function animate() {
   anime({
+    // animate purple blob
     ...BASE_ANIME_CONFIG,
     targets: '#_path-blob-purple',
     d: [
@@ -31,6 +32,7 @@ function animate() {
     easing: 'easeOutBack',
   })
   anime({
+    // animate polkadot blob
     ...BASE_ANIME_CONFIG,
     targets: '#_path-polka',
     d: [
