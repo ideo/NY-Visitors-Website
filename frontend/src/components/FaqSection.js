@@ -147,7 +147,7 @@ export default function FaqSection({ data }) {
                 <h4 className="ma0 fw6">
                   {question}
                 </h4>
-                <p className="sans-serif f7 lh-copy">
+                <p className="sans-serif f6 mv3 lh-copy">
                   {answer}
                 </p>
               </li>

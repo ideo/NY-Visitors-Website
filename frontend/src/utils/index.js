@@ -52,35 +52,10 @@ export function getOffsetTop(el) {
 	return el.getBoundingClientRect().top
 }
 
-export function getVerticalGridAlignmentDiscrepancy(el) {
-	const elOffsetTop = getOffsetTop(el)
-	const gridSizePx = getPxFromWv(getGridSizeWv())
-	if (isDesktop() || (elOffsetTop % gridSizePx === 0)) {
-		// We don't need alignment on Desktop. All is done via CSS.
-		return 0
-	}
-	const gridCountFromTop = Math.floor(elOffsetTop / gridSizePx)
-	const targetGridCountFromTop = gridCountFromTop + 1
-	const discrepancy = (targetGridCountFromTop * gridSizePx) - elOffsetTop
-	return discrepancy
-}
-
-export function getGridSizeWv() {
-	if (isMobile()) { return 5 }
-	if (isTablet()) { return 5 }
-	if (isDesktop()) { return 2.5 }
-}
-
 export const BREAKPOINTS_EM = {
 	NOT_SMALL_MIN: 30,
 	DESKTOP_MIN: 60
 }
-
-export function getPxFromWv(wv) {
-	return parseFloat(document.documentElement.clientWidth / 100) * wv
-}
-
-
 
 export function getEmFromPx(px) {
 	return px / EM_BASIS // assuming every `em` is 16px
