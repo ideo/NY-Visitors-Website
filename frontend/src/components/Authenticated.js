@@ -29,7 +29,7 @@ export default withRouter(function Authenticated({ history }) {
 
   return (
     <div className="w-100"> 
-      <h1 className="serif self-center">
+      <h1 className="serif pa4 f-subheadline self-center">
         Logging you in ...
       </h1>
     </div>

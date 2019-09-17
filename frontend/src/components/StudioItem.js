@@ -18,7 +18,7 @@ export default function StudioItem({ data }) {
         title={question} />
       
       {isExpanded &&
-        <p className="_response-studio pl4 pr4 sans-serif f6">
+        <p className="_response-studio pl4 pr4 lh-copy mv3 sans-serif f6">
           { response }
         </p>
       }
