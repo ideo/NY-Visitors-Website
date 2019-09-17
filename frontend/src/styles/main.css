@@ -135,6 +135,10 @@ body  {
   z-index: var(--layer-11);
 }
 
+._modal-menu-link {
+  cursor: pointer;
+}
+
 ._branding-global {
   height: calc(var(--unit) * 3);
   background-color: var(--white);
@@ -688,6 +692,7 @@ body  {
 }
 
 ._footer-global ._branding-global {
+  z-index: var(--layer-5);
   height: calc(var(--unit) * 1);
   padding-left: calc(var(--unit) * 2.5);
   background-size: calc(var(--unit) * 2);
