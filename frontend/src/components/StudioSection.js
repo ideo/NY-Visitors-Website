@@ -4,6 +4,8 @@ import { withRouter } from 'react-router-dom'
 import ReactPlaceholder from 'react-placeholder'
 import 'react-placeholder/lib/reactPlaceholder.css'
 import Rellax from 'react-rellax'
+import classNames from 'classnames'
+
 
 /* 1st party */
 import StudioItem from './StudioItem'
@@ -15,7 +17,7 @@ import YellowBlobDesktop from '../styles/images/yellow-blob-desktop.png'
 import MiniPrinter from '../styles/images/mini-printer.png'
 import MiniPrinterDesktop from '../styles/images/mini-printer-desktop.png'
 import PolkaBlobBottom from '../styles/images/polka-blob-bottom.png'
-import OceanBlobBotton from '../styles/images/ocean-blob-bottom.png'
+import OceanBlobBottom from '../styles/images/ocean-blob-bottom.png'
 
 const Tips = ({ items }) => {
   let ret = null
@@ -83,14 +85,14 @@ export default withRouter(function StudioSection({ history }) {
       </Rellax>
       
       <Rellax className="_image-ocean-blob-bottom" as="div" speed={1.3} >
-        <img src={OceanBlobBotton} />
+        <img src={OceanBlobBottom} />
       </Rellax>
 
       <div className="flex flex-column items-end w-80 w-70">
         <div className="_inner-studio outline flex flex-column w-100 w-75-l">
 
-          <header className="_header-studio bb w-100 flex flex-row items-center">
-            <h3 className="f3 fw5 serif ma0 w-100">
+          <header className={classNames('_header-studio', 'bb', 'w-100', 'flex', 'flex-row', 'items-center', {'_unlocked': isAuthenticated()})}>
+            <h3 className="f3 fw5 serif ma0 w-80">
               03/ In the Studio
             </h3>
           </header>
