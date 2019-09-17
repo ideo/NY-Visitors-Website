@@ -8,6 +8,7 @@ import * as serviceWorker from './serviceWorker'
 
 /* css styles */
 import 'tachyons'
+import './styles/hamburgers.min.css'
 import './styles/fonts.css'
 import './styles/main.css'
 
@@ -20,3 +21,4 @@ ReactDOM.render(<App />, document.getElementById('root'))
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.register()
+
