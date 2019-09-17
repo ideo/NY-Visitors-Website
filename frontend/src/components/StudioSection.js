@@ -6,7 +6,6 @@ import 'react-placeholder/lib/reactPlaceholder.css'
 import Rellax from 'react-rellax'
 import classNames from 'classnames'
 
-
 /* 1st party */
 import StudioItem from './StudioItem'
 import { isAuthenticated, hydrate, logout, ENDPOINTS, LOCAL_STORAGE_AUTH_KEY, BASE_API_URL } from '../utils'
