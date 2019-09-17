@@ -267,6 +267,18 @@ body  {
   background-color: var(--white);
 }
 
+._header-studio {
+  background-position-y: center;
+  background-position-x: 95%;
+  background-repeat: no-repeat;
+  background-size: 3%;
+  background-image: url('./images/locked.png');
+}
+
+._header-studio._unlocked {
+  background-image: url('./images/unlocked.png');
+}
+
 ._inner-get-here,
 ._inner-places,
 ._inner-studio {
@@ -641,6 +653,7 @@ body  {
   user-select: none;
   transform: translate(-50%, -50%) scale(2);
   transition: 0.1s ease-in transform;
+  background-color: transparent;
 }
 
 ._marker-place ._icon-place {
@@ -657,10 +670,10 @@ body  {
   transform: scale(1.7);
 }
 
-._marker-place ._icon-place path {
+/* ._marker-place ._icon-place path {
   color: var(--black);
   enable-background: accumulate;
-}
+} */
 
 ._section-studio {
   margin-top: calc(var(--unit) * 6);
