@@ -39,19 +39,19 @@ export default function GlobalHeader() {
             <Link
               to="#get-here"
               onClick={toggleMenu}
-              className="_modal-menu-link flex black link f2 pa3">
+              className="_modal-menu-link _get-here justify-center flex black link f2 pa3">
               Get here
             </Link>
             <Link
               to="#around-studio"
               onClick={toggleMenu}
-              className="_modal-menu-link flex black link f2 pa3">
+              className="_modal-menu-link _around-studio justify-center flex black link f2 pa3">
               Around the Studio
             </Link>
             <Link 
               to="#in-studio"
               onClick={toggleMenu}
-              className="_modal-menu-link flex black link f2 pa3">
+              className="_modal-menu-link _in-studio justify-center flex black link f2 pa3">
               In the Studio
             </Link>
           </nav>
