@@ -49,7 +49,7 @@ export default function PlacesSection() {
   '#cccccc' 
   
   const isLoading = isEmpty(placeCategories)
-  console.log('places section :::: ', isLoading)
+
   return (
     <section
       id="around-studio"

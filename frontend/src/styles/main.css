@@ -73,10 +73,6 @@
   background: var(--yellow);
 }
 
-html, body {
-  /* min-height: 100vh; */
-}
-
 body  {
   background-size: var(--unit) var(--unit);
   background-image: linear-gradient(to right, var(--grid-color) .5px, transparent 0px), linear-gradient(to bottom, var(--grid-color) .5px, transparent 0px);
@@ -305,15 +301,12 @@ body  {
 
 ._wrapper-info {
   position: relative;
-  /* z-index: var(--layer-1); */
-  /* width: calc(var(--unit) * 15); */
   height: calc(var(--unit) * 9);
   overflow: visible;
 }
 
 ._section-get-here {
   position: relative;
-  /* z-index: var(--layer-1); */
   margin-top: calc(var(--unit) * 16);
   height: calc(var(--unit) * 26);
 }
@@ -338,21 +331,9 @@ body  {
   background-image: url('./images/unlocked.png');
 }
 
-._inner-get-here,
-._inner-places,
-._inner-studio {
-}
-
 ._content-get-here {
   height: calc(var(--unit) * 30);
   overflow-y: scroll;
-}
-
-._items-get-here {
-}
-
-._item-get-here {
-  
 }
 
 ._image-sign {
@@ -485,7 +466,6 @@ body  {
   position: absolute;
   top: calc(var(--unit) * -15);
   left: calc(var(--unit) * 8);
-  /* width: 80px; */
   z-index: var(--layer-3);
 } 
 
@@ -677,10 +657,6 @@ body  {
   cursor: pointer;
 }
 
-._section-places-list,
-._response-studio {
-}
-
 ._item-place {
   cursor: pointer;
   transition: color .2s ease;
@@ -730,11 +706,6 @@ body  {
 ._marker-place ._icon-ideo {
   transform: scale(1.7);
 }
-
-/* ._marker-place ._icon-place path {
-  color: var(--black);
-  enable-background: accumulate;
-} */
 
 ._section-studio {
   margin-top: calc(var(--unit) * 6);
@@ -803,19 +774,11 @@ body  {
   background-position-x: calc(var(--unit) * 0.2);
 }
 
-._message-footer {
-
-}
-
 /* 
   equivalent of Tachyon's `ns`
   everything above mobile size
 */
 @media screen and (min-width: 30em) {
-  :root {
-    /* --unit: 2.5vw; */
-  }
-
   ._nav-global {
     display: flex;
   }
@@ -836,10 +799,6 @@ body  {
 
   ._content-places {
     height: calc(var(--unit) * 23);
-  }
-
-  ._footer-studio {
-    /* height: calc(var(--unit) * 10); */
   }
 
   ._blob-black {
@@ -1036,14 +995,8 @@ body  {
     height: calc(var(--unit) * 2);
   }
 
-  /* ._nav-global {
-    display: flex;
-  } */
-  
   ._nav-global > a {
     margin-left: var(--unit);
-    /* background-color: var(--white); */
-    /* color: var(--black); */
   }
 
   ._branding-global {
@@ -1055,29 +1008,11 @@ body  {
   ._section-welcome {
     margin-top: calc(var(--unit) * 4);
   }
-  
-  ._inner-welcome {
-    /* position: relative; */
-  }
-  
-  ._article-info { 
-    /* height: calc(var(--unit) * 2); */
-  }
-  
-  ._article-info._address {
-  }
-  
-  ._article-info._network {
-  }
-  
-  ._article-info._contact {
-  }
-  
+
   ._wrapper-info {
     position: absolute;
     top: calc(var(--unit) * 6);
     width: calc(var(--unit) * 15);
-    /* height: calc(var(--unit) * 6); */
   }
   
   ._section-get-here {
@@ -1126,28 +1061,16 @@ body  {
   ._inner-expandable {
     position: relative;
   }
-  
-  ._article-expandable._expanded ._arrow-expandable {
-  }
-  
-  
+ 
   ._title-expandable {
     z-index: var(--layer-1);
     position: relative;
   }
-  
-  ._underline-expandable {
-    
-  }
-  
+
   ._heading-expandable:hover ._underline-expandable,
   ._article-expandable._expanded ._underline-expandable {
     visibility: visible;
     transform: scaleX(1);
-  }
-  
-  ._arrow-expandable {
-    
   }
   
   ._content-places ._arrow-expandable {
@@ -1169,16 +1092,6 @@ body  {
     animation-name: appear;
   }
   
-  ._item-place {
-    
-  }
-  
-  ._item-place:hover {
-  }
-  
-  ._item-place-name:after {
-  }
-  
   ._map-places {
     height: auto;
   }
@@ -1190,19 +1103,7 @@ body  {
   ._marker-place {
     transform: translate(-50%, -50%) scale(1);
   }
-  
-  ._marker-place ._icon-place {
     
-  }
-  
-  ._marker-place._active ._icon-place,
-  ._marker-place:hover ._icon-place {
-    
-  }
-  
-  ._marker-place ._icon-ideo {
-  }
-  
   ._section-studio {
     margin-top: 0;
     position: absolute;
@@ -1218,35 +1119,16 @@ body  {
     height: calc(var(--unit) * 7);
   }
   
-  ._button-group-login {
-    /* height: calc(var(--unit) * 1.5); */
-  }
-  
   ._title-google {
-    /* background: url('./images/google.png') center center no-repeat var(--white); */
     background-size: 20%;
   }
   
-  ._button-login {
-    /* background-position: center center; */
-    /* background-color: var(--black); */
-    /* background-repeat: no-repeat; */
-    /* font-size: 0; */
-    /* border: none; */
-    /* cursor: pointer; */
-  }
-  
   ._button-login._ideo {
-    /* background-image: url('./images/logo-white.svg'); */
     background-size: 30%;
   }
   
   ._button-login._ideoorg {
-    /* background-image: url('./images/orglogo-white.svg'); */
     background-size: 50%;
-    /* font-size: 0; */
-    /* border: none; */
-    /* border-left: 1px solid var(--white); */
   }
   
   ._footer-global {
