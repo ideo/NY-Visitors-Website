@@ -602,6 +602,7 @@ body  {
 }
 
 ._header-expandable {
+  cursor: pointer;
 }
 
 ._section-places-list,
@@ -654,6 +655,11 @@ body  {
 
 ._marker-place ._icon-ideo {
   transform: scale(1.7);
+}
+
+._marker-place ._icon-place path {
+  color: var(--black);
+  enable-background: accumulate;
 }
 
 ._section-studio {
