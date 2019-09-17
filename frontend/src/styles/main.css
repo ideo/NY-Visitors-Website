@@ -20,6 +20,10 @@
   --layer-3: 30;
   --layer-4: 40;
   --layer-5: 50;
+  --layer-6: 60;
+  --layer-7: 70;
+  --layer-8: 80;
+  --layer-9: 90;
   --layer-10: 100;
   --layer-11: 110;
   --layer-12: 120;
@@ -738,6 +742,7 @@ body  {
 }
 
 ._content-studio {
+  position: relative;
   height: calc(var(--unit) * 22);
 }
 
