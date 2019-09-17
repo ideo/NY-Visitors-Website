@@ -476,6 +476,12 @@ body  {
   z-index: var(--layer-1);
 }
 
+._image-yellow-blob-desktop {
+  display: none;
+  position: absolute;
+  z-index: var(--layer-4);
+}
+
 ._image-mini-printer {
   position: absolute;
   top: calc(var(--unit) * 175);
@@ -483,6 +489,11 @@ body  {
   width: 80px;
   height: auto;
   z-index: var(--layer-11);
+}
+
+._image-mini-printer-desktop {
+  display: none;
+  position: 'absolute';
 }
 
 ._image-polka-blob-bottom {
@@ -1238,7 +1249,6 @@ body  {
 
   ._image-polkaflat {
     top: calc(var(--unit) * 13);
-    border: 1px solid red;
     right: calc(var(--unit) * 0);
     width: calc(var(--unit) * 4);
   }
@@ -1285,50 +1295,66 @@ body  {
   }
 
   ._image-red-dot-3 {
-    top: calc(var(--unit) * 110);
+    top: calc(var(--unit) * 10);
     left: calc(var(--unit) * 0.5);
     width: 28px;
   }
   
   ._image-black-blob {
-    top: calc(var(--unit) * 105);
+    top: calc(var(--unit) * 15);
     left: calc(var(--unit) * 1);
     width: 130px;
   }
   
   ._image-golden-blob {
-    top: calc(var(--unit) * 100);
+    top: calc(var(--unit) * 10);
     right: calc(var(--unit) * 0);
     width: 120px;
   }
   
   ._image-purple-blob {
-    top: calc(var(--unit) * 104);
+    top: calc(var(--unit) * 12);
     right: calc(var(--unit) * 0);
     width: 220px;
   }
   
   ._image-printer {
-    top: calc(var(--unit) * 126);
+    top: calc(var(--unit) * 20);
     left: calc(var(--unit) * 3);
     width: 340px;
   }
   
   ._image-funky-blob {
-    top: calc(var(--unit) * 125);
+    top: calc(var(--unit) * 14);
     left: calc(var(--unit) * 0);
     width: 380px;
   }
   
   ._image-yellow-blob {
-    top: calc(var(--unit) * 148);
-    right: calc(var(--unit) * 0);
-    width: 180px;
+    display: none;
+  }
+
+  ._image-yellow-blob-desktop {
+    display: block;
+    top: calc(var(--unit) * 13);
+    left: calc(var(--unit) * 2);
+    width: 350px;
   }
   
   ._image-mini-printer {
-    top: calc(var(--unit) * 152);
-    right: calc(var(--unit) * 0);
+    display: none;
+    top: calc(var(--unit) * 12);
+    left: calc(var(--unit) * 3);
+    right: unset;
+    width: 130px;
+  }
+
+  ._image-mini-printer-desktop {
+    display: block;
+    position: absolute;
+    top: calc(var(--unit) * 12);
+    left: calc(var(--unit) * 7);
+    z-index: var(--layer-10);
     width: 130px;
   }
   

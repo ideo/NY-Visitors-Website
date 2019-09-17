@@ -11,7 +11,9 @@ import { isAuthenticated, hydrate, logout, ENDPOINTS, LOCAL_STORAGE_AUTH_KEY, BA
 import Printer from '../styles/images/printer.png'
 import FunkyBlob from '../styles/images/funky-blob.png'
 import YellowBlob from '../styles/images/yellow-blob.png'
+import YellowBlobDesktop from '../styles/images/yellow-blob-desktop.png'
 import MiniPrinter from '../styles/images/mini-printer.png'
+import MiniPrinterDesktop from '../styles/images/mini-printer-desktop.png'
 import PolkaBlobBottom from '../styles/images/polka-blob-bottom.png'
 import OceanBlobBotton from '../styles/images/ocean-blob-bottom.png'
 
@@ -62,8 +64,16 @@ export default withRouter(function StudioSection({ history }) {
         <img src={YellowBlob} />
       </Rellax>
       
+      <Rellax className="_image-yellow-blob-desktop" as="div" speed={1.1} >
+        <img src={YellowBlobDesktop} />
+      </Rellax>
+      
       <Rellax className="_image-mini-printer" as="div" speed={1.1} >
         <img src={MiniPrinter} />
+      </Rellax>
+
+      <Rellax className="_image-mini-printer-desktop" as="div" speed={1.1} >
+        <img src={MiniPrinterDesktop} />
       </Rellax>
       
       <Rellax className="_image-polka-blob-bottom" as="div" speed={1.1} >
