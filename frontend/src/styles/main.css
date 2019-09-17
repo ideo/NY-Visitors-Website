@@ -1260,25 +1260,31 @@ body  {
   }
 
   ._image-sun {
-    top: calc(var(--unit) * 70);
+    top: calc(var(--unit) * 63);
     left: calc(var(--unit) * 4);
     right: unset;
     width: 80px;
   }
 
   ._image-red-dot-1 {
-    top: calc(var(--unit) * 65);
-    left: calc(var(--unit) * 4);
+    top: calc(var(--unit) * 58);
+    left: calc(var(--unit) * 3.8);
     right: unset;
     width: 50px;
   }
   
   ._image-red-dot-2 {
     position: absolute;
-    top: calc(var(--unit) * 63);  
-    left: calc(var(--unit) * 4);
+    top: calc(var(--unit) * 51);  
+    left: calc(var(--unit) * 3);
     right: unset;
     width: 35px;
+  }
+
+  ._image-red-dot-3 {
+    top: calc(var(--unit) * 31.5);
+    left: calc(var(--unit) * 3);
+    width: 28px;
   }
 
   ._image-epic-poster {
@@ -1292,12 +1298,6 @@ body  {
     top: calc(var(--unit) * -20);
     left: calc(var(--unit) * 2);
     width: calc(var(--unit) * 20);
-  }
-
-  ._image-red-dot-3 {
-    top: calc(var(--unit) * 10);
-    left: calc(var(--unit) * 0.5);
-    width: 28px;
   }
   
   ._image-black-blob {
@@ -1352,7 +1352,7 @@ body  {
   ._image-mini-printer-desktop {
     display: block;
     position: absolute;
-    top: calc(var(--unit) * 12);
+    top: calc(var(--unit) * 11);
     left: calc(var(--unit) * 7);
     z-index: var(--layer-10);
     width: 130px;

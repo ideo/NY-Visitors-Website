@@ -46,7 +46,9 @@ export default function FaqSection({ data }) {
   animate()
   
   return (
-    <section className="_section-get-here flex flex-column w-100 items-center">        
+    <section
+      id="get-here"
+      className="_section-get-here flex flex-column w-100 items-center">        
       
       <Rellax className="_image-sign" as="div" speed={2} >
         <img src={Sign} />

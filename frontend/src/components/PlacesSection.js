@@ -5,7 +5,7 @@ import Rellax from 'react-rellax'
 /* 1st party */
 import PlaceCategory from './PlaceCategory'
 import PlacesMap from './PlacesMap'
-import { hydrate, ENDPOINTS, isMobile, isDesktop } from '../utils'
+import { hydrate, ENDPOINTS, isDesktop } from '../utils'
 import Key from '../styles/images/key.png'
 import RedDot1 from '../styles/images/red-dot-1.png'
 import BlackBlob from '../styles/images/black-blob.png'
@@ -47,7 +47,9 @@ export default function PlacesSection() {
     '#cccccc' 
 
   return (
-    <section className="_section-places flex flex-column w-100 mt0-l items-center">        
+    <section
+      id="around-studio"
+      className="_section-places flex flex-column w-100 mt0-l items-center">        
       
       <Rellax className="_image-key" as="div" speed={1.8} >
         <img src={Key} />

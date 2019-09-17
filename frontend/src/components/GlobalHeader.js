@@ -1,8 +1,11 @@
 /* 3rd party */
 import React, { useState } from 'react'
 import classNames from 'classnames'
+import { HashLink as Link } from 'react-router-hash-link'
+import { withRouter } from 'react-router-dom'
 
-export default function GlobalHeader() {
+
+export default withRouter(function GlobalHeader({history}) {
   
   // mobile menu state
   const [isMenuOpen, setMenuIsOpen] = useState(false)
@@ -13,12 +16,12 @@ export default function GlobalHeader() {
 
   return (
     <header className="_header-global serif flex flex-row justify-between w-100">        
-      <div className="_branding-global flex serif w-50 w-30-l outline">
-        
+      
+      {/* branding */}
+      <div className="_branding-global flex serif w-50 w-30-l outline">  
         <span className="f7 f6-m f5-l self-center">
           Visitor Guide | New York
         </span>
-      
       </div>
 
       {/* mobile menu */}
@@ -34,34 +37,59 @@ export default function GlobalHeader() {
       {isMenuOpen &&
         <div className="_modal-menu serif flex flex-column justify-around">
           <nav className="flex flex-column items-end tr pa5">
-            <a href="#get-here" className="flex black link f2 pa3 ">Get here</a>
-            <a href="#around-studio" className="flex black link f2 pa3">Around the Studio</a>
-            <a href="#in-studio" className="flex black link f2 pa3">In the Studio</a>
+            <Link
+              to="#get-here"
+              onClick={toggleMenu}
+              onTouchEnd={toggleMenu}
+              className="flex black link f2 pa3">
+              Get here
+            </Link>
+            <a
+              onClick={toggleMenu}
+              onTouchEnd={(e) => {
+                history.push('#around-studio')
+                // toggleMenu(e)
+                // setMenuIsOpen(!isMenuOpen)
+              }}
+              className="flex black link f2 pa3">
+              Around the Studio
+            </a>
+            <Link 
+              to="#in-studio"
+              onClick={toggleMenu}
+              onTouchEnd={toggleMenu}
+              className="flex black link f2 pa3">
+              In the Studio
+            </Link>
           </nav>
-
-
         </div>
       }
 
+      {/* desktop menu */}
       <nav className="_nav-global w-50 flex flex-row justify-end">
-        
-        <a href="#" className="flex pa3 w-30-ns w-20-l dib justify-center outline link underline-hover">
+        <Link 
+          to="#get-here" 
+          className="flex pa3 w-30-ns w-20-l dib justify-center outline link underline-hover">
           <span className="f5-ns f6  self-center">
             Get Here
           </span>
-        </a>
-        <a href="#" className="flex pa3 w-30-ns w-30-l dib justify-center outline link underline-hover">
+        </Link>
+        <Link 
+          to="#around-studio" 
+          className="flex pa3 w-30-ns w-30-l dib justify-center outline link underline-hover">
           <span className="f5-ns f6 self-center">
             Around the Studio
           </span>
-        </a>
-        <a href="#" className="f5-ns pa3 f6 flex w-30-ns w-20-l dib justify-center outline link underline-hover">
+        </Link>
+        <Link 
+          to="#in-studio" 
+          className="f5-ns pa3 f6 flex w-30-ns w-20-l dib justify-center outline link underline-hover">
           <span className="self-center">
             In the Studio
           </span>
-        </a>
-      
+        </Link>
       </nav>
+
     </header>
   )
-}
+})
