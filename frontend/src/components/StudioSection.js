@@ -50,7 +50,9 @@ export default withRouter(function StudioSection({ history }) {
   }, [])
 
   return (
-    <section className="_section-studio flex flex-column w-100 items-center">        
+    <section
+      id="in-studio"
+      className="_section-studio flex flex-column w-100 items-center">        
       
       <Rellax className="_image-printer" as="div" speed={2.1} >
         <img src={Printer} />

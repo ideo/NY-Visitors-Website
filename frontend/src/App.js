@@ -21,7 +21,7 @@ const Root = () => {
     async function hydrateApp() {
       const faqs = await hydrate(ENDPOINTS.FAQS, 'id:ASC')
       setfaqs(faqs)
-      // We only need 1 item here: the 1st item.
+      // We only need 1 item here: the 1st item
       const [info] = await hydrate(ENDPOINTS.INFOS, 'id:ASC')
       setInfo(info)
     }
