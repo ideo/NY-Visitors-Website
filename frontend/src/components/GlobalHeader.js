@@ -2,10 +2,9 @@
 import React, { useState } from 'react'
 import classNames from 'classnames'
 import { HashLink as Link } from 'react-router-hash-link'
-import { withRouter } from 'react-router-dom'
 
 
-export default withRouter(function GlobalHeader({history}) {
+export default function GlobalHeader() {
   
   // mobile menu state
   const [isMenuOpen, setMenuIsOpen] = useState(false)
@@ -40,25 +39,19 @@ export default withRouter(function GlobalHeader({history}) {
             <Link
               to="#get-here"
               onClick={toggleMenu}
-              onTouchEnd={toggleMenu}
-              className="flex black link f2 pa3">
+              className="_modal-menu-link flex black link f2 pa3">
               Get here
             </Link>
-            <a
+            <Link
+              to="#around-studio"
               onClick={toggleMenu}
-              onTouchEnd={(e) => {
-                history.push('#around-studio')
-                // toggleMenu(e)
-                // setMenuIsOpen(!isMenuOpen)
-              }}
-              className="flex black link f2 pa3">
+              className="_modal-menu-link flex black link f2 pa3">
               Around the Studio
-            </a>
+            </Link>
             <Link 
               to="#in-studio"
               onClick={toggleMenu}
-              onTouchEnd={toggleMenu}
-              className="flex black link f2 pa3">
+              className="_modal-menu-link flex black link f2 pa3">
               In the Studio
             </Link>
           </nav>
@@ -92,4 +85,4 @@ export default withRouter(function GlobalHeader({history}) {
 
     </header>
   )
-})
+}
