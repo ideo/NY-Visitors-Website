@@ -10,6 +10,7 @@
   --unit: 5vw;
   --underline-height: 6px;
   --grid-color: #878787;
+  --light-grey: #878787;
   --white: #ffffff;
   --black: #000000;
   --yellow: #fcf113;
@@ -99,6 +100,7 @@ body  {
   height: calc(var(--unit) * 3);
   border: 1px solid var(--black);
   cursor: pointer;  
+  -webkit-tap-highlight-color: transparent;
 }
 
 ._button-expand-mobile-nav .hamburger-box {
@@ -110,7 +112,7 @@ body  {
 
 ._button-expand-mobile-nav.hamburger:hover, 
 ._button-expand-mobile-nav.hamburger.is-active:hover {
-  opacity: 1; /* verriding hamburger.css */
+  opacity: 1; /* overriding hamburger.css */
 }
 
 ._button-expand-mobile-nav.is-active {
@@ -124,19 +126,38 @@ body  {
 }
 
 ._modal-menu {
+  position: fixed; 
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-  background-color: var(--white);
-  /* background-size: var(--unit) var(--unit); */
-  /* background-image: linear-gradient(to right, var(--white) .5px, transparent 0px), linear-gradient(to bottom, var(--white) .5px, transparent 0px); */
-  position: fixed; 
   z-index: var(--layer-11);
+  background-color: var(--white);
+  background-size: var(--unit) var(--unit);
+  background-image: linear-gradient(to right, var(--light-grey) .5px, transparent 0px), linear-gradient(to bottom, var(--light-grey) .5px, transparent 0px);
 }
 
 ._modal-menu-link {
   cursor: pointer;
+  position: absolute;
+  border: 1px solid var(--light-grey);
+  background-color: var(--white);
+  right: calc(var(--unit) * 3);
+}
+
+._modal-menu-link._get-here {
+  top: calc(var(--unit) * 8);
+  width: calc(var(--unit) * 10);
+}
+
+._modal-menu-link._around-studio {
+  top: calc(var(--unit) * 14);
+  width: calc(var(--unit) * 11);
+}
+
+._modal-menu-link._in-studio {
+  top: calc(var(--unit) * 22);
+  width: calc(var(--unit) * 14);
 }
 
 ._branding-global {
@@ -924,7 +945,6 @@ body  {
   covers roughly desktops
 */
 @media screen and (min-width: 60em) {
-
   :root {
     --unit: 2.5vw;
   }
