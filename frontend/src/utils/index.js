@@ -9,6 +9,8 @@ export const LOCAL_STORAGE_AUTH_KEY = REACT_APP_LS_AUTH_KEY
 export const AUTHORIZED_DOMAIN = REACT_APP_AUTHORIZED_GOOGLE_DOMAIN
 export const BASE_API_URL = REACT_APP_BASE_API_URL
 
+const EM_BASIS = 16
+
 export async function hydrate(endpoint, sortBy = '') {
 	const sort = sortBy.length ? `?_sort=${sortBy}` : ''
 	const jwtToken = getAuthToken() ? getAuthToken().jwt : ''
@@ -44,6 +46,79 @@ export function isAuthenticated() {
 export function logout() {
 	window.localStorage.removeItem(LOCAL_STORAGE_AUTH_KEY)
 	window.location.reload()
+}
+
+export function getOffsetTop(el) {
+	return el.getBoundingClientRect().top
+}
+
+export function getVerticalGridAlignmentDiscrepancy(el) {
+	const elOffsetTop = getOffsetTop(el)
+	const gridSizePx = getPxFromWv(getGridSizeWv())
+	if (isDesktop() || (elOffsetTop % gridSizePx === 0)) {
+		// We don't need alignment on Desktop. All is done via CSS.
+		return 0
+	}
+	const gridCountFromTop = Math.floor(elOffsetTop / gridSizePx)
+	const targetGridCountFromTop = gridCountFromTop + 1
+	const discrepancy = (targetGridCountFromTop * gridSizePx) - elOffsetTop
+	return discrepancy
+}
+
+export function getGridSizeWv() {
+	if (isMobile()) { return 5 }
+	if (isTablet()) { return 5 }
+	if (isDesktop()) { return 2.5 }
+}
+
+export const BREAKPOINTS_EM = {
+	NOT_SMALL_MIN: 30,
+	DESKTOP_MIN: 60
+}
+
+export function getPxFromWv(wv) {
+	return parseFloat(document.documentElement.clientWidth / 100) * wv
+}
+
+export function getVwFromPx(px) {
+	const windowWidth = document.documentElement.clientWidth
+	return parseFloat(px / windowWidth) * 100
+}
+
+export function getEmFromPx(px) {
+	return px / EM_BASIS // assuming every `em` is 16px
+}
+
+export function getPxFromEm(em) {
+	return em * EM_BASIS // assuming every `em` is 16px
+}
+
+export function getWindowWidthEm() {
+	const windowWidthPx = document.documentElement.clientWidth
+	return getEmFromPx(Math.round(windowWidthPx))
+}
+
+export function isMobile() {
+	return getWindowWidthEm() < BREAKPOINTS_EM.NOT_SMALL_MIN
+}
+
+export function isTablet() {
+	const windowWidthEm = getWindowWidthEm()
+	return windowWidthEm >= BREAKPOINTS_EM.NOT_SMALL_MIN && windowWidthEm < BREAKPOINTS_EM.NOT_SMALL_MIN
+}
+
+export function isDesktop() {
+	return getWindowWidthEm() >= BREAKPOINTS_EM.DESKTOP_MIN
+}
+
+export const BASE_ANIME_CONFIG = {
+	easing: 'easeOutQuad',
+	duration: 6000,
+	loop: true,
+	autoplay: true,
+	delay: 400,
+	endDelay: 0,
+	direction: 'alternate'
 }
 
 export const ENDPOINTS = {

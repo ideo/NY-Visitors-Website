@@ -13,7 +13,7 @@ import Authenticated from './components/Authenticated'
 import { hydrate, ENDPOINTS } from './utils'
 
 const Root = () => {
-  
+
   // hydrate `faq` and `info` items from endpoint
   const [faqs, setfaqs] = useState([])
   const [info, setInfo] = useState([])
