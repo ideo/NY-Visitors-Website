@@ -80,10 +80,7 @@ export function getPxFromWv(wv) {
 	return parseFloat(document.documentElement.clientWidth / 100) * wv
 }
 
-export function getVwFromPx(px) {
-	const windowWidth = document.documentElement.clientWidth
-	return parseFloat(px / windowWidth) * 100
-}
+
 
 export function getEmFromPx(px) {
 	return px / EM_BASIS // assuming every `em` is 16px
