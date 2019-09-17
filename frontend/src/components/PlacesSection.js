@@ -1,8 +1,10 @@
 /* 3rd party */
 import React, { useState, useEffect } from 'react'
 import Rellax from 'react-rellax'
+import isEmpty from 'lodash.isempty'
 
 /* 1st party */
+import Loading from './Loading'
 import PlaceCategory from './PlaceCategory'
 import PlacesMap from './PlacesMap'
 import { hydrate, ENDPOINTS, isDesktop } from '../utils'
@@ -23,29 +25,31 @@ export default function PlacesSection() {
     }
     hydratePlaces()
   }, [])
-
+  
   // expanding & collapsing UI
   const [expandedCategoryIndex, setExpandedCategoryIndex] = useState(0)
   function handlePlaceCategoryClick(index) {
     setExpandedCategoryIndex(index)
   }  
-
+  
   // hovering + touching a place from the places list
   const [activePlaceId, setActivePlaceId] = useState(null)
   function handleActivePlaceIdChange(id) {
     setActivePlaceId(id)
   }
-
+  
   let currentPlaces = 
-    placeCategories[expandedCategoryIndex] ? 
-    placeCategories[expandedCategoryIndex].places :
-    [] 
-
+  placeCategories[expandedCategoryIndex] ? 
+  placeCategories[expandedCategoryIndex].places :
+  [] 
+  
   let currentCategoryColor = 
-    placeCategories[expandedCategoryIndex] ? 
-    placeCategories[expandedCategoryIndex].color :
-    '#cccccc' 
-
+  placeCategories[expandedCategoryIndex] ? 
+  placeCategories[expandedCategoryIndex].color :
+  '#cccccc' 
+  
+  const isLoading = isEmpty(placeCategories)
+  console.log('places section :::: ', isLoading)
   return (
     <section
       id="around-studio"
@@ -80,14 +84,14 @@ export default function PlacesSection() {
         </header>
 
         <div className="_content-places w-100 flex flex-column flex-row-l">
-          {!isDesktop() && 
+          {!isDesktop() &&
             <PlacesMap
               activePlaceId={activePlaceId}
               data={currentPlaces}
               color={currentCategoryColor} />
           }
           <div className="_list-places w-100 w-50-l br-l overflow-y-scroll">
-
+            {isLoading && <Loading />}
             {placeCategories.map((placeCategory, index) => (
               <PlaceCategory
                 key={index}
@@ -99,7 +103,7 @@ export default function PlacesSection() {
             ))}
 
           </div>
-          {isDesktop() && 
+          {isDesktop() &&
             <PlacesMap
               activePlaceId={activePlaceId}
               data={currentPlaces}

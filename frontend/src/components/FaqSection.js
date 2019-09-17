@@ -2,8 +2,10 @@
 import React from 'react'
 import Rellax from 'react-rellax'
 import anime from 'animejs'
+import isEmpty from 'lodash.isempty'
 
 /* 1st party */
+import Loading from './Loading'
 import PolkadotTexture from '../styles/images/polkadot-texture.jpg'
 import PolkadotFlat from '../styles/images/polkaflat.png'
 import EpicPoster from '../styles/images/epic.png'
@@ -46,7 +48,9 @@ function animate() {
 
 export default function FaqSection({ data }) { 
   animate()
-  
+
+  const isLoading = isEmpty(data)
+
   return (
     <section
       id="get-here"
@@ -97,8 +101,7 @@ export default function FaqSection({ data }) {
           width="300"
           height="300"
           viewBox="0 0 600 600"
-          xmlns="http://www.w3.org/2000/svg"
-        >
+          xmlns="http://www.w3.org/2000/svg">
           <clipPath id="_mask-polka" transform="translate(80,120) scale(0.4)">
             <path
               id="_path-polka"
@@ -141,9 +144,11 @@ export default function FaqSection({ data }) {
           <h3 className="f3 fw5 serif ma0 w-100">01/ Get Here</h3>
         </header>
         <div className="_content-get-here pt3 pr3 pb3 w-100">
+          {isLoading && <Loading />}
+
           <ul className="_items-get-here ma0 serif">
             {data.map(({ question, answer }, index) => (
-              <li className="mb3" key={index}>
+              <li className="mb5" key={index}>
                 <h4 className="ma0 fw6">
                   {question}
                 </h4>

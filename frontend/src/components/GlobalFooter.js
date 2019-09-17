@@ -1,5 +1,6 @@
 /* 3rd party */
 import React from 'react'
+import isEmpty from 'lodash.isempty'
 
 /* 1st party */
 import Address from './Address'
@@ -7,6 +8,8 @@ import Network from './Network'
 import Contact from './Contact'
 
 export default function GlobalFooter({ data }) {
+  const isLoading = isEmpty(data)
+
   const address = {
     line1: data['address-line-1'],
     line2: data['address-line-2'],
@@ -33,15 +36,15 @@ export default function GlobalFooter({ data }) {
       
       <div className="w-100 w-80-l flex flex-column flex-row-l">
         <div className="w-80 self-center w-30-l flex f7">
-          <Address data={address} />
+          <Address isLoading={isLoading} data={address} />
         </div>
         
         <div className="w-80 self-center w-30-l flex">
-          <Network data={network} />
+          <Network isLoading={isLoading} data={network} />
         </div>
 
         <div className="w-80 self-center w-30-l flex">
-          <Contact data={contact} />
+          <Contact isLoading={isLoading} data={contact} />
         </div>
       </div>
     </footer>

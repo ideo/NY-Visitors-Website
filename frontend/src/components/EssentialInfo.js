@@ -1,6 +1,7 @@
 /* 3rd party */
 import React from 'react'
 import anime from 'animejs'
+import isEmpty from 'lodash.isempty'
 
 /* 1st party */
 import Address from './Address'
@@ -39,6 +40,8 @@ function animate() {
 
 export default function EssentialInfo({ data }) {
   animate()
+  
+  const isLoading = isEmpty(data)
 
   const address = {
     line1: data['address-line-1'],
@@ -79,9 +82,9 @@ export default function EssentialInfo({ data }) {
         </g>
       </svg>
 
-      <Address data={address} />
-      <Network data={network} />
-      <Contact data={contact} />  
+      <Address isLoading={isLoading} data={address} />
+      <Network isLoading={isLoading} data={network} />
+      <Contact isLoading={isLoading} data={contact} />  
     </div>
   )
 }
