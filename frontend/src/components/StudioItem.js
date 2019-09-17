@@ -7,7 +7,6 @@ import ExpandableHeader from './ExpandableHeader'
 
 export default function StudioItem({ data }) {
   const { question, response } = data
-
   const [isExpanded, setIsExpanded] = useState(false)
 
   return (
@@ -19,7 +18,7 @@ export default function StudioItem({ data }) {
       
       {isExpanded &&
         <p className="_response-studio pl4 pr4 lh-copy mv3 sans-serif f6">
-          { response }
+          {response}
         </p>
       }
       

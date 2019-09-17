@@ -38,6 +38,18 @@
     opacity: 1;
   }
 }
+
+@keyframes dots {
+  50% {
+    transform: translateX(-31px);
+  }
+}
+
+@keyframes dot {
+  50% {
+    transform: translateX(96px);
+  }
+}
   
 /* 
   override Tachyon's `serif` and `sans-serif` font stacks
@@ -76,6 +88,49 @@ body  {
   that they were hand-authored, and do not come from tachyons.css
   or any other 3rd party source
 */
+
+/* loading animation - credits: https://dribbble.com/shots/5092176-Newton-Loader */
+._loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 142px;
+  height: 40px;
+  margin: -20px 0 0 -71px;
+  background: var(--white);
+  filter: contrast(20);
+}
+
+._loading ._dot {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 12px;
+  left: 15px;
+  filter: blur(4px);
+  background: var(--black);
+  border-radius: 50%;
+  transform: translateX(0);
+  animation: dot 2.8s infinite;
+}
+
+._loading ._dots {
+  transform: translateX(0);
+  margin-top: 12px;
+  margin-left: 31px;
+  animation: dots 2.8s infinite;
+}
+._loading ._dots span {
+  display: block;
+  float: left;
+  width: 16px;
+  height: 16px;
+  margin-left: 16px;
+  filter: blur(4px);
+  background: var(--black);
+  border-radius: 50%;
+}
+
 ._header-global {
   height: calc(var(--unit) * 3);
   margin-bottom: calc(var(--unit) * 3)
@@ -140,9 +195,9 @@ body  {
 ._modal-menu-link {
   cursor: pointer;
   position: absolute;
-  border: 1px solid var(--light-grey);
   background-color: var(--white);
   right: calc(var(--unit) * 3);
+  height: calc(var(--unit) * 6);
 }
 
 ._modal-menu-link._get-here {
@@ -156,7 +211,7 @@ body  {
 }
 
 ._modal-menu-link._in-studio {
-  top: calc(var(--unit) * 22);
+  top: calc(var(--unit) * 20);
   width: calc(var(--unit) * 14);
 }
 
@@ -558,6 +613,7 @@ body  {
 
 ._content-places {
   height: calc(var(--unit) * 37);
+  position: relative;
   overflow-y: scroll;
 }
 
@@ -641,6 +697,7 @@ body  {
 
 ._list-places {
   height: calc(var(--unit) * 22);
+  position: relative;
 }
 
 ._marker-place {
