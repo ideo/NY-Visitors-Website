@@ -1,12 +1,14 @@
 /* 3rd party */
 import React, { useState, useEffect } from 'react'
 import { withRouter } from 'react-router-dom'
-import ReactPlaceholder from 'react-placeholder'
-import 'react-placeholder/lib/reactPlaceholder.css'
 import Rellax from 'react-rellax'
 import classNames from 'classnames'
+import isEmpty from 'lodash.isempty'
+import ReactPlaceholder from 'react-placeholder'
+import 'react-placeholder/lib/reactPlaceholder.css'
 
 /* 1st party */
+import Loading from './Loading'
 import StudioItem from './StudioItem'
 import { isAuthenticated, hydrate, logout, ENDPOINTS, LOCAL_STORAGE_AUTH_KEY, BASE_API_URL } from '../utils'
 import Printer from '../styles/images/printer.png'
@@ -49,6 +51,8 @@ export default withRouter(function StudioSection({ history }) {
     }
     hydrateTips()
   }, [])
+
+  const isLoading = isEmpty(tips)
 
   return (
     <section
@@ -98,6 +102,7 @@ export default withRouter(function StudioSection({ history }) {
 
           <div className="_content-studio w-100 flex flex-column overflow-y-scroll">
             <ReactPlaceholder className='pa3' type='text' rows={18} ready={isAuthenticated()}>
+              {isLoading && <Loading />}
               <Tips items={tips} />
             </ReactPlaceholder>
           </div>
