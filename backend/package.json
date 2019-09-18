@@ -21,7 +21,7 @@
     "knex": "latest",
     "lodash": "^4.17.5",
     "nanoid": "^2.1.0",
-    "pg": "latest",
+    "pg": "^7.12.1",
     "strapi": "3.0.0-beta.15",
     "strapi-admin": "3.0.0-beta.15",
     "strapi-hook-bookshelf": "3.0.0-beta.15",
@@ -32,6 +32,7 @@
     "strapi-plugin-settings-manager": "3.0.0-beta.15",
     "strapi-plugin-upload": "3.0.0-beta.15",
     "strapi-plugin-users-permissions": "3.0.0-beta.15",
+    "strapi-provider-upload-aws-s3": "^3.0.0-beta.16.5",
     "strapi-utils": "3.0.0-beta.15"
   },
   "author": {
