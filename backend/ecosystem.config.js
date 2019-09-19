@@ -2,20 +2,18 @@ module.exports = {
   apps : [
       {
         name: "ideo-nyc-visitors-backend",
-        script: "./server.js",
+        cwd: "/home/ubuntu/NY-Visitors-Website/backend",
+	script: "npm",
+	args: "start",
         watch: true,
-        env: {
-            "PORT": 1337,
-            "NODE_ENV": "production"
-        },
         env_production: {
-            "DATABASE_HOST": process.env.DATABASE_HOST,
-            "DATABASE_PORT": process.env.DATABASE_PORT,
-            "DATABASE_NAME": process.env.DATABASE_NAME,
-            "DATABASE_USERNAME": process.env.DATABASE_USERNAME,
-            "DATABASE_PASSWORD": process.env.DATABASE_PASSWORD,
-            "PORT": 1337,
             "NODE_ENV": "production",
+            "DATABASE_HOST": "nyvisitor-db-instance.cwynzxw34i7s.us-east-1.rds.amazonaws.com",
+            "DATABASE_PORT": "5432",
+            "DATABASE_NAME": "nyvisitor",
+            "DATABASE_USERNAME": "nyvisitor",
+            "DATABASE_PASSWORD": "R0ck1234!",
+            "PORT": "1337",
         }
       }
   ]
