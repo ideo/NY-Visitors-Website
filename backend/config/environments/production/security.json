@@ -37,7 +37,7 @@
       "Server-Authorization"
     ],
     "maxAge": 31536000,
-    "credentials": true,
+    "credentials": false,
     "methods": [
       "GET",
       "POST",
