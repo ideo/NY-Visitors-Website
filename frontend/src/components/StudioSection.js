@@ -35,7 +35,7 @@ const Tips = ({ items }) => {
   return ret
 }
 
-const converter = new showdown.Converter()
+const { makeHtml } = new showdown.Converter()
 
 export default withRouter(function StudioSection({ history }) {
 
@@ -48,8 +48,12 @@ export default withRouter(function StudioSection({ history }) {
       if (response.statusCode && response.statusCode === 403) {
         console.log('We are not logged in, it seems.')
       } else if (Array.isArray(response)) {
-        console.log(response)
-        data = response
+        data = response.map(({ question, response }) => {
+          return {
+            question,
+            response: makeHtml(response)
+          }
+        })
       }
       setTips(data)
     }
