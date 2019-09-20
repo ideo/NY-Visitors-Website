@@ -35,7 +35,7 @@ const Tips = ({ items }) => {
   return ret
 }
 
-const { makeHtml } = new showdown.Converter()
+const converter = new showdown.Converter();
 
 export default withRouter(function StudioSection({ history }) {
 
@@ -50,8 +50,7 @@ export default withRouter(function StudioSection({ history }) {
       } else if (Array.isArray(response)) {
         data = response.map(({ question, response }) => {
           return {
-            question,
-            response: makeHtml(response)
+            question, response: converter.makeHtml(response)
           }
         })
       }
@@ -109,7 +108,7 @@ export default withRouter(function StudioSection({ history }) {
           </header>
 
           <div className="_content-studio w-100 flex flex-column overflow-y-scroll">
-            <ReactPlaceholder className='pa3' type='text' rows={18} ready={isAuthenticated()}>
+            <ReactPlaceholder className='pa3' type='text' rows={18} ready={true}>
               {isLoading && <Loading />}
               <Tips items={tips} />
             </ReactPlaceholder>
