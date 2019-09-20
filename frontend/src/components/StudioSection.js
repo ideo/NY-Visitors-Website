@@ -5,6 +5,7 @@ import Rellax from 'react-rellax'
 import classNames from 'classnames'
 import isEmpty from 'lodash.isempty'
 import ReactPlaceholder from 'react-placeholder'
+import showdown from 'showdown'
 import 'react-placeholder/lib/reactPlaceholder.css'
 
 /* 1st party */
@@ -34,6 +35,8 @@ const Tips = ({ items }) => {
   return ret
 }
 
+const converter = new showdown.Converter()
+
 export default withRouter(function StudioSection({ history }) {
 
   // hydrate `tips` from endpoint
@@ -45,6 +48,7 @@ export default withRouter(function StudioSection({ history }) {
       if (response.statusCode && response.statusCode === 403) {
         console.log('We are not logged in, it seems.')
       } else if (Array.isArray(response)) {
+        console.log(response)
         data = response
       }
       setTips(data)
