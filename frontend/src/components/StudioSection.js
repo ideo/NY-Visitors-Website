@@ -131,11 +131,8 @@ export default withRouter(function StudioSection({ history }) {
                 <div className="_button-group-login outline flex flex-row w-100 mt4">
                   <div className="_title-google outline flex w-10"></div>
                   <button 
-                    className="_button-login _ideo flex w-50"
+                    className="_button-login _ideo flex w-100"
                     onClick={() => { window.location = `${BASE_API_URL}/connect/google` }}>IDEO</button>
-                  <button 
-                    className="_button-login _ideoorg flex w-50"
-                    onClick={() => { window.location = `${BASE_API_URL}/connect/google` }}>IDEO.ORG</button>
                 </div>
               </>
             }
