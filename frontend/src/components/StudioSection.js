@@ -67,35 +67,35 @@ export default withRouter(function StudioSection({ history }) {
       className="_section-studio flex flex-column w-100 items-center">        
       
       <Rellax className="_image-printer" as="div" speed={2.1} >
-        <img src={Printer} />
+        <img src={Printer} alt="printer" />
       </Rellax>
       
       <Rellax className="_image-funky-blob" as="div" speed={2.1} >
-        <img src={FunkyBlob} />
+        <img src={FunkyBlob} alt="funky blob" />
       </Rellax>
       
       <Rellax className="_image-yellow-blob" as="div" speed={1.1} >
-        <img src={YellowBlob} />
+        <img src={YellowBlob} alt="yellow blob" />
       </Rellax>
       
       <Rellax className="_image-yellow-blob-desktop" as="div" speed={1.1} >
-        <img src={YellowBlobDesktop} />
+        <img src={YellowBlobDesktop} alt="yellow blob" />
       </Rellax>
       
       <Rellax className="_image-mini-printer" as="div" speed={1.1} >
-        <img src={MiniPrinter} />
+        <img src={MiniPrinter} alt="mini printer" />
       </Rellax>
 
       <Rellax className="_image-mini-printer-desktop" as="div" speed={1.1} >
-        <img src={MiniPrinterDesktop} />
+        <img src={MiniPrinterDesktop} alt="mini printer" />
       </Rellax>
       
       <Rellax className="_image-polka-blob-bottom" as="div" speed={1.1} >
-        <img src={PolkaBlobBottom} />
+        <img src={PolkaBlobBottom} alt="polka blob" />
       </Rellax>
       
       <Rellax className="_image-ocean-blob-bottom" as="div" speed={1.3} >
-        <img src={OceanBlobBottom} />
+        <img src={OceanBlobBottom} alt="ocean blob" />
       </Rellax>
 
       <div className="flex flex-column items-end w-80 w-70">
