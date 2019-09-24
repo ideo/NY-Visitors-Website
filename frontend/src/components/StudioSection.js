@@ -108,7 +108,7 @@ export default withRouter(function StudioSection({ history }) {
           </header>
 
           <div className="_content-studio w-100 flex flex-column overflow-y-scroll">
-            <ReactPlaceholder className='pa3' type='text' rows={18} ready={true}>
+            <ReactPlaceholder className='pa3' type='text' rows={18} ready={isAuthenticated()}>
               {isLoading && <Loading />}
               <Tips items={tips} />
             </ReactPlaceholder>
