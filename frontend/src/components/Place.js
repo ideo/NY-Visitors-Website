@@ -1,14 +1,13 @@
 /* 3rd party */
 import React from 'react'
 
-
-export default function Place({ data, handlePlaceMouseEnter, handlePlaceMouseLeave, handlePlaceClick }) {
+export default function Place({ data, handlePlaceMouseEnter, handlePlaceMouseLeave }) {
   const { name, address } = data
   const directions = `https://www.google.com/maps/dir/?api=1&origin=IDEO&destination=${name.split(' ').join('+')}&travelmode=walking`
 
   return (
     <a 
-      onTouchStart={handlePlaceMouseEnter}
+      onTouchEnd={handlePlaceMouseEnter}
       onTouchCancel={handlePlaceMouseLeave}
       onMouseEnter={handlePlaceMouseEnter}
       onMouseLeave={handlePlaceMouseLeave}
