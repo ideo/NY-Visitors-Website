@@ -12,7 +12,7 @@ export default function ExpandableHeader({ handleClick, color, title }) {
     <header
       className="_header-expandable flex flex-row items-center"
       onClick={onClick}
-      onTouchStart={onClick}>
+      onTouchEnd={onClick}>
       <h4 className="_heading-expandable pl4 mb1 w-80 ttu fw6 f4 serif">
         <div className="_inner-expandable dib">
           <div className="_title-expandable pr1">{title}</div>

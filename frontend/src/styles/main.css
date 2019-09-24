@@ -334,6 +334,7 @@ body  {
 ._content-get-here {
   height: calc(var(--unit) * 30);
   overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 ._image-sign {
@@ -599,6 +600,7 @@ body  {
   height: calc(var(--unit) * 37);
   position: relative;
   overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 ._inner-expandable {
@@ -1031,6 +1033,7 @@ body  {
   ._content-get-here {
     height: calc(var(--unit) * 15);
     overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
   }
   
   ._inner-get-here {
@@ -1056,6 +1059,7 @@ body  {
   ._content-places {
     height: calc(var(--unit) * 15);
     overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
   }
   
   ._inner-expandable {

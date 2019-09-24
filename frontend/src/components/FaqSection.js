@@ -57,27 +57,27 @@ export default function FaqSection({ data }) {
       className="_section-get-here flex flex-column w-100 items-center">        
       
       <Rellax className="_image-sign" as="div" speed={2} >
-        <img src={Sign} />
+        <img src={Sign} alt="sign" />
       </Rellax>
 
       <Rellax className="_image-sandy" as="div" speed={2.5} >
-        <img src={Sandy} />
+        <img src={Sandy} alt="Sandy" />
       </Rellax>
       
       <Rellax className="_image-moon" as="div" speed={2.0} >
-        <img src={Moon} />
+        <img src={Moon} alt="moon" />
       </Rellax>
 
       <Rellax className="_image-bridge" as="div" speed={2.8} >
-        <img src={Bridge} />
+        <img src={Bridge} alt="bridge" />
       </Rellax>
 
       <Rellax className="_image-tom" as="div" speed={3.5} >
-        <img src={Tom} />
+        <img src={Tom} alt="Tom" />
       </Rellax>
 
       <Rellax className="_image-tower" as="div" speed={2} >
-        <img src={Tower} />
+        <img src={Tower} alt="tower" />
       </Rellax>
 
       <Rellax className="_blob-purple" as="div" speed={4} >
@@ -96,7 +96,7 @@ export default function FaqSection({ data }) {
       </Rellax>
 
       <Rellax className="_blob-polka" as="div" speed={4} >
-        <img src={PolkadotTexture} className="_bg-blob-polka" />
+        <img src={PolkadotTexture} alt="polka blob" className="_bg-blob-polka" />
         <svg
           width="300"
           height="300"
@@ -112,31 +112,31 @@ export default function FaqSection({ data }) {
       </Rellax>
 
       <Rellax className="_image-wrinkle" as="div" speed={3.4} >
-        <img src={Wrinkle} />
+        <img src={Wrinkle} alt="wrinkle" />
       </Rellax>
 
       <Rellax className="_image-polkaflat" as="div" speed={2.4} >
-        <img src={PolkadotFlat} />
+        <img src={PolkadotFlat} alt="polka pattern" />
       </Rellax>
 
       <Rellax className="_image-ocean-blob" as="div" speed={4} >
-        <img src={OceanBlob} />
+        <img src={OceanBlob} alt="ocean blob" />
       </Rellax>
       
       <Rellax className="_image-sun" as="div" speed={5} >
-        <img src={Sun} />
+        <img src={Sun} alt="sun" />
       </Rellax>
       
       <Rellax className="_image-red-dot-1" as="div" speed={4} >
-        <img src={RedDot1} />
+        <img src={RedDot1} alt="red dot one" />
       </Rellax>
 
       <Rellax className="_image-red-dot-2" as="div" speed={3} >
-        <img src={RedDot2} />
+        <img src={RedDot2} alt="red dot two" />
       </Rellax>
       
       <Rellax className="_image-epic-poster" as="div" speed={1.8} >
-        <img src={EpicPoster} />
+        <img src={EpicPoster} alt="red dot three" />
       </Rellax>
 
       <div className="_inner-get-here outline w-80 w-70-ns w-40-l">
