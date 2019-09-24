@@ -56,23 +56,23 @@ export default function PlacesSection() {
       className="_section-places flex flex-column w-100 mt0-l items-center">        
       
       <Rellax className="_image-key" as="div" speed={1.8} >
-        <img src={Key} />
+        <img src={Key} alt="key" />
       </Rellax>
 
       <Rellax className="_image-red-dot-3" as="div" speed={2.7} >
-        <img src={RedDot1} />
+        <img src={RedDot1} alt="red dot" />
       </Rellax>
       
       <Rellax className="_image-black-blob" as="div" speed={1.8} >
-        <img src={BlackBlob} />
+        <img src={BlackBlob} alt="black blob" />
       </Rellax>
 
       <Rellax className="_image-golden-blob" as="div" speed={2.3} >
-        <img src={GoldenBlob} />
+        <img src={GoldenBlob} alt="golden blob" />
       </Rellax>
       
       <Rellax className="_image-purple-blob" as="div" speed={0.3} >
-        <img src={PurpleBlob2} />
+        <img src={PurpleBlob2} alt="purple blob" />
       </Rellax>
       
       <div className="_inner-places outline w-80 w-70-m">
