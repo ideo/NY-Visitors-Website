@@ -12,6 +12,7 @@ export default function Place({ data, handlePlaceMouseEnter, handlePlaceMouseLea
       onMouseEnter={handlePlaceMouseEnter}
       onMouseLeave={handlePlaceMouseLeave}
       href={directions}
+      rel="noopener noreferrer"
       target="_blank"
       className="_item-place sans-serif pl4 pt1 pb1 f7 db lh-copy underline-hover">
       <span className="_item-place-name">{name}</span>
