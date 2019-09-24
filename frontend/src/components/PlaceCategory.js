@@ -1,5 +1,5 @@
 /* 3rd party */
-import React, { useState } from 'react'
+import React from 'react'
 import classNames from 'classnames'
 
 /* 1st party */
@@ -27,7 +27,6 @@ export default function PlaceCategory({
               data={place} 
               handlePlaceMouseEnter={handleActivePlaceIdChange.bind(null, place.id)}
               handlePlaceMouseLeave={handleActivePlaceIdChange.bind(null, null)}
-              handlePlaceClick={() => { console.log('mouse place click') }}
             />
           ))}
         </section>
