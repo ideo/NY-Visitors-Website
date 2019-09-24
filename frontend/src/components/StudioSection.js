@@ -5,6 +5,7 @@ import Rellax from 'react-rellax'
 import classNames from 'classnames'
 import isEmpty from 'lodash.isempty'
 import ReactPlaceholder from 'react-placeholder'
+import showdown from 'showdown'
 import 'react-placeholder/lib/reactPlaceholder.css'
 
 /* 1st party */
@@ -34,6 +35,8 @@ const Tips = ({ items }) => {
   return ret
 }
 
+const converter = new showdown.Converter();
+
 export default withRouter(function StudioSection({ history }) {
 
   // hydrate `tips` from endpoint
@@ -45,7 +48,11 @@ export default withRouter(function StudioSection({ history }) {
       if (response.statusCode && response.statusCode === 403) {
         console.log('We are not logged in, it seems.')
       } else if (Array.isArray(response)) {
-        data = response
+        data = response.map(({ question, response }) => {
+          return {
+            question, response: converter.makeHtml(response)
+          }
+        })
       }
       setTips(data)
     }
@@ -101,7 +108,7 @@ export default withRouter(function StudioSection({ history }) {
           </header>
 
           <div className="_content-studio w-100 flex flex-column overflow-y-scroll">
-            <ReactPlaceholder className='pa3' type='text' rows={18} ready={isAuthenticated()}>
+            <ReactPlaceholder className='pa3' type='text' rows={18} ready={true}>
               {isLoading && <Loading />}
               <Tips items={tips} />
             </ReactPlaceholder>
@@ -131,11 +138,8 @@ export default withRouter(function StudioSection({ history }) {
                 <div className="_button-group-login outline flex flex-row w-100 mt4">
                   <div className="_title-google outline flex w-10"></div>
                   <button 
-                    className="_button-login _ideo flex w-50"
+                    className="_button-login _ideo flex w-100"
                     onClick={() => { window.location = `${BASE_API_URL}/connect/google` }}>IDEO</button>
-                  <button 
-                    className="_button-login _ideoorg flex w-50"
-                    onClick={() => { window.location = `${BASE_API_URL}/connect/google` }}>IDEO.ORG</button>
                 </div>
               </>
             }
