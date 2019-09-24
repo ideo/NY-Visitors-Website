@@ -3,11 +3,11 @@ import React from 'react'
 import { withRouter} from 'react-router-dom'
 
 /* 1st party */
-import { LOCAL_STORAGE_AUTH_KEY, BASE_API_URL, AUTHORIZED_DOMAIN} from '../utils'
+import { LOCAL_STORAGE_AUTH_KEY, BASE_API_URL } from '../utils'
 
 export default withRouter(function Authenticated({ history }) {
   
-  function checkAuthParams () {
+  function authenticate() {
     if (window.location.search.length && window.location.search.indexOf('id_token') >= 0) {
       let authParms = window.location.search.split('')
       authParms = authParms.splice(1).join('')
@@ -25,7 +25,7 @@ export default withRouter(function Authenticated({ history }) {
     }
   }
 
-  checkAuthParams()
+  authenticate()
 
   return (
     <div className="w-100"> 
