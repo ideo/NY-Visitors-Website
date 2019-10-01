@@ -6,11 +6,11 @@ import Loading from './Loading'
 
 export default function Contact({ data, isLoading }) {
   return (
-    <article className="_article-info _contact f7 f6-ns sans-serif flex flex-column self-center justify-center">
+    <article className="_article-info _contact f5-l f6 sans-serif flex flex-column self-center justify-center">
       {isLoading && <Loading />}
       {!isLoading && 
         <>
-          <div className="flex flex-row">
+          <div className="flex flex-row mb1">
             <span className="pr2">Phone:</span>
             <a className="no-underline underline-hover black flex w-40" href={`tel:${data.phone}`}>{data.phone}</a>
           </div>
