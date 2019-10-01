@@ -110,3 +110,8 @@ coverage
 exports
 .cache
 build
+
+############################
+# pm2
+############################
+ecosystem.config.js
