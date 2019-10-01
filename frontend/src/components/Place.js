@@ -14,7 +14,7 @@ export default function Place({ data, handlePlaceMouseEnter, handlePlaceMouseLea
       href={directions}
       rel="noopener noreferrer"
       target="_blank"
-      className="_item-place sans-serif pl4 pt1 pb1 f7 db lh-copy underline-hover">
+      className="_item-place sans-serif pl4 pt1 pb1 f5-l f6 db lh-copy underline-hover">
       <span className="_item-place-name">{name}</span>
       <span className="_item-place-address ml1">{address}</span>
     </a>
