@@ -3,12 +3,19 @@
   "port": "${process.env.PORT || 1337}",
   "production": true,
   "proxy": {
-    "enabled": false
+    "enabled": true,
+    "ssl": true,
+    "host": "ny-visitors.ideo.com",
+    "port": 80
   },
   "cron": {
     "enabled": false
   },
   "admin": {
-    "autoOpen": false
+    "path": "/admin",
+    "autoOpen": false,
+    "build": {
+      "backend": "https://ny-visitors.ideo.com/api"
+    }
   }
 }
