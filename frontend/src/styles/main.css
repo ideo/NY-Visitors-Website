@@ -341,7 +341,7 @@ body  {
 ._image-sign {
   position: absolute;
   top: calc(var(--unit) * -10);
-  left: calc(var(--unit) * 2);
+  left: calc(var(--unit) * -1);
   width: 200px;
   height: auto;
   z-index: var(--layer-1);
@@ -823,7 +823,7 @@ body  {
   }
 
   ._bg-blob-polka {
-    top: calc(var(--unit) * 1);
+    top: calc(var(--unit) * -2);
     left: calc(var(--unit) * 0);
     transform: scale(1.5) rotate(-40deg);
   }
