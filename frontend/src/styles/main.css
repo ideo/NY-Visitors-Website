@@ -253,7 +253,8 @@ body  {
   z-index: var(--layer-0);
 }
 
-._bg-blob-green  {
+._bg-blob-green  {  
+  transform: rotate(-40deg);
   z-index: var(--layer-0);
   clip-path: url(#_mask-green);
   position: absolute;
@@ -262,7 +263,7 @@ body  {
 }
 
 ._blob-black {
-  transform: scale(0.4);
+  transform: scale(0.4) rotate(-30deg);
   position: absolute;
   top: calc(var(--unit) * -4);
   left: calc(var(--unit) * -12)
@@ -340,7 +341,7 @@ body  {
 ._image-sign {
   position: absolute;
   top: calc(var(--unit) * -10);
-  left: calc(var(--unit) * 2);
+  left: calc(var(--unit) * -1);
   width: 200px;
   height: auto;
   z-index: var(--layer-1);
@@ -546,7 +547,7 @@ body  {
 
 ._image-yellow-blob {
   position: absolute;
-  top: calc(var(--unit) * 168);
+  top: calc(var(--unit) * 163);
   right: calc(var(--unit) * 0);
   width: 150px;
   height: auto;
@@ -561,7 +562,7 @@ body  {
 
 ._image-mini-printer {
   position: absolute;
-  top: calc(var(--unit) * 175);
+  top: calc(var(--unit) * 173);
   right: calc(var(--unit) * 0);
   width: 80px;
   height: auto;
@@ -575,7 +576,7 @@ body  {
 
 ._image-polka-blob-bottom {
   position: absolute;
-  top: calc(var(--unit) * 175);
+  top: calc(var(--unit) * 172);
   left: calc(var(--unit) * 0);
   width: 150px;
   height: auto;
@@ -776,6 +777,11 @@ body  {
   background-position-x: calc(var(--unit) * 0.2);
 }
 
+._message-footer:after {
+  content: '•';
+  margin-left: calc(var(--unit) * 0.7);
+}
+
 /* 
   equivalent of Tachyon's `ns`
   everything above mobile size
@@ -804,7 +810,7 @@ body  {
   }
 
   ._blob-black {
-    left: calc(var(--unit) * -9)
+    left: calc(var(--unit) * -10)
   }
 
   ._blob-purple {
@@ -817,9 +823,9 @@ body  {
   }
 
   ._bg-blob-polka {
-    top: calc(var(--unit) * 1);
+    top: calc(var(--unit) * -2);
     left: calc(var(--unit) * 0);
-    transform: scale(1.5);
+    transform: scale(1.5) rotate(-40deg);
   }
 
   ._blob-polka {
@@ -1128,7 +1134,7 @@ body  {
   }
   
   ._button-login._ideo {
-    background-size: 30%;
+    background-size: 12%;
   }
   
   ._button-login._ideoorg {
@@ -1143,15 +1149,14 @@ body  {
   
   ._footer-global ._article-info {
     border: none;
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     background-size: calc(var(--unit) * 0.9);
     background-position: calc(var(--unit) * 0.3);
     padding-left: calc(var(--unit) * 1.8);
-    width: 100%;
   }
   
   ._footer-global ._branding-global {
-    padding-left: calc(var(--unit) * 3);
+    padding-left: calc(var(--unit) * 2.4);
   }
 
   ._message-footer {
@@ -1172,7 +1177,7 @@ body  {
   }
 
   ._blob-black {
-    left: calc(var(--unit) * -9)
+    left: calc(var(--unit) * -14);
   }
 
   ._blob-purple {
@@ -1181,18 +1186,18 @@ body  {
   }
 
   ._inner-blob-purple {
-    width: calc(var(--unit) * 10);
+    width: calc(var(--unit) * 12);
   }
 
   ._bg-blob-polka {
-    top: calc(var(--unit) * -6);
-    left: calc(var(--unit) * 18);
-    transform: scale(1.1);
+    top: calc(var(--unit) * -9);
+    left: calc(var(--unit) * 16);
+    transform: scale(1.1) rotate(-45deg);
   }
 
   ._blob-polka {
-    top: calc(var(--unit) * -3);
-    left: calc(var(--unit) * 8);
+    top: calc(var(--unit) * 0);
+    left: calc(var(--unit) * 11);
   }
   
   ._image-sign {
@@ -1353,8 +1358,8 @@ body  {
   }
   
   ._image-polka-blob-bottom {
-    top: calc(var(--unit) * -40);
-    left: calc(var(--unit) * 2);
+    top: calc(var(--unit) * -43);
+    left: calc(var(--unit) * -3);
     width: calc(var(--unit) * 20);
   }
   
