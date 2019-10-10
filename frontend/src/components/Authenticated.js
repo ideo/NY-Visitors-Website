@@ -16,7 +16,7 @@ export default withRouter(function Authenticated({ history }) {
         .then(response => response.json())
         .then(parsedResponse => {
           window.localStorage && window.localStorage.setItem(LOCAL_STORAGE_AUTH_KEY, JSON.stringify(parsedResponse))
-          history.push('/')
+          history.push('/#in-studio')
         })
         .catch(e => console.log('Failed - ', e))
     } else {
