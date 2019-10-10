@@ -2,6 +2,7 @@
 import React from 'react'
 import Rellax from 'react-rellax'
 import anime from 'animejs'
+import showdown from 'showdown'
 import isEmpty from 'lodash.isempty'
 
 /* 1st party */
@@ -34,23 +35,18 @@ function animate() {
     ],
     easing: 'easeOutBack',
   })
-  // anime({
-  //   // animate polkadot blob
-  //   ...BASE_ANIME_CONFIG,
-  //   targets: '#_path-polka',
-  //   d: [
-  //     { value: ['M59.6,-57.5C104,-64.1,185.3,-92.9,217.3,-81.9C249.3,-70.9,232,-20,209.5,19.3C187,58.6,159.3,86.3,136.7,126C114.1,165.8,96.6,217.7,62.7,239.7C28.7,261.6,-21.7,253.6,-60.5,230.8C-99.2,208.1,-126.3,170.5,-155.7,135.5C-185.1,100.5,-216.8,68.1,-227.3,29.5C-237.8,-9.1,-227.1,-54,-197.5,-78.3C-167.9,-102.6,-119.4,-106.4,-83.3,-103.6C-47.2,-100.8,-23.6,-91.4,-8,-78.9C7.6,-66.4,15.1,-50.9,59.6,-57.5Z'] },
-  //     { value: ['M118.2,-177.5C155.4,-160.1,189.1,-130.9,206.8,-93.9C224.5,-56.9,226.1,-12.1,197.7,12.5C169.4,37.1,111.2,41.5,80.9,62.2C50.7,83,48.4,120.2,28.8,149.3C9.2,178.5,-27.8,199.6,-71.5,204.6C-115.2,209.6,-165.7,198.4,-176.3,164.7C-187,131,-157.8,74.8,-163.8,24.4C-169.8,-26,-210.9,-70.5,-198.8,-88.2C-186.7,-105.9,-121.5,-96.7,-79.5,-111.8C-37.5,-127,-18.7,-166.5,10.9,-183.5C40.5,-200.4,81.1,-194.9,118.2,-177.5Z'] }
-  //   ],
-  //   duration: 9000,
-  //   delay: 1000,
-  // })
 }
+
+const converter = new showdown.Converter()
 
 export default function FaqSection({ data }) { 
   animate()
 
   const isLoading = isEmpty(data)
+  const parsedData = data.map(({ question, answer }) => ({
+    question,
+    answer: converter.makeHtml(answer)
+  }))
 
   return (
     <section
@@ -148,13 +144,14 @@ export default function FaqSection({ data }) {
           {isLoading && <Loading />}
 
           <ul className="_items-get-here ma0 serif">
-            {data.map(({ question, answer }, index) => (
+            {parsedData.map(({ question, answer }, index) => (
               <li className="mb5" key={index}>
                 <h4 className="ma0 fw6 f4-l f5">
                   {question}
                 </h4>
-                <p className="sans-serif f5-l f6 mv3 lh-copy">
-                  {answer}
+                <p 
+                  className="sans-serif f5-l f6 mv3 lh-copy"
+                  dangerouslySetInnerHTML={{__html: answer}}>
                 </p>
               </li>
             ))}
