@@ -795,17 +795,22 @@ body  {
   ._nav-global {
     display: flex;
   }
-
+  
   ._button-expand-mobile-nav {
     display: none;
   }
-
+  
   ._nav-global > a {
     margin-left: 0;
+    border-left: none;
     background-color: var(--white);
     color: var(--black);
   }
-
+  
+  ._nav-global > a:first-child {
+    border-left: 1px solid var(--black);
+  }
+  
   ._section-places {
     height: calc(var(--unit) * 35);
   }
@@ -1010,6 +1015,8 @@ body  {
 
   ._nav-global > a {
     margin-left: var(--unit);
+    border-left: 1px solid var(--black);
+
   }
 
   ._branding-global {
