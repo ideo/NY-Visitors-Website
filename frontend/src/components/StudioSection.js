@@ -35,7 +35,7 @@ const Tips = ({ items }) => {
   return ret
 }
 
-const converter = new showdown.Converter();
+const converter = new showdown.Converter()
 
 export default withRouter(function StudioSection({ history }) {
 
