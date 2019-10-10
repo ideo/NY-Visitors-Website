@@ -718,6 +718,7 @@ body  {
 ._content-studio {
   position: relative;
   height: calc(var(--unit) * 22);
+  -webkit-overflow-scrolling: touch;
 }
 
 ._footer-studio {
