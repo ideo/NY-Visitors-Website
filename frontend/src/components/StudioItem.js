@@ -9,11 +9,15 @@ export default function StudioItem({ data }) {
   const { question, response } = data
   const [isExpanded, setIsExpanded] = useState(false)
 
+  function onClick() {
+    setIsExpanded(!isExpanded)
+  }
+
   return (
     <article className={classNames('_article-expandable', 'w-100', { '_expanded' : isExpanded })}>
       
       <ExpandableHeader
-        handleClick={() => { setIsExpanded(!isExpanded) }}
+        handleClick={onClick}
         title={question} />
       
       {isExpanded &&
