@@ -1,10 +1,18 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# IDEO NY Visitors Website Frontend
+This is a responsive PWA frontend for IDEO NY Visitors Website.
 
-## Todo
-- fix env vars, make sure app properly uses them
+## Environment Variables
+By convention, `.env` file used to inject environment variables at build time is ignored by `git`. Instead, an `.env.example` is checked-in and tracked. Prior to running this app in development or building it for production:
+
+- `cp .env.example .env` to create the `.env` file from its template
+- Edit `.env` and fill it with the correct values:
+	- `REACT_APP_BASE_API_URL` is where the frontend discovers the backend service. If you're developing this app locally, strat your backend Strapi application (found at `../backend` and use the value `http://localhost:1337` for this environment variable.
+	- `REACT_APP_GOOGLE_API_KEY` is used to authenticate this applicationb with Google to use for `OAuth`. To retrieve the appropriate value, contact the maintainer of this project at [mnilchiani@ideo.com](mailto:mnilchiani@ideo.com)
+	- `REACT_APP_LS_AUTH_KEY` is the key used to store the `jwt` token retrieved from `OAuth` authentication process in localstorage. Use any value that makes sense for you.
 
 
 ## Available Scripts
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 In the project directory, you can run:
 
