@@ -22,7 +22,7 @@ export default function StudioItem({ data }) {
       
       {isExpanded &&
         <p 
-          className="_response-studio pl4 pr4 lh-copy mv3 sans-serif f6"
+          className="_response-studio pl4 pr4 mr5-ns lh-copy mv3 sans-serif f6"
           dangerouslySetInnerHTML={{ __html: response }}>
         </p>
       }
