@@ -8,12 +8,12 @@ This repository houses two separate Javascript / Node.js codebases in one:
 - `./frontend`: A PWA created using [Create React App](https://github.com/facebook/create-react-app)
 - `./backend`: A [Strapi](http://strapi.io) application using a [Postgres](https://www.postgresql.org/) database.
 - [`pm2`](http://pm2.keymetrics.io/) is used to monitor and manage the Strapi's node.js process. `pm2` uses configuration found at `ecosystem.config.js`. This file is `.gitignore`d by default but an `ecosystem.config.js.example` is checked-in. Copy this file and fill it with the appropriate values. For questions, contact the maintainer. (Refer to the bottom of this document)
-- An [`nginx`](https://www.nginx.com/) server is used to provide reverse proxy for the backend application, as well as to performantly sevre the frontend assets.
+- An [`nginx`](https://www.nginx.com/) server is used to provide reverse proxy for the backend application, as well as to performantly serve the frontend assets.
 - [`certbot`](https://certbot.eff.org/) is used to generate SSL certificates and refirect all `http` requests to `https`
 - [`OAuth`](https://oauth.net/) is used to authenticate visitors with their IDEO G-Suite credentials and allow them access to employees-only information. For `OAuth` and `Strapi` configuration please see [this document](https://strapi.io/documentation/3.0.0-beta.x/plugins/users-permissions.html#authentication).
 
 ## Deployment
-This website is hosted on an [AWS EC2](https://aws.amazon.com/ec2/) instance. The postgres database is also hosted on [AWS RDS](https://aws.amazon.com/rds/?c=db&sec=srv). Credentials for this AWS account exist in IDEO NY's [1Password](https://1password.com) account. For access, please flie a ticket to [support@ideo.com](mailto:support@ideo.com)
+This website is hosted on an [AWS EC2](https://aws.amazon.com/ec2/) instance. The postgres database is also hosted on [AWS RDS](https://aws.amazon.com/rds/?c=db&sec=srv). Credentials for this AWS account exist in IDEO NY's [1Password](https://1password.com) account. For access, please file a ticket to [support@ideo.com](mailto:support@ideo.com)
 
 This website does NOT use CI/CD. For deployments follow these steps:
 
