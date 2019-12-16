@@ -28,11 +28,11 @@ export async function hydrate(endpoint, sortBy = '') {
 	.then(response => response.json())
 	.then(parsedResponse => {
 		debugger
-		if (parsedResponse.statusCode === 401 && parsedResponse.message === 'Invalid token.') {
-			console.log('Perhaps the auth token has expired. Logging out ... ')
+		if (parsedResponse.statusCode === 401 || parsedResponse.statusCode === 403) {
+			console.log('Not logged in, or perhaps the auth token has expired. Resetting auth state ... ')
 			logout()
 		}
-		return { }
+		return { loggedOut: true }
 	})
     .catch(error => console.log('Failed to fetch data: ', error))
 }
