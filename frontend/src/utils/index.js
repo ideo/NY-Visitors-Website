@@ -10,7 +10,6 @@ export const BASE_API_URL = REACT_APP_BASE_API_URL
 const EM_BASIS = 16
 
 export async function hydrate(endpoint, sortBy = '') {
-	console.log('hydrate')
 	const sort = sortBy.length ? `?_sort=${sortBy}` : ''
 	const jwtToken = getAuthToken() ? getAuthToken().jwt : ''
 	let config = {
@@ -25,17 +24,7 @@ export async function hydrate(endpoint, sortBy = '') {
 		config.headers['Authorization'] = `Bearer ${jwtToken}`
 	}
 	return await fetch(`${REACT_APP_BASE_API_URL}/${endpoint}${sort}`, config)
-	.then(response => response.json())
-	.then(parsedResponse => {
-		debugger
-		if (parsedResponse.statusCode === 401 || parsedResponse.statusCode === 403) {
-			console.log('Not logged in, or perhaps the auth token has expired. Resetting auth state ... ')
-			if (isAuthenticated()) {
-				logout()
-			}
-		}
-		return { loggedOut: true }
-	})
+    .then(response => response.json())
     .catch(error => console.log('Failed to fetch data: ', error))
 }
 
