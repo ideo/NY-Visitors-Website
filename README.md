@@ -13,7 +13,7 @@ This repository houses two separate Javascript / Node.js codebases in one:
 - [`OAuth`](https://oauth.net/) is used to authenticate visitors with their IDEO G-Suite credentials and allow them access to employees-only information. For `OAuth` and `Strapi` configuration please see [this document](https://strapi.io/documentation/3.0.0-beta.x/plugins/users-permissions.html#authentication).
 
 ## Deployment
-This website is hosted on an [AWS EC2](https://aws.amazon.com/ec2/) instance. The postgres database is also hosted on [AWS RDS](https://aws.amazon.com/rds/?c=db&sec=srv). Credentials for this AWS account exist in IDEO NY's [1Password](https://1password.com) account. For access, please file a ticket to [support@ideo.com](mailto:support@ideo.com)
+This website is hosted on an [AWS EC2](https://aws.amazon.com/ec2/) instance. The postgres database is also hosted on [AWS RDS](https://aws.amazon.com/rds/?c=db&sec=srv). Credentials for this AWS account exist in IDEO NY's [1Password](https://1password.com) account. For access, please flie a ticket to [support@ideo.com](mailto:support@ideo.com)
 
 This website does NOT use CI/CD. For deployments follow these steps:
 
