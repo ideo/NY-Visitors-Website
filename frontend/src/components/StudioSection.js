@@ -44,7 +44,12 @@ export default withRouter(function StudioSection({ history }) {
   useEffect(() => {
     async function hydrateTips() {
       let data = []
-      const response = await hydrate(ENDPOINTS.TIPS, 'id:ASC')
+      let response = null
+      try {
+        response = await hydrate(ENDPOINTS.TIPS, 'id:ASC')
+      } catch(e) {
+        console.log('Failed at #hydrate')
+      }
       if (response.statusCode && response.statusCode === 403) {
         console.log('We are not logged in, it seems.')
       } else if (Array.isArray(response)) {
