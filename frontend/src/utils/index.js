@@ -26,10 +26,12 @@ export async function hydrate(endpoint, sortBy = '') {
 	return await fetch(`${REACT_APP_BASE_API_URL}/${endpoint}${sort}`, config)
 	.then(response => response.json())
 	.then(parsedResponse => {
+		debugger
 		if (parsedResponse.statusCode === 401 && parsedResponse.message === 'Invalid token.') {
 			console.log('Perhaps the auth token has expired. Logging out ... ')
 			logout()
 		}
+		return { }
 	})
     .catch(error => console.log('Failed to fetch data: ', error))
 }
