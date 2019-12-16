@@ -92,7 +92,7 @@ export default function PlacesSection() {
           }
           <div className="_list-places w-100 w-50-l br-l overflow-y-scroll">
             {isLoading && <Loading />}
-            {placeCategories.map((placeCategory, index) => (
+            {placeCategories && placeCategories.length > 0 && placeCategories.map((placeCategory, index) => (
               <PlaceCategory
                 key={index}
                 data={placeCategory}
