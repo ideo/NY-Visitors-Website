@@ -10,6 +10,7 @@ export const BASE_API_URL = REACT_APP_BASE_API_URL
 const EM_BASIS = 16
 
 export async function hydrate(endpoint, sortBy = '') {
+	console.log('hydrate')
 	const sort = sortBy.length ? `?_sort=${sortBy}` : ''
 	const jwtToken = getAuthToken() ? getAuthToken().jwt : ''
 	let config = {
