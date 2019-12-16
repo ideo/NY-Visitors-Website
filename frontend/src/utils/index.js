@@ -30,7 +30,9 @@ export async function hydrate(endpoint, sortBy = '') {
 		debugger
 		if (parsedResponse.statusCode === 401 || parsedResponse.statusCode === 403) {
 			console.log('Not logged in, or perhaps the auth token has expired. Resetting auth state ... ')
-			logout()
+			if (isAuthenticated()) {
+				logout()
+			}
 		}
 		return { loggedOut: true }
 	})
