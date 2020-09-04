@@ -22,7 +22,7 @@
     "lodash": "^4.17.5",
     "nanoid": "^2.1.0",
     "pg": "^7.12.1",
-    "strapi": "3.0.0-beta.15",
+    "strapi": "3.0.0-beta.17.8",
     "strapi-admin": "3.0.0-beta.15",
     "strapi-hook-bookshelf": "3.0.0-beta.15",
     "strapi-hook-knex": "3.0.0-beta.15",
