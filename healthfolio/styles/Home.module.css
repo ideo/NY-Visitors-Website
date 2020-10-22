@@ -1,0 +1,27 @@
+.container {
+  
+}
+
+.curtain {
+  background-color: black;
+  min-height: 100vh;
+  margin-bottom: 100vh;
+  height: auto;
+}
+
+.lifted {
+  margin-bottom: 0!important;
+}
+
+.behind {
+  position: fixed;
+  background-color: white;
+  z-index: -1;
+  top: 0vh;
+  left: 0;
+}
+
+.released {
+  position: relative!important;
+  z-index: 1!important;
+}
