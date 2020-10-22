@@ -25,3 +25,19 @@
   position: relative!important;
   z-index: 1!important;
 }
+
+.linescontainer {
+  top: 2rem;
+  right: 2rem;
+  bottom: 2rem;
+  left: 2rem;
+  z-index: 2;
+}
+
+.line {
+  position: relative;
+  z-index: 3;
+  transform-origin: top left;
+  will-change: transform;
+  background-color: rgba(0, 0, 0, 0.5);
+}

@@ -1,15 +1,43 @@
-import { useCallback, useState } from 'react'
+import { useEffect, useState, createRef } from 'react'
 import Head from 'next/head'
 import { Waypoint } from 'react-waypoint'
 
 import {
-  container, curtain, behind, lifted, released
+  container, curtain, behind, lifted, released, linescontainer, line
 } from '../styles/Home.module.css'
 
+function getLineInfo(el) {
+  const elHeight = el.offsetHeight
+  const computedStyles = window.getComputedStyle(el)
+  const lineHeight = parseInt(computedStyles.lineHeight)
+  const lineCount = Math.floor(elHeight / lineHeight);
+  return { lineCount, lineHeight }
+}
 
 export default function Home() {
-  
+
   const [isFoamBoardReleased, setFoamBoardReleased] = useState(false)
+  const [currentLine, setCurrentLine] = useState(0)
+  const [lineCount, setLineCount] = useState(0)
+  const [lineHeight, setLineHeight] = useState(0)
+  const curtainEl = createRef(null)
+  const [linesMatrix, setLinesMatrix] = useState(new Array(100).fill(0))
+
+  useEffect(() => {
+    const { lineCount, lineHeight } = getLineInfo(curtainEl.current) 
+    setLineCount(lineCount)
+    setLineHeight(lineHeight)
+  }, [curtainEl])
+
+  useEffect(() => {
+    setLinesMatrix(new Array(lineCount).fill(0))
+  }, [lineCount])
+
+  useEffect(() => {
+    console.log('line matrix ', linesMatrix)
+    console.log('line count ', lineCount)
+    console.log('line height ', lineHeight)
+  }, [linesMatrix])
 
   return (
     <div className={`${container}`}>
@@ -19,64 +47,75 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className={`${curtain} ${isFoamBoardReleased ? lifted : ''} lh-copy f1 tj white pa4`}>
+      <div className={`${curtain} ${isFoamBoardReleased ? lifted : ''} lh-copy relative f1 tj white pa4`} ref={curtainEl}>
+        
+        <div className={`${linescontainer} absolute flex flex-column`}>
+          {linesMatrix.map((progress, idx) => {
+            return (
+              <div key={idx} className={`${line} w-100`} style={{ transform: `scaleX(${(100 - progress) / 100})`, height: `${lineHeight}px` }}>
+              
+              </div>
+            )
+          })}
+        </div>
+        
         <p className="mb2 mt0">
-          One Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac condimentum justo. Nulla quis turpis a enim dapibus fermentum vitae vel justo. Curabitur non sollicitudin ex. Integer ut lectus scelerisque, pharetra est at, accumsan dolor. Suspendisse potenti. Nullam non lorem non nulla varius accumsan quis vel ligula. Maecenas eget quam at ante rutrum commodo vel a massa. Mauris placerat consectetur est, in eleifend est molestie viverra. Ut mattis lectus in dui blandit, quis cursus nulla laoreet. Sed nec scelerisque ante, eget vulputate turpis. Mauris ac cursus ante. Praesent non elit non ex sodales iaculis congue sed turpis. Aenean sed aliquet nulla, at tristique quam. 
+          One Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac condimentum justo. Nulla quis turpis a enim dapibus fermentum vitae vel justo. Curabitur non sollicitudin ex. Integer ut lectus scelerisque, pharetra est at, accumsan dolor. Suspendisse potenti. Nullam non lorem non nulla varius accumsan quis vel ligula. Maecenas eget quam at ante rutrum commodo vel a massa. Mauris placerat consectetur est, in eleifend est molestie viverra. Ut mattis lectus in dui blandit, quis cursus nulla laoreet. Sed nec scelerisque ante, eget vulputate turpis. Mauris ac cursus ante. Praesent non elit non ex sodales iaculis congue sed turpis. Aenean sed aliquet nulla, at tristique quam.
           </p>
-          <p className="mb2">
-          Two Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac condimentum justo. Nulla quis turpis a enim dapibus fermentum vitae vel justo. Curabitur non sollicitudin ex. Integer ut lectus scelerisque, pharetra est at, accumsan dolor. Suspendisse potenti. Nullam non lorem non nulla varius accumsan quis vel ligula. Maecenas eget quam at ante rutrum commodo vel a massa. Mauris placerat consectetur est, in eleifend est molestie viverra. Ut mattis lectus in dui blandit, quis cursus nulla laoreet. Sed nec scelerisque ante, eget vulputate turpis. Mauris ac cursus ante. Praesent non elit non ex sodales iaculis congue sed turpis. Aenean sed aliquet nulla, at tristique quam. 
+        <p className="mb2">
+          Two Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac condimentum justo. Nulla quis turpis a enim dapibus fermentum vitae vel justo. Curabitur non sollicitudin ex. Integer ut lectus scelerisque, pharetra est at, accumsan dolor. Suspendisse potenti. Nullam non lorem non nulla varius accumsan quis vel ligula. Maecenas eget quam at ante rutrum commodo vel a massa. Mauris placerat consectetur est, in eleifend est molestie viverra. Ut mattis lectus in dui blandit, quis cursus nulla laoreet. Sed nec scelerisque ante, eget vulputate turpis. Mauris ac cursus ante. Praesent non elit non ex sodales iaculis congue sed turpis. Aenean sed aliquet nulla, at tristique quam.
           </p>
-          <p className="mb2">
-          Three Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac condimentum justo. Nulla quis turpis a enim dapibus fermentum vitae vel justo. Curabitur non sollicitudin ex. Integer ut lectus scelerisque, pharetra est at, accumsan dolor. Suspendisse potenti. Nullam non lorem non nulla varius accumsan quis vel ligula. Maecenas eget quam at ante rutrum commodo vel a massa. Mauris placerat consectetur est, in eleifend est molestie viverra. Ut mattis lectus in dui blandit, quis cursus nulla laoreet. Sed nec scelerisque ante, eget vulputate turpis. Mauris ac cursus ante. Praesent non elit non ex sodales iaculis congue sed turpis. Aenean sed aliquet nulla, at tristique quam. 
+        <p className="mb2">
+          Three Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac condimentum justo. Nulla quis turpis a enim dapibus fermentum vitae vel justo. Curabitur non sollicitudin ex. Integer ut lectus scelerisque, pharetra est at, accumsan dolor. Suspendisse potenti. Nullam non lorem non nulla varius accumsan quis vel ligula. Maecenas eget quam at ante rutrum commodo vel a massa. Mauris placerat consectetur est, in eleifend est molestie viverra. Ut mattis lectus in dui blandit, quis cursus nulla laoreet. Sed nec scelerisque ante, eget vulputate turpis. Mauris ac cursus ante. Praesent non elit non ex sodales iaculis congue sed turpis. Aenean sed aliquet nulla, at tristique quam.
           </p>
-          <p className="mb2">
-          Four Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac condimentum justo. Nulla quis turpis a enim dapibus fermentum vitae vel justo. Curabitur non sollicitudin ex. Integer ut lectus scelerisque, pharetra est at, accumsan dolor. Suspendisse potenti. Nullam non lorem non nulla varius accumsan quis vel ligula. Maecenas eget quam at ante rutrum commodo vel a massa. Mauris placerat consectetur est, in eleifend est molestie viverra. Ut mattis lectus in dui blandit, quis cursus nulla laoreet. Sed nec scelerisque ante, eget vulputate turpis. Mauris ac cursus ante. Praesent non elit non ex sodales iaculis congue sed turpis. Aenean sed aliquet nulla, at tristique quam. 
+        <p className="mb2">
+          Four Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac condimentum justo. Nulla quis turpis a enim dapibus fermentum vitae vel justo. Curabitur non sollicitudin ex. Integer ut lectus scelerisque, pharetra est at, accumsan dolor. Suspendisse potenti. Nullam non lorem non nulla varius accumsan quis vel ligula. Maecenas eget quam at ante rutrum commodo vel a massa. Mauris placerat consectetur est, in eleifend est molestie viverra. Ut mattis lectus in dui blandit, quis cursus nulla laoreet. Sed nec scelerisque ante, eget vulputate turpis. Mauris ac cursus ante. Praesent non elit non ex sodales iaculis congue sed turpis. Aenean sed aliquet nulla, at tristique quam.
           </p>
-          <p className="mb2">
-          Five Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac condimentum justo. Nulla quis turpis a enim dapibus fermentum vitae vel justo. Curabitur non sollicitudin ex. Integer ut lectus scelerisque, pharetra est at, accumsan dolor. Suspendisse potenti. Nullam non lorem non nulla varius accumsan quis vel ligula. Maecenas eget quam at ante rutrum commodo vel a massa. Mauris placerat consectetur est, in eleifend est molestie viverra. Ut mattis lectus in dui blandit, quis cursus nulla laoreet. Sed nec scelerisque ante, eget vulputate turpis. Mauris ac cursus ante. Praesent non elit non ex sodales iaculis congue sed turpis. Aenean sed aliquet nulla, at tristique quam. 
+        <p className="mb2">
+          Five Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac condimentum justo. Nulla quis turpis a enim dapibus fermentum vitae vel justo. Curabitur non sollicitudin ex. Integer ut lectus scelerisque, pharetra est at, accumsan dolor. Suspendisse potenti. Nullam non lorem non nulla varius accumsan quis vel ligula. Maecenas eget quam at ante rutrum commodo vel a massa. Mauris placerat consectetur est, in eleifend est molestie viverra. Ut mattis lectus in dui blandit, quis cursus nulla laoreet. Sed nec scelerisque ante, eget vulputate turpis. Mauris ac cursus ante. Praesent non elit non ex sodales iaculis congue sed turpis. Aenean sed aliquet nulla, at tristique quam.
           </p>
-          <p className="mb2">
-          Six Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac condimentum justo. Nulla quis turpis a enim dapibus fermentum vitae vel justo. Curabitur non sollicitudin ex. Integer ut lectus scelerisque, pharetra est at, accumsan dolor. Suspendisse potenti. Nullam non lorem non nulla varius accumsan quis vel ligula. Maecenas eget quam at ante rutrum commodo vel a massa. Mauris placerat consectetur est, in eleifend est molestie viverra. Ut mattis lectus in dui blandit, quis cursus nulla laoreet. Sed nec scelerisque ante, eget vulputate turpis. Mauris ac cursus ante. Praesent non elit non ex sodales iaculis congue sed turpis. Aenean sed aliquet nulla, at tristique quam. 
+        <p className="mb2">
+          Six Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac condimentum justo. Nulla quis turpis a enim dapibus fermentum vitae vel justo. Curabitur non sollicitudin ex. Integer ut lectus scelerisque, pharetra est at, accumsan dolor. Suspendisse potenti. Nullam non lorem non nulla varius accumsan quis vel ligula. Maecenas eget quam at ante rutrum commodo vel a massa. Mauris placerat consectetur est, in eleifend est molestie viverra. Ut mattis lectus in dui blandit, quis cursus nulla laoreet. Sed nec scelerisque ante, eget vulputate turpis. Mauris ac cursus ante. Praesent non elit non ex sodales iaculis congue sed turpis. Aenean sed aliquet nulla, at tristique quam.
           </p>
       </div>
 
       <Waypoint
-        onLeave={({ currentPosition, previousPosition }) => { 
+        onLeave={({ currentPosition }) => {
           if (currentPosition === 'below') {
-            setFoamBoardReleased(false)  
+            setFoamBoardReleased(false)
           }
           if (currentPosition === 'above') {
-            setFoamBoardReleased(true)  
+            setFoamBoardReleased(true)
           }
         }}
-        onEnter={({ previousPosition }) => { 
-          if (previousPosition === 'above') {
-            setFoamBoardReleased(false)  
-          }
+        onEnter={({ previousPosition }) => {
           if (previousPosition === 'below') {
-            setFoamBoardReleased(true)  
+            setFoamBoardReleased(true)
+          }
+          if (previousPosition === 'above') {
+            setFoamBoardReleased(false)
           }
         }}
       />
 
       <div className={`${behind} ${isFoamBoardReleased ? released : ''} pa4 lh-copy f2 tj black`}>
         <p className="mb2">
-        One Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac condimentum justo. Nulla quis turpis a enim dapibus fermentum vitae vel justo. Curabitur non sollicitudin ex. Integer ut lectus scelerisque, pharetra est at, accumsan dolor. Suspendisse potenti. Nullam non lorem non nulla varius accumsan quis vel ligula. Maecenas eget quam at ante rutrum commodo vel a massa. Mauris placerat consectetur est, in eleifend est molestie viverra. Ut mattis lectus in dui blandit, quis cursus nulla laoreet. Sed nec scelerisque ante, eget vulputate turpis. Mauris ac cursus ante. Praesent non elit non ex sodales iaculis congue sed turpis. Aenean sed aliquet nulla, at tristique quam. 
+          One Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac condimentum justo. Nulla quis turpis a enim dapibus fermentum vitae vel justo. Curabitur non sollicitudin ex. Integer ut lectus scelerisque, pharetra est at, accumsan dolor. Suspendisse potenti. Nullam non lorem non nulla varius accumsan quis vel ligula. Maecenas eget quam at ante rutrum commodo vel a massa. Mauris placerat consectetur est, in eleifend est molestie viverra. Ut mattis lectus in dui blandit, quis cursus nulla laoreet. Sed nec scelerisque ante, eget vulputate turpis. Mauris ac cursus ante. Praesent non elit non ex sodales iaculis congue sed turpis. Aenean sed aliquet nulla, at tristique quam.
         </p>
         <p className="mb2">
-        Two Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac condimentum justo. Nulla quis turpis a enim dapibus fermentum vitae vel justo. Curabitur non sollicitudin ex. Integer ut lectus scelerisque, pharetra est at, accumsan dolor. Suspendisse potenti. Nullam non lorem non nulla varius accumsan quis vel ligula. Maecenas eget quam at ante rutrum commodo vel a massa. Mauris placerat consectetur est, in eleifend est molestie viverra. Ut mattis lectus in dui blandit, quis cursus nulla laoreet. Sed nec scelerisque ante, eget vulputate turpis. Mauris ac cursus ante. Praesent non elit non ex sodales iaculis congue sed turpis. Aenean sed aliquet nulla, at tristique quam. 
+          Two Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac condimentum justo. Nulla quis turpis a enim dapibus fermentum vitae vel justo. Curabitur non sollicitudin ex. Integer ut lectus scelerisque, pharetra est at, accumsan dolor. Suspendisse potenti. Nullam non lorem non nulla varius accumsan quis vel ligula. Maecenas eget quam at ante rutrum commodo vel a massa. Mauris placerat consectetur est, in eleifend est molestie viverra. Ut mattis lectus in dui blandit, quis cursus nulla laoreet. Sed nec scelerisque ante, eget vulputate turpis. Mauris ac cursus ante. Praesent non elit non ex sodales iaculis congue sed turpis. Aenean sed aliquet nulla, at tristique quam.
         </p>
         <p className="mb2">
-        Three Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac condimentum justo. Nulla quis turpis a enim dapibus fermentum vitae vel justo. Curabitur non sollicitudin ex. Integer ut lectus scelerisque, pharetra est at, accumsan dolor. Suspendisse potenti. Nullam non lorem non nulla varius accumsan quis vel ligula. Maecenas eget quam at ante rutrum commodo vel a massa. Mauris placerat consectetur est, in eleifend est molestie viverra. Ut mattis lectus in dui blandit, quis cursus nulla laoreet. Sed nec scelerisque ante, eget vulputate turpis. Mauris ac cursus ante. Praesent non elit non ex sodales iaculis congue sed turpis. Aenean sed aliquet nulla, at tristique quam. 
+          Three Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac condimentum justo. Nulla quis turpis a enim dapibus fermentum vitae vel justo. Curabitur non sollicitudin ex. Integer ut lectus scelerisque, pharetra est at, accumsan dolor. Suspendisse potenti. Nullam non lorem non nulla varius accumsan quis vel ligula. Maecenas eget quam at ante rutrum commodo vel a massa. Mauris placerat consectetur est, in eleifend est molestie viverra. Ut mattis lectus in dui blandit, quis cursus nulla laoreet. Sed nec scelerisque ante, eget vulputate turpis. Mauris ac cursus ante. Praesent non elit non ex sodales iaculis congue sed turpis. Aenean sed aliquet nulla, at tristique quam.
         </p>
         <p className="mb2">
-        Four Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac condimentum justo. Nulla quis turpis a enim dapibus fermentum vitae vel justo. Curabitur non sollicitudin ex. Integer ut lectus scelerisque, pharetra est at, accumsan dolor. Suspendisse potenti. Nullam non lorem non nulla varius accumsan quis vel ligula. Maecenas eget quam at ante rutrum commodo vel a massa. Mauris placerat consectetur est, in eleifend est molestie viverra. Ut mattis lectus in dui blandit, quis cursus nulla laoreet. Sed nec scelerisque ante, eget vulputate turpis. Mauris ac cursus ante. Praesent non elit non ex sodales iaculis congue sed turpis. Aenean sed aliquet nulla, at tristique quam. 
+          Four Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac condimentum justo. Nulla quis turpis a enim dapibus fermentum vitae vel justo. Curabitur non sollicitudin ex. Integer ut lectus scelerisque, pharetra est at, accumsan dolor. Suspendisse potenti. Nullam non lorem non nulla varius accumsan quis vel ligula. Maecenas eget quam at ante rutrum commodo vel a massa. Mauris placerat consectetur est, in eleifend est molestie viverra. Ut mattis lectus in dui blandit, quis cursus nulla laoreet. Sed nec scelerisque ante, eget vulputate turpis. Mauris ac cursus ante. Praesent non elit non ex sodales iaculis congue sed turpis. Aenean sed aliquet nulla, at tristique quam.
         </p>
         <p className="mb2">
-        Five Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac condimentum justo. Nulla quis turpis a enim dapibus fermentum vitae vel justo. Curabitur non sollicitudin ex. Integer ut lectus scelerisque, pharetra est at, accumsan dolor. Suspendisse potenti. Nullam non lorem non nulla varius accumsan quis vel ligula. Maecenas eget quam at ante rutrum commodo vel a massa. Mauris placerat consectetur est, in eleifend est molestie viverra. Ut mattis lectus in dui blandit, quis cursus nulla laoreet. Sed nec scelerisque ante, eget vulputate turpis. Mauris ac cursus ante. Praesent non elit non ex sodales iaculis congue sed turpis. Aenean sed aliquet nulla, at tristique quam. 
+          Five Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac condimentum justo. Nulla quis turpis a enim dapibus fermentum vitae vel justo. Curabitur non sollicitudin ex. Integer ut lectus scelerisque, pharetra est at, accumsan dolor. Suspendisse potenti. Nullam non lorem non nulla varius accumsan quis vel ligula. Maecenas eget quam at ante rutrum commodo vel a massa. Mauris placerat consectetur est, in eleifend est molestie viverra. Ut mattis lectus in dui blandit, quis cursus nulla laoreet. Sed nec scelerisque ante, eget vulputate turpis. Mauris ac cursus ante. Praesent non elit non ex sodales iaculis congue sed turpis. Aenean sed aliquet nulla, at tristique quam.
         </p>
         <p className="mb2">
-        Six Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac condimentum justo. Nulla quis turpis a enim dapibus fermentum vitae vel justo. Curabitur non sollicitudin ex. Integer ut lectus scelerisque, pharetra est at, accumsan dolor. Suspendisse potenti. Nullam non lorem non nulla varius accumsan quis vel ligula. Maecenas eget quam at ante rutrum commodo vel a massa. Mauris placerat consectetur est, in eleifend est molestie viverra. Ut mattis lectus in dui blandit, quis cursus nulla laoreet. Sed nec scelerisque ante, eget vulputate turpis. Mauris ac cursus ante. Praesent non elit non ex sodales iaculis congue sed turpis. Aenean sed aliquet nulla, at tristique quam. 
+          Six Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac condimentum justo. Nulla quis turpis a enim dapibus fermentum vitae vel justo. Curabitur non sollicitudin ex. Integer ut lectus scelerisque, pharetra est at, accumsan dolor. Suspendisse potenti. Nullam non lorem non nulla varius accumsan quis vel ligula. Maecenas eget quam at ante rutrum commodo vel a massa. Mauris placerat consectetur est, in eleifend est molestie viverra. Ut mattis lectus in dui blandit, quis cursus nulla laoreet. Sed nec scelerisque ante, eget vulputate turpis. Mauris ac cursus ante. Praesent non elit non ex sodales iaculis congue sed turpis. Aenean sed aliquet nulla, at tristique quam.
         </p>
       </div>
     </div>
