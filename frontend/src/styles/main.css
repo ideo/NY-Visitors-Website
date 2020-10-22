@@ -8,12 +8,10 @@
 */
 :root {
   --unit: 5vw;
-  --underline-height: 6px;
-  --grid-color: #878787;
-  --light-grey: #878787;
   --white: #ffffff;
   --black: #000000;
-  --yellow: #fcf113;
+  --green: #009e69;
+  --red: #ff1800;
   --layer-0: 0;
   --layer-1: 10;
   --layer-2: 20;
