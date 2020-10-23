@@ -37,7 +37,7 @@
 .line {
   position: relative;
   z-index: 3;
-  transform-origin: top left;
+  transform-origin: top right;
   will-change: transform;
   background-color: rgba(0, 0, 0, 1);
   transition: 100ms ease-in transform;

@@ -15,6 +15,23 @@ function getLineInfo(el) {
   return { lineCount, lineHeight }
 }
 
+/**
+ * Cubic Pulse.
+ *
+ * @param  {number} c - Edge 1.
+ * @param  {number} w - Edge 2.
+ * @param  {number} x - Source value for interpolation.
+ * @return {number} Cubic pulse.
+ * @see {@link http://www.iquilezles.org/www/articles/functions/functions.htm}
+ */
+
+function cubicPulse (c, w, x) {
+  x = Math.abs(x - c)
+  if (x > w) return 0
+  x /= w
+  return 1 - x * x * (3 - 2 * x)
+}
+
 export default function Home() {
 
   const [isFoamBoardReleased, setFoamBoardReleased] = useState(false)
@@ -23,7 +40,7 @@ export default function Home() {
   const [lineHeight, setLineHeight] = useState(0)
   const [curtainHeight, setCurtainHeight] = useState(0)
   const curtainEl = createRef(null)
-  const [linesMatrix, setLinesMatrix] = useState(new Array(100).fill(0))
+  const [linesMatrix, setLinesMatrix] = useState(new Array(100).fill(1))
   
   useEffect(() => {
     const { lineCount, lineHeight } = getLineInfo(curtainEl.current) 
@@ -35,21 +52,16 @@ export default function Home() {
   useEffect(() => {
     setLinesMatrix(new Array(lineCount).fill(0))
   }, [lineCount])
-
-  useEffect(() => {
-    console.log('line matrix ', linesMatrix)
-    console.log('line count ', lineCount)
-    console.log('line height ', lineHeight)
-  }, [linesMatrix])
-
+  
   useScrollPosition(({ currPos }) => {
     const scrolledPx = Math.abs(currPos.y)
-    if (scrolledPx > curtainHeight) { return }
-    const scrolledPct = (scrolledPx * 100) / curtainHeight
+    if (scrolledPx > curtainHeight) { console.log('end!'); return }
+    const K  = 0.8 + cubicPulse(1, 300, scrolledPx)
+    const scrolledPct = ((scrolledPx * 100) / curtainHeight) * K
     const scrolledLines = scrolledPct % lineCount
     const currentLineNumber = Math.floor(scrolledLines)
     const currentLinePct = Number((scrolledLines - currentLineNumber).toFixed(3))
-    console.log(currentLineNumber, currentLinePct)
+    // console.log(currentLineNumber, currentLinePct)
     if (currentLine !== currentLineNumber) {
       setCurrentLine(currentLineNumber)
     }
@@ -57,6 +69,8 @@ export default function Home() {
     updatedLinesMatrix.forEach((_, idx) => {
       if (idx < currentLineNumber) {
         updatedLinesMatrix[idx] = 1
+      } else {
+        updatedLinesMatrix[idx] = 0
       }
     })
     updatedLinesMatrix[currentLineNumber] = currentLinePct
@@ -76,30 +90,17 @@ export default function Home() {
         <div className={`${linescontainer} absolute flex flex-column`}>
           {linesMatrix.map((progress, idx) => {
             return (
-              <div key={idx} className={`${line} w-100`} style={{ transform: `scaleX(${progress})`, height: `${lineHeight}px` }}>
+              <div key={idx} className={`${line} w-100`} style={{ transform: `scaleX(${1 - progress})`, height: `${lineHeight}px` }}>
               </div>
             )
           })}
         </div>
         
         <p className="mb0 mt0">
-          One Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac condimentum justo. Nulla quis turpis a enim dapibus fermentum vitae vel justo. Curabitur non sollicitudin ex. Integer ut lectus scelerisque, pharetra est at, accumsan dolor. Suspendisse potenti. Nullam non lorem non nulla varius accumsan quis vel ligula. Maecenas eget quam at ante rutrum commodo vel a massa. Mauris placerat consectetur est, in eleifend est molestie viverra. Ut mattis lectus in dui blandit, quis cursus nulla laoreet. Sed nec scelerisque ante, eget vulputate turpis. Mauris ac cursus ante. Praesent non elit non ex sodales iaculis congue sed turpis. Aenean sed aliquet nulla, at tristique quam.
-          </p>
-        <p className="mb0 mt0">
-          Two Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac condimentum justo. Nulla quis turpis a enim dapibus fermentum vitae vel justo. Curabitur non sollicitudin ex. Integer ut lectus scelerisque, pharetra est at, accumsan dolor. Suspendisse potenti. Nullam non lorem non nulla varius accumsan quis vel ligula. Maecenas eget quam at ante rutrum commodo vel a massa. Mauris placerat consectetur est, in eleifend est molestie viverra. Ut mattis lectus in dui blandit, quis cursus nulla laoreet. Sed nec scelerisque ante, eget vulputate turpis. Mauris ac cursus ante. Praesent non elit non ex sodales iaculis congue sed turpis. Aenean sed aliquet nulla, at tristique quam.
-          </p>
-        <p className="mb0 mt0">
-          Three Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac condimentum justo. Nulla quis turpis a enim dapibus fermentum vitae vel justo. Curabitur non sollicitudin ex. Integer ut lectus scelerisque, pharetra est at, accumsan dolor. Suspendisse potenti. Nullam non lorem non nulla varius accumsan quis vel ligula. Maecenas eget quam at ante rutrum commodo vel a massa. Mauris placerat consectetur est, in eleifend est molestie viverra. Ut mattis lectus in dui blandit, quis cursus nulla laoreet. Sed nec scelerisque ante, eget vulputate turpis. Mauris ac cursus ante. Praesent non elit non ex sodales iaculis congue sed turpis. Aenean sed aliquet nulla, at tristique quam.
-          </p>
-        <p className="mb0 mt0">
-          Four Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac condimentum justo. Nulla quis turpis a enim dapibus fermentum vitae vel justo. Curabitur non sollicitudin ex. Integer ut lectus scelerisque, pharetra est at, accumsan dolor. Suspendisse potenti. Nullam non lorem non nulla varius accumsan quis vel ligula. Maecenas eget quam at ante rutrum commodo vel a massa. Mauris placerat consectetur est, in eleifend est molestie viverra. Ut mattis lectus in dui blandit, quis cursus nulla laoreet. Sed nec scelerisque ante, eget vulputate turpis. Mauris ac cursus ante. Praesent non elit non ex sodales iaculis congue sed turpis. Aenean sed aliquet nulla, at tristique quam.
-          </p>
-        <p className="mb0 mt0">
-          Five Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac condimentum justo. Nulla quis turpis a enim dapibus fermentum vitae vel justo. Curabitur non sollicitudin ex. Integer ut lectus scelerisque, pharetra est at, accumsan dolor. Suspendisse potenti. Nullam non lorem non nulla varius accumsan quis vel ligula. Maecenas eget quam at ante rutrum commodo vel a massa. Mauris placerat consectetur est, in eleifend est molestie viverra. Ut mattis lectus in dui blandit, quis cursus nulla laoreet. Sed nec scelerisque ante, eget vulputate turpis. Mauris ac cursus ante. Praesent non elit non ex sodales iaculis congue sed turpis. Aenean sed aliquet nulla, at tristique quam.
-          </p>
-        <p className="mb0 mt0">
-          Six Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac condimentum justo. Nulla quis turpis a enim dapibus fermentum vitae vel justo. Curabitur non sollicitudin ex. Integer ut lectus scelerisque, pharetra est at, accumsan dolor. Suspendisse potenti. Nullam non lorem non nulla varius accumsan quis vel ligula. Maecenas eget quam at ante rutrum commodo vel a massa. Mauris placerat consectetur est, in eleifend est molestie viverra. Ut mattis lectus in dui blandit, quis cursus nulla laoreet. Sed nec scelerisque ante, eget vulputate turpis. Mauris ac cursus ante. Praesent non elit non ex sodales iaculis congue sed turpis. Aenean sed aliquet nulla, at tristique quam.
-          </p>
+          And suddenly you’re a patient. And nothing makes sense. And what’s this test, and what will it cost, and what was that thing you said just then. You’re in the healthcare machine for real, tumbling and turning: which way is which and which way is out. Skills, experiences, status—little of that helps. At every turn, overstretched nurses and doctors are doing their level best to see you, to really see you, and to look after you; doing their level best to work systems that seem to care less for how you’re feeling, and more for how you’re paying. navigate insurance why can’t you see me what is this bill a face beneath gauze well-documented disparities I am more than an outcome squeeze the tube dry give me death trying their level best to help it won’t go away on its own my family has it hardest proximal left anterior ventilators breathing searing pain in my heart and now I am a doctor spiked another fever low tolerance the body battles cold cotton gowns indecipherable pain drugs that sound like roman gods burnt out by the conversations scrubs of invisible suffering acute systemic distress a thousand different pills to take limbs so heavy everyone talking about solutions I am scared medical distancing isn’t new surge and persevere don and doff and don and doff emotion is evidence clinical care is messy hug my family forever navigate insurance why can’t you see me what is this bill a face beneath gauze well-documented disparities I am more than an outcome squeeze the tube dry give me death trying their level best to help it won’t go away on its own my family has it hardest proximal left anterior ventilators breathing searing pain in my heart and now I am a doctor spiked another fever low tolerance the body battles cold cotton gowns indecipherable pain drugs that sound like roman gods burnt out by the conversations scrubs of invisible suffering acute systemic distress a thousand different pills to take limbs so heavy everyone talking about solutions I am scared medical distancing isn’t new surge and persevere don and doff and don and doff emotion is evidence clinical care is messy hug my family forever.
+
+        </p>
+        
       </div>
 
       <Waypoint
