@@ -40,8 +40,9 @@ export default function Home() {
   const [lineHeight, setLineHeight] = useState(0)
   const [curtainHeight, setCurtainHeight] = useState(0)
   const curtainEl = createRef(null)
-  const [linesMatrix, setLinesMatrix] = useState(new Array(100).fill(1))
-  
+  const [linesMatrix, setLinesMatrix] = useState([])
+  let loop = null
+
   useEffect(() => {
     const { lineCount, lineHeight } = getLineInfo(curtainEl.current) 
     setLineCount(lineCount)
@@ -51,31 +52,46 @@ export default function Home() {
 
   useEffect(() => {
     setLinesMatrix(new Array(lineCount).fill(0))
+    console.log('lineCount changed ', lineCount)
   }, [lineCount])
+
+  useEffect(() => {
+    console.log('linesMatrix changed ', linesMatrix.length)
+  }, [linesMatrix])
   
   useScrollPosition(({ currPos }) => {
+    if (isFoamBoardReleased) { console.log('end!'); return }
     const scrolledPx = Math.abs(currPos.y)
-    if (scrolledPx > curtainHeight) { console.log('end!'); return }
-    const K  = 0.8 + cubicPulse(1, 300, scrolledPx)
-    const scrolledPct = ((scrolledPx * 100) / curtainHeight) * K
-    const scrolledLines = scrolledPct % lineCount
+    const coefficient  = 0.8 + cubicPulse(1, 300, scrolledPx)
+    const scrolledPct = ((scrolledPx * 100) / (curtainHeight - window.innerHeight)) * coefficient
+    const scrolledLines = (scrolledPct * lineCount) / 100
     const currentLineNumber = Math.floor(scrolledLines)
     const currentLinePct = Number((scrolledLines - currentLineNumber).toFixed(3))
-    // console.log(currentLineNumber, currentLinePct)
     if (currentLine !== currentLineNumber) {
       setCurrentLine(currentLineNumber)
-    }
+    } 
     const updatedLinesMatrix = [...linesMatrix]
-    updatedLinesMatrix.forEach((_, idx) => {
-      if (idx < currentLineNumber) {
-        updatedLinesMatrix[idx] = 1
-      } else {
-        updatedLinesMatrix[idx] = 0
-      }
-    })
-    updatedLinesMatrix[currentLineNumber] = currentLinePct
-    setLinesMatrix(updatedLinesMatrix)
+    // console.log(`line ${currentLineNumber} – pct ${Number((currentLinePct * 100).toFixed(2))} – total ${lineCount}`)
+    if (currentLine <= (lineCount - 2)) {
+      updatedLinesMatrix.forEach((_, idx) => {          
+        if (idx < currentLineNumber) {
+          updatedLinesMatrix[idx] = 1
+        } else {
+          updatedLinesMatrix[idx] = 0
+        }
+      })
+      updatedLinesMatrix[currentLineNumber] = currentLinePct
+      setLinesMatrix(updatedLinesMatrix)
+    } else {
+      // console.log('Not updating the matrix')
+    }
   })
+
+  useEffect(() => {
+    loop = window.requestAnimationFrame(() => {
+      
+    })
+  }, [])
 
   return (
     <div className={`${container}`}>
@@ -90,7 +106,10 @@ export default function Home() {
         <div className={`${linescontainer} absolute flex flex-column`}>
           {linesMatrix.map((progress, idx) => {
             return (
-              <div key={idx} className={`${line} w-100`} style={{ transform: `scaleX(${1 - progress})`, height: `${lineHeight}px` }}>
+              <div 
+                key={idx} 
+                className={`${line} w-100 pv1`} 
+                style={{ transform: `scaleX(${1 - progress})`, height: `${lineHeight}px`}}>
               </div>
             )
           })}
