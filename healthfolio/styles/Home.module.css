@@ -39,5 +39,6 @@
   z-index: 3;
   transform-origin: top left;
   will-change: transform;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 1);
+  transition: 100ms ease-in transform;
 }
