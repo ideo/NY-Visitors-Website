@@ -26,7 +26,7 @@ export default function GlobalFooter({ data }) {
     <footer className="_footer-global serif flex flex-row-l flex-column w-100 outline">        
       
       <div className="w-100 w-20-l flex pa1 pa0-l flex-row items-center justify-center">
-        <h3 className="_message-footer serif fw5 f5">See you soon!</h3>
+        <h3 className="_message-footer serif fw6 f3">See you soon!</h3>
         <div className="_branding-global flex serif mt1 ml3 m0-l">
           <span className="f6 self-center">
             |&nbsp;&nbsp;New York
@@ -35,7 +35,7 @@ export default function GlobalFooter({ data }) {
       </div>
       
       <div className="w-100 w-80-l flex flex-column flex-row-l">
-        <div className="w-80 self-center w-30-l flex f7">
+        <div className="w-80 self-center w-30-l flex">
           <Address isLoading={isLoading} data={address} />
         </div>
         
